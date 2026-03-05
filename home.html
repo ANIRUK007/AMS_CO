@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMS Co. LTD – Industrial Construction & Maintenance Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:    #0D1B2A;
+    --navy-2:  #112238;
+    --navy-3:  #162d4a;
+    --cyan:    #00AEEF;
+    --cyan-2:  #00C6FF;
+    --cyan-dim:#0090c8;
+    --white:   #FFFFFF;
+    --off-white:#E8EEF4;
+    --muted:   #A8B8C8;
+    --dim:     #607080;
+    --border:  rgba(0,174,239,0.18);
+  }
+
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    font-family: 'Open Sans', sans-serif;
+    background: var(--white);
+    color: #333;
+    overflow-x: hidden;
+  }
+
+  /* ── TOP BAR ─────────────────────────────────── */
+  .topbar {
+    background: var(--navy-2);
+    padding: 8px 0;
+    font-size: 13px;
+    color: var(--muted);
+    border-bottom: 1px solid rgba(0,174,239,0.15);
+  }
+  .topbar-inner {
+    max-width: 1280px; margin: 0 auto; padding: 0 32px;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
+  }
+  .topbar-left { display:flex; gap:28px; flex-wrap:wrap; }
+  .tb-item { display:flex; align-items:center; gap:8px; font-size:12.5px; }
+  .tb-item .ico { color: var(--cyan); font-size:13px; }
+  .tb-item a { color:var(--muted); text-decoration:none; }
+  .tb-item a:hover { color:var(--cyan); }
+
+  /* ── NAVBAR ──────────────────────────────────── */
+  nav {
+    background: var(--navy);
+    position: sticky; top: 0; z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.4);
+  }
+  .nav-inner {
+    max-width: 1280px; margin: 0 auto; padding: 0 32px;
+    display: flex; align-items: center; justify-content: space-between; height: 66px;
+  }
+  .logo {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700; font-size: 28px; letter-spacing: 3px;
+    color: var(--white); text-decoration: none; display:flex; align-items:baseline; gap:2px;
+  }
+  .logo .ams { color: var(--cyan); }
+  .logo .co  { color: var(--white); font-size:18px; letter-spacing:1px; font-weight:500; }
+  .nav-links { display:flex; align-items:center; gap:0; list-style:none; }
+  .nav-links > li > a {
+    color: var(--white); text-decoration:none;
+    font-family: 'Rajdhani', sans-serif; font-weight:600;
+    font-size: 13.5px; letter-spacing: 1.2px; text-transform: uppercase;
+    padding: 8px 13px; display:block;
+    transition: color .2s;
+    position:relative;
+  }
+  .nav-links > li > a::after {
+    content:''; position:absolute; bottom:-2px; left:13px; right:13px; height:2px;
+    background: var(--cyan); transform:scaleX(0); transition:transform .2s;
+  }
+  .nav-links > li > a:hover { color: var(--cyan); }
+  .nav-links > li > a:hover::after { transform:scaleX(1); }
+  .nav-links > li > a.active { color: var(--cyan); }
+  .nav-links > li > a.active::after { transform:scaleX(1); }
+
+  /* Dropdown */
+  .nav-links .dropdown { position:relative; }
+  .dropdown-menu {
+    display:none; position:absolute; top:100%; left:0;
+    background: var(--navy-2); border-top:2px solid var(--cyan);
+    min-width: 220px; list-style:none;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.4);
+  }
+  .nav-links .dropdown:hover .dropdown-menu { display:block; }
+  .dropdown-menu li a {
+    display:block; padding:12px 20px;
+    color:var(--muted); font-family:'Rajdhani',sans-serif;
+    font-size:13px; letter-spacing:1px; text-transform:uppercase;
+    font-weight:600; text-decoration:none; transition:all .15s;
+    border-bottom:1px solid rgba(255,255,255,0.04);
+  }
+  .dropdown-menu li a:hover { color:var(--cyan); background:rgba(0,174,239,0.06); padding-left:26px; }
+  .dropdown-menu li a::after { display:none !important; }
+
+  /* Contact Us CTA button */
+  .nav-cta {
+    border: 2px solid var(--white) !important;
+    padding: 6px 18px !important;
+    margin-left: 10px;
+    transition: all .2s !important;
+  }
+  .nav-cta:hover { background: var(--cyan) !important; border-color: var(--cyan) !important; color: var(--navy) !important; }
+  .nav-cta::after { display:none !important; }
+
+  /* ── HERO ─────────────────────────────────────── */
+  .hero {
+    background: var(--navy);
+    position: relative; overflow:hidden;
+    min-height: 88vh;
+    display:flex; align-items:center;
+  }
+  .hero-bg-lines {
+    position:absolute; inset:0; overflow:hidden; pointer-events:none;
+  }
+  .hero-bg-lines::before {
+    content:'';
+    position:absolute; top:-40%; right:-10%;
+    width:700px; height:700px; border-radius:50%;
+    background: radial-gradient(circle, rgba(0,174,239,0.12) 0%, transparent 65%);
+  }
+  .hero-bg-lines::after {
+    content:''; position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(0,174,239,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,174,239,0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .hero-inner {
+    max-width:1280px; margin:0 auto; padding:80px 32px;
+    display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center;
+    position:relative; z-index:1; width:100%;
+  }
+  .hero-left { animation: fadeUp .9s ease both; }
+  .hero-eyebrow {
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:'Rajdhani',sans-serif; font-size:12px; letter-spacing:5px;
+    text-transform:uppercase; color:var(--cyan); margin-bottom:20px;
+  }
+  .hero-eyebrow::before { content:''; width:32px; height:2px; background:var(--cyan); }
+  .hero h1 {
+    font-family:'Rajdhani',sans-serif; font-weight:700;
+    font-size: clamp(44px, 5.5vw, 78px); line-height:.95; letter-spacing:-1px;
+    color: var(--white); margin-bottom:24px;
+  }
+  .hero h1 .line2 { color: var(--cyan); display:block; }
+  .hero-desc {
+    font-size:15px; line-height:1.8; color:var(--muted);
+    max-width:480px; margin-bottom:40px;
+  }
+  .hero-btns { display:flex; gap:16px; flex-wrap:wrap; }
+  .btn-primary {
+    background: var(--cyan); color: var(--navy);
+    padding:13px 32px; font-family:'Rajdhani',sans-serif;
+    font-weight:700; font-size:14px; letter-spacing:2px; text-transform:uppercase;
+    border:none; cursor:pointer; text-decoration:none;
+    transition: all .2s; display:inline-block;
+  }
+  .btn-primary:hover { background:var(--cyan-2); transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,174,239,0.35); }
+  .btn-outline {
+    background:transparent; color:var(--white);
+    padding:12px 32px; font-family:'Rajdhani',sans-serif;
+    font-weight:700; font-size:14px; letter-spacing:2px; text-transform:uppercase;
+    border:2px solid rgba(255,255,255,0.3); cursor:pointer; text-decoration:none;
+    transition: all .2s; display:inline-block;
+  }
+  .btn-outline:hover { border-color:var(--cyan); color:var(--cyan); }
+  .hero-right { animation: fadeUp .9s ease .2s both; }
+  .hero-stat-cards { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .hsc {
+    background: rgba(255,255,255,0.04);
+    border:1px solid var(--border);
+    padding:28px 24px;
+    border-bottom: 3px solid var(--cyan);
+    transition: transform .2s;
+  }
+  .hsc:hover { transform:translateY(-4px); }
+  .hsc-num {
+    font-family:'Rajdhani',sans-serif; font-weight:700;
+    font-size:52px; line-height:1; color:var(--cyan);
+  }
+  .hsc-label {
+    font-size:11px; letter-spacing:3px; text-transform:uppercase;
+    color:var(--muted); margin-top:6px; font-family:'Rajdhani',sans-serif; font-weight:600;
+  }
+
+  /* ── CYAN BAND ───────────────────────────────── */
+  .band-cyan { background: var(--cyan); padding: 18px 0; }
+  .band-cyan-inner {
+    max-width:1280px; margin:0 auto; padding:0 32px;
+    display:flex; align-items:center; gap:48px; flex-wrap:wrap; justify-content:center;
+  }
+  .band-item {
+    font-family:'Rajdhani',sans-serif; font-weight:700;
+    font-size:14px; letter-spacing:2px; text-transform:uppercase;
+    color:var(--navy); display:flex; align-items:center; gap:10px;
+  }
+  .band-item .dot { width:6px; height:6px; background:var(--navy); border-radius:50%; opacity:0.4; }
+
+  /* ── SECTION COMMONS ─────────────────────────── */
+  section { padding:96px 0; }
+  .container { max-width:1280px; margin:0 auto; padding:0 32px; }
+  .sec-tag {
+    font-family:'Rajdhani',sans-serif; font-size:12px; letter-spacing:5px;
+    text-transform:uppercase; color:var(--cyan); margin-bottom:10px;
+  }
+  .sec-title {
+    font-family:'Rajdhani',sans-serif; font-weight:700;
+    font-size: clamp(32px, 4vw, 52px); line-height:1; color: var(--navy);
+  }
+  .sec-title .hl { color:var(--cyan); }
+  .sec-title-white { color:var(--white) !important; }
+  .sec-line { width:50px; height:3px; background:var(--cyan); margin-top:16px; }
+  .sec-desc { color:#607080; font-size:15px; line-height:1.8; max-width:580px; margin-top:18px; }
+  .sec-header { margin-bottom:56px; }
+
+  /* ── ABOUT ───────────────────────────────────── */
+  .about { background:#F4F8FB; }
+  .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+  .about-img-wrap { position:relative; }
+  .about-img-box {
+    width:100%; aspect-ratio:4/3;
+    background:linear-gradient(135deg,var(--navy),var(--navy-3));
+    display:flex; align-items:center; justify-content:center; font-size:96px;
+  }
+  .about-exp-badge {
+    position:absolute; bottom:-20px; right:-20px;
+    width:110px; height:110px; background:var(--cyan);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    font-family:'Rajdhani',sans-serif; color:var(--navy);
+  }
+  .about-exp-badge .n { font-size:44px; font-weight:700; line-height:1; }
+  .about-exp-badge .l { font-size:11px; letter-spacing:1px; font-weight:700; text-align:center; }
+  .about-intro { font-size:18px; color:var(--navy); line-height:1.7; font-weight:600; margin:20px 0 18px; }
+  .about-body { font-size:14.5px; color:#5A6070; line-height:1.85; margin-bottom:32px; }
+  .divisions-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:32px; }
+  .div-item {
+    display:flex; align-items:center; gap:10px; padding:10px 14px;
+    background:white; border-left:3px solid var(--cyan);
+    font-size:13px; font-weight:600; color:var(--navy);
+    font-family:'Rajdhani',sans-serif; letter-spacing:.5px; text-transform:uppercase;
+  }
+  .div-item::before { content:'›'; color:var(--cyan); font-size:16px; }
+
+  /* ── PILLARS ─────────────────────────────────── */
+  .pillars { background:var(--navy); }
+  .pillars-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:56px; }
+  .pillar {
+    background:rgba(255,255,255,0.03); border:1px solid var(--border);
+    padding:44px 36px; border-bottom:3px solid transparent; transition:all .3s;
+  }
+  .pillar:hover { background:rgba(0,174,239,0.07); border-bottom-color:var(--cyan); transform:translateY(-4px); }
+  .pillar-icon { font-size:36px; margin-bottom:20px; }
+  .pillar-title {
+    font-family:'Rajdhani',sans-serif; font-weight:700;
+    font-size:20px; letter-spacing:1px; text-transform:uppercase; color:var(--white); margin-bottom:14px;
+  }
+  .pillar-desc { font-size:14px; color:var(--muted); line-height:1.8; }
+
+  /* ── SERVICES ────────────────────────────────── */
+  .services { background:white; }
+  .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .svc-card { border:1px solid #E0EAF2; overflow:hidden; transition:all .3s; background:white; }
+  .svc-card:hover { box-shadow:0 12px 40px rgba(0,0,0,0.1); transform:translateY(-4px); border-color:var(--cyan); }
+  .svc-top {
+    background:var(--navy); height:130px;
+    display:flex; align-items:center; justify-content:center; font-size:52px;
+    position:relative; overflow:hidden; transition:.3s;
+  }
+  .svc-card:hover .svc-top { background:var(--navy-3); }
+  .svc-top-bar { position:absolute; bottom:0; left:0; right:0; height:3px; background:var(--cyan); transform:scaleX(0); transition:.3s; }
+  .svc-card:hover .svc-top-bar { transform:scaleX(1); }
+  .svc-body { padding:22px; }
+  .svc-name {
+    font-family:'Rajdhani',sans-serif; font-weight:700;
+    font-size:17px; letter-spacing:.5px; text-transform:uppercase; color:var(--navy); margin-bottom:10px; transition:.2s;
+  }
+  .svc-card:hover .svc-name { color:var(--cyan); }
+  .svc-desc { font-size:13px; color:#6A7888; line-height:1.7; }
+
+  /* ── STATS BAND ──────────────────────────────── */
+  .stats-band { background:var(--cyan); padding:64px 0; }
+  .stats-inner {
+    max-width:1280px; margin:0 auto; padding:0 32px;
+    display:grid; grid-template-columns:repeat(4,1fr); gap:32px; text-align:center;
+  }
+  .stat-n { font-family:'Rajdhani',sans-serif; font-weight:700; font-size:72px; line-height:1; color:var(--navy); }
+  .stat-l { font-family:'Rajdhani',sans-serif; font-size:13px; letter-spacing:3px; text-transform:uppercase; color:rgba(13,27,42,0.6); margin-top:4px; font-weight:700; }
+
+  /* ── AREAS + FAQ ─────────────────────────────── */
+  .areas-sec { background:#F4F8FB; }
+  .areas-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
+  .area-list { list-style:none; margin-top:36px; }
+  .area-item {
+    display:flex; align-items:center; gap:14px; padding:16px 0; border-bottom:1px solid #E0EAF2;
+    font-size:14.5px; color:#334455; font-weight:600; transition:.2s; cursor:default;
+    font-family:'Rajdhani',sans-serif; letter-spacing:.5px; text-transform:uppercase;
+  }
+  .area-item:hover { color:var(--cyan); padding-left:6px; }
+  .area-item .bullet { width:8px; height:8px; background:var(--cyan); flex-shrink:0; }
+  .faq { margin-top:36px; }
+  .faq-item { border:1px solid #DDE8F0; margin-bottom:10px; overflow:hidden; }
+  .faq-q {
+    padding:18px 22px; cursor:pointer;
+    font-family:'Rajdhani',sans-serif; font-weight:700; font-size:15px; letter-spacing:.5px; text-transform:uppercase;
+    color:var(--navy); background:white; display:flex; justify-content:space-between; align-items:center; transition:.2s;
+  }
+  .faq-q:hover { color:var(--cyan); }
+  .faq-q .arr { color:var(--cyan); transition:transform .2s; font-size:18px; }
+  .faq-a { display:none; padding:18px 22px; font-size:14px; color:#5A6070; line-height:1.8; background:#F4F8FB; border-top:1px solid #E0EAF2; }
+  .faq-item.open .faq-q { color:var(--cyan); background:#F0F7FC; }
+  .faq-item.open .arr { transform:rotate(180deg); }
+  .faq-item.open .faq-a { display:block; }
+
+  /* ── BRANCHES ────────────────────────────────── */
+  .branches { background:var(--navy); }
+  .branches-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:56px; }
+  .branch-card {
+    background:rgba(255,255,255,0.04); border:1px solid var(--border);
+    padding:36px 30px; position:relative; overflow:hidden; transition:.3s;
+  }
+  .branch-card::before {
+    content:''; position:absolute; top:0; left:0; right:0; height:3px;
+    background:var(--cyan); transform:scaleX(0); transform-origin:left; transition:.3s;
+  }
+  .branch-card:hover { border-color:rgba(0,174,239,0.4); }
+  .branch-card:hover::before { transform:scaleX(1); }
+  .branch-flag { font-size:32px; margin-bottom:16px; }
+  .branch-country { font-family:'Rajdhani',sans-serif; font-weight:700; font-size:22px; letter-spacing:2px; text-transform:uppercase; color:var(--white); margin-bottom:4px; }
+  .branch-role { font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--cyan); margin-bottom:18px; font-family:'Rajdhani',sans-serif; font-weight:600; }
+  .branch-addr { font-size:13px; color:var(--muted); line-height:1.8; margin-bottom:18px; }
+  .branch-contacts { list-style:none; }
+  .branch-contacts li { font-size:13px; color:var(--muted); margin-bottom:7px; display:flex; align-items:center; gap:8px; }
+  .branch-contacts .ico { color:var(--cyan); }
+
+  /* ── CONTACT ─────────────────────────────────── */
+  .contact { background:white; }
+  .contact-grid { display:grid; grid-template-columns:1fr 1.5fr; gap:80px; align-items:start; }
+  .contact-detail { display:flex; gap:16px; margin-bottom:28px; align-items:flex-start; }
+  .c-icon { width:46px; height:46px; background:var(--navy); flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:18px; }
+  .c-label { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--cyan); margin-bottom:5px; font-family:'Rajdhani',sans-serif; font-weight:700; }
+  .c-value { font-size:14.5px; color:#334; line-height:1.65; }
+  .f-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+  .f-grp { margin-bottom:16px; }
+  .f-grp label { display:block; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#8A9AAA; margin-bottom:8px; font-family:'Rajdhani',sans-serif; font-weight:700; }
+  .f-grp input, .f-grp textarea, .f-grp select {
+    width:100%; background:#F4F8FB; border:1px solid #DDE8F0;
+    color:#334; padding:13px 16px; font-family:'Open Sans',sans-serif; font-size:14px; outline:none; transition:border-color .2s;
+  }
+  .f-grp input:focus, .f-grp textarea:focus, .f-grp select:focus { border-color:var(--cyan); background:white; }
+  .f-grp textarea { resize:vertical; min-height:120px; }
+  .f-grp select option { background:white; }
+
+  /* ── FOOTER ──────────────────────────────────── */
+  footer { background:var(--navy-2); border-top:2px solid var(--cyan); }
+  .footer-main {
+    max-width:1280px; margin:0 auto; padding:72px 32px 60px;
+    display:grid; grid-template-columns:2fr 1fr 1fr 1.4fr; gap:56px;
+  }
+  .f-logo { font-family:'Rajdhani',sans-serif; font-weight:700; font-size:34px; letter-spacing:3px; color:var(--white); margin-bottom:6px; }
+  .f-logo span { color:var(--cyan); }
+  .f-tagline { font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--dim); margin-bottom:20px; font-family:'Rajdhani',sans-serif; }
+  .f-about { font-size:13.5px; color:var(--muted); line-height:1.8; }
+  .f-heading { font-family:'Rajdhani',sans-serif; font-weight:700; font-size:15px; letter-spacing:2px; text-transform:uppercase; color:var(--white); margin-bottom:20px; padding-bottom:10px; border-bottom:1px solid rgba(0,174,239,0.2); }
+  .f-links { list-style:none; }
+  .f-links li { margin-bottom:9px; }
+  .f-links a { color:var(--muted); text-decoration:none; font-size:13.5px; transition:.2s; display:flex; align-items:center; gap:7px; }
+  .f-links a:hover { color:var(--cyan); }
+  .f-links a::before { content:'›'; color:var(--cyan-dim); }
+  .f-hours { list-style:none; }
+  .f-hours li { font-size:13px; color:var(--muted); margin-bottom:7px; }
+  .f-hours strong { color:var(--white); font-family:'Rajdhani',sans-serif; font-size:14px; }
+  .footer-bottom {
+    border-top:1px solid rgba(255,255,255,0.06);
+    max-width:1280px; margin:0 auto; padding:22px 32px;
+    display:flex; justify-content:space-between; align-items:center;
+    font-size:12.5px; color:var(--dim); flex-wrap:wrap; gap:12px;
+  }
+  .footer-bottom a { color:var(--dim); text-decoration:none; margin-left:20px; }
+  .footer-bottom a:hover { color:var(--cyan); }
+
+  /* ── ANIMATIONS ──────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(28px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+  .reveal { opacity:0; transform:translateY(22px); transition:opacity .65s, transform .65s; }
+  .reveal.vis { opacity:1; transform:translateY(0); }
+
+  /* ── RESPONSIVE ──────────────────────────────── */
+  @media(max-width:1050px){
+    .nav-links > li > a { font-size:12px; padding:8px 9px; letter-spacing:.8px; }
+  }
+  @media(max-width:960px){
+    .hero-inner, .about-grid, .contact-grid, .areas-grid { grid-template-columns:1fr; gap:40px; }
+    .services-grid, .pillars-grid, .branches-grid { grid-template-columns:1fr 1fr; }
+    .stats-inner { grid-template-columns:1fr 1fr; }
+    .footer-main { grid-template-columns:1fr 1fr; gap:40px; }
+    .f-row { grid-template-columns:1fr; }
+    .nav-links { display:none; }
+  }
+  @media(max-width:600px){
+    .services-grid,.pillars-grid,.branches-grid { grid-template-columns:1fr; }
+    .stats-inner { grid-template-columns:1fr; }
+    .divisions-grid { grid-template-columns:1fr; }
+    .footer-main { grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <div class="tb-item"><span class="ico">⏰</span> Sun – Thur &nbsp;8:00 – 16:00</div>
+      <div class="tb-item"><span class="ico">📞</span><a href="tel:+966541720336">+966 54 172 0336</a></div>
+      <div class="tb-item"><span class="ico">✉</span><a href="mailto:operations@shihabksa.com">operations@shihabksa.com</a></div>
+    </div>
+    <div style="display:flex;gap:16px;align-items:center;">
+      <a href="#" style="color:var(--muted);font-size:11px;letter-spacing:2px;text-decoration:none;text-transform:uppercase;font-family:'Rajdhani',sans-serif;font-weight:600;">EN</a>
+      <span style="color:rgba(255,255,255,.15);">|</span>
+      <a href="#" style="color:var(--muted);font-size:11px;letter-spacing:2px;text-decoration:none;text-transform:uppercase;font-family:'Rajdhani',sans-serif;font-weight:600;">AR</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo"><span class="ams">AMS</span><span class="co">CO</span></a>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#" onclick="return false;">Supplies</a></li>
+      <li><a href="#" onclick="return false;">Projects</a></li>
+      <li><a href="#" onclick="return false;">Partners</a></li>
+      <li><a href="#" onclick="return false;">Clients</a></li>
+      <li><a href="#" onclick="return false;">Safety Policy</a></li>
+      <li class="dropdown">
+        <a href="#" onclick="return false;">Certificates ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="#" onclick="return false;">Government Certificate</a></li>
+          <li><a href="#" onclick="return false;">ISO Certificate</a></li>
+          <li><a href="#" onclick="return false;">Appreciation Certificate</a></li>
+        </ul>
+      </li>
+      <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-lines"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-eyebrow">Saudi Arabia · Qatar · Bahrain · Kuwait · Oman</div>
+      <h1>Your Trusted<span class="line2">Industrial Partner</span></h1>
+      <p class="hero-desc">AMSCO is a 15-year-old company based in Al Khobar providing comprehensive construction, maintenance, and supply services to the oil &amp; gas, locomotive, and fabrication industries across the GCC.</p>
+      <div class="hero-btns">
+        <a href="#services" class="btn-primary">Explore Services</a>
+        <a href="#contact" class="btn-outline">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-stat-cards">
+        <div class="hsc"><div class="hsc-num">15+</div><div class="hsc-label">Years Experience</div></div>
+        <div class="hsc"><div class="hsc-num">109</div><div class="hsc-label">Expert Workers</div></div>
+        <div class="hsc"><div class="hsc-num">50</div><div class="hsc-label">Clients Served</div></div>
+        <div class="hsc"><div class="hsc-num">500</div><div class="hsc-label">Supplies &amp; Services</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CYAN BAND -->
+<div class="band-cyan">
+  <div class="band-cyan-inner">
+    <div class="band-item">Industrial Maintenance<span class="dot"></span></div>
+    <div class="band-item">Oil &amp; Gas Services<span class="dot"></span></div>
+    <div class="band-item">Electrical &amp; Mechanical<span class="dot"></span></div>
+    <div class="band-item">Fabrication<span class="dot"></span></div>
+    <div class="band-item">Logistics &amp; Manpower</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <div class="about-img-box">🏗️</div>
+        <div class="about-exp-badge"><div class="n">15</div><div class="l">Years<br>Exp.</div></div>
+      </div>
+      <div class="reveal">
+        <div class="sec-tag">Who We Are</div>
+        <h2 class="sec-title">About <span class="hl">AMSCO</span></h2>
+        <div class="sec-line"></div>
+        <p class="about-intro">A financially sound industrial powerhouse based in Al Khobar, Saudi Arabia — serving the Kingdom and GCC for over 15 years.</p>
+        <p class="about-body">AMSCO is capable of sustaining the cash flow required for major works as demonstrated by our ongoing projects. We are suppliers &amp; service providers for oil &amp; gas, locomotive, and fabrication industries across the Kingdom and beyond.</p>
+        <div class="divisions-grid">
+          <div class="div-item">Industrial Maintenance</div>
+          <div class="div-item">Electrical</div>
+          <div class="div-item">Electromechanical</div>
+          <div class="div-item">Mechanical</div>
+          <div class="div-item">Material Supply</div>
+          <div class="div-item">Manpower Supply</div>
+          <div class="div-item">Logistics Services</div>
+        </div>
+        <a href="#services" class="btn-primary">Our Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section class="pillars">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-tag">Why Choose Us</div>
+      <h2 class="sec-title sec-title-white">Our <span class="hl">Strengths</span></h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar reveal">
+        <div class="pillar-icon">👷</div>
+        <div class="pillar-title">Expert Workers</div>
+        <p class="pillar-desc">All our teams are professionally experienced in their respective sectors. Skilled workers are trained under expert supervisors to deliver the highest quality outcomes.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="pillar-icon">🏆</div>
+        <div class="pillar-title">Quality Work</div>
+        <p class="pillar-desc">We provide quality products that meet customer needs and expectations, complying with requirements &amp; specifications agreed upon at the time of contract signing.</p>
+      </div>
+      <div class="pillar reveal">
+        <div class="pillar-icon">🕐</div>
+        <div class="pillar-title">24/7 Support</div>
+        <p class="pillar-desc">Our dedicated support team is always available to ensure your operations run smoothly regardless of time or day. We are there when you need us most.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="sec-header reveal">
+      <div class="sec-tag">What We Do</div>
+      <h2 class="sec-title">Our <span class="hl">Services</span></h2>
+      <div class="sec-line"></div>
+      <p class="sec-desc">AMSCO provides a wide range of services to meet the diverse needs of our clients. Our experienced team ensures the highest standards of service delivery.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <div class="svc-top">⚡<div class="svc-top-bar"></div></div>
+        <div class="svc-body"><div class="svc-name">Electrical Services</div><p class="svc-desc">Installation, maintenance, and repair of high-voltage and low-voltage electrical systems, providing reliable and safe solutions.</p></div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-top">⚙️<div class="svc-top-bar"></div></div>
+        <div class="svc-body"><div class="svc-name">Electromechanical Services</div><p class="svc-desc">Installation and maintenance of electromechanical systems to the highest standards, delivering efficient and reliable solutions.</p></div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-top">🔧<div class="svc-top-bar"></div></div>
+        <div class="svc-body"><div class="svc-name">Mechanical Services</div><p class="svc-desc">Installation, maintenance, and repair of mechanical systems ensuring all equipment operates efficiently and effectively.</p></div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-top">🔍<div class="svc-top-bar"></div></div>
+        <div class="svc-body"><div class="svc-name">Inspection Services</div><p class="svc-desc">Comprehensive inspection using advanced techniques to provide accurate assessments and actionable insights for your infrastructure.</p></div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-top">🌡️<div class="svc-top-bar"></div></div>
+        <div class="svc-body"><div class="svc-name">HVAC Systems</div><p class="svc-desc">Heating, ventilation, and air conditioning for standard and critical environments including duct fabrication and ongoing maintenance.</p></div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-top">🏗️<div class="svc-top-bar"></div></div>
+        <div class="svc-body"><div class="svc-name">Steel Structure Works</div><p class="svc-desc">Fabrication of heavy, medium, and light steel structures to precise specifications for industrial and commercial applications.</p></div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-top">🧪<div class="svc-top-bar"></div></div>
+        <div class="svc-body"><div class="svc-name">Labware Services &amp; Repairs</div><p class="svc-desc">Specialized labware services and repairs by skilled technicians ensuring minimal downtime and high precision in every task.</p></div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-top">🚜<div class="svc-top-bar"></div></div>
+        <div class="svc-body"><div class="svc-name">Heavy Equipment</div><p class="svc-desc">Comprehensive equipment rental and solutions including construction equipment, industrial tools, and pumps with expert support.</p></div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-top">🔬<div class="svc-top-bar"></div></div>
+        <div class="svc-body"><div class="svc-name">Research &amp; Development</div><p class="svc-desc">Continuous innovation exploring new construction techniques and advanced systems to adopt cutting-edge industry best practices.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<div class="stats-band">
+  <div class="stats-inner">
+    <div class="reveal"><div class="stat-n">109</div><div class="stat-l">Expert Workers</div></div>
+    <div class="reveal"><div class="stat-n">485</div><div class="stat-l">Visitors</div></div>
+    <div class="reveal"><div class="stat-n">50</div><div class="stat-l">Clients</div></div>
+    <div class="reveal"><div class="stat-n">500</div><div class="stat-l">Supplies &amp; Services</div></div>
+  </div>
+</div>
+
+<!-- AREAS + FAQ -->
+<section class="areas-sec">
+  <div class="container">
+    <div class="areas-grid">
+      <div class="reveal">
+        <div class="sec-tag">Coverage</div>
+        <h2 class="sec-title">Service <span class="hl">Areas</span></h2>
+        <div class="sec-line"></div>
+        <p style="color:#607080;font-size:14px;line-height:1.8;margin:18px 0 0;">Operating throughout the Kingdom of Saudi Arabia and GCC countries including Bahrain, Kuwait, Qatar, and Oman.</p>
+        <ul class="area-list">
+          <li class="area-item"><span class="bullet"></span>Operation &amp; Maintenance of Factories</li>
+          <li class="area-item"><span class="bullet"></span>Reverse Engineering</li>
+          <li class="area-item"><span class="bullet"></span>Technical Workers</li>
+          <li class="area-item"><span class="bullet"></span>Support Project Services</li>
+          <li class="area-item"><span class="bullet"></span>Sale of Industrial Equipment &amp; Spare Parts</li>
+          <li class="area-item"><span class="bullet"></span>Oil &amp; Gas Services</li>
+          <li class="area-item"><span class="bullet"></span>Fabrication Services</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="sec-tag">FAQ</div>
+        <h2 class="sec-title">You May <span class="hl">Ask</span></h2>
+        <div class="sec-line"></div>
+        <div class="faq">
+          <div class="faq-item open">
+            <div class="faq-q" onclick="toggleFaq(this)">What do we do?<span class="arr">▾</span></div>
+            <div class="faq-a">AMS supplies &amp; provides services in the industrial, commercial sectors &amp; project support across Saudi Arabia and the wider GCC region.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Which sectors and regions does AMS serve?<span class="arr">▾</span></div>
+            <div class="faq-a">AMS provides services in Electrical, Mechanical, Electro-Mechanical, Manpower Services, and Logistics — covering all of Saudi Arabia and Bahrain, Kuwait, Qatar, and Oman.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">How experienced is the AMSCO team?<span class="arr">▾</span></div>
+            <div class="faq-a">AMSCO has over 15 years of industry experience with 109+ expert workers professionally trained in their respective sectors under expert supervisors.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Does AMSCO hold relevant certifications?<span class="arr">▾</span></div>
+            <div class="faq-a">Yes — AMSCO holds Government Certificates, ISO Certificates, and Appreciation Certificates demonstrating our commitment to international quality and regulatory compliance.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANCHES -->
+<section class="branches" id="branches">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-tag">Our Presence</div>
+      <h2 class="sec-title sec-title-white">Our <span class="hl">Branches</span></h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="branches-grid">
+      <div class="branch-card reveal">
+        <div class="branch-flag">🇸🇦</div>
+        <div class="branch-country">Saudi Arabia</div>
+        <div class="branch-role">Headquarters</div>
+        <p class="branch-addr">Unit 24, P.O Box 7941, 22nd Street, King Faisal Street, Shamaliya, Al Khobar – 34425-3554, Saudi Arabia</p>
+        <ul class="branch-contacts">
+          <li><span class="ico">📞</span> +966 54 172 0336</li>
+          <li><span class="ico">✉</span> operations@shihabksa.com</li>
+        </ul>
+      </div>
+      <div class="branch-card reveal">
+        <div class="branch-flag">🇶🇦</div>
+        <div class="branch-country">Qatar</div>
+        <div class="branch-role">Branch Office</div>
+        <p class="branch-addr">Building 127, Unit 2, Area 71, Street 750, Qatar</p>
+        <ul class="branch-contacts">
+          <li><span class="ico">📞</span> +974 30005862</li>
+          <li><span class="ico">📞</span> +966 54 172 0336</li>
+          <li><span class="ico">✉</span> operations@shihabksa.com</li>
+        </ul>
+      </div>
+      <div class="branch-card reveal">
+        <div class="branch-flag">🇧🇭</div>
+        <div class="branch-country">Bahrain</div>
+        <div class="branch-role">Branch Office</div>
+        <p class="branch-addr">Building No. 4130, Block-1014, Road 1454, Al Hamalah, Kingdom of Bahrain</p>
+        <ul class="branch-contacts">
+          <li><span class="ico">📞</span> +966 54 172 0336</li>
+          <li><span class="ico">✉</span> operations@shihabksa.com</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="sec-header reveal">
+      <div class="sec-tag">Get In Touch</div>
+      <h2 class="sec-title">Contact <span class="hl">Us</span></h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-detail">
+          <div class="c-icon">📍</div>
+          <div><div class="c-label">Headquarters</div><div class="c-value">Unit 24, P.O Box 7941, 22nd Street,<br>King Faisal Street, Al Khobar – 34425-3554,<br>Saudi Arabia</div></div>
+        </div>
+        <div class="contact-detail">
+          <div class="c-icon">📞</div>
+          <div><div class="c-label">Phone</div><div class="c-value">+966 54 172 0336</div></div>
+        </div>
+        <div class="contact-detail">
+          <div class="c-icon">✉</div>
+          <div><div class="c-label">Email</div><div class="c-value">operations@shihabksa.com</div></div>
+        </div>
+        <div class="contact-detail">
+          <div class="c-icon">⏰</div>
+          <div><div class="c-label">Opening Hours</div><div class="c-value">Sunday – Thursday<br>8:00 AM – 4:00 PM</div></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="f-row">
+          <div class="f-grp"><label>First Name</label><input type="text" placeholder="John"></div>
+          <div class="f-grp"><label>Last Name</label><input type="text" placeholder="Doe"></div>
+        </div>
+        <div class="f-row">
+          <div class="f-grp"><label>Email Address</label><input type="email" placeholder="john@company.com"></div>
+          <div class="f-grp"><label>Phone</label><input type="tel" placeholder="+966 ..."></div>
+        </div>
+        <div class="f-grp">
+          <label>Service Interested In</label>
+          <select>
+            <option value="">Select a service...</option>
+            <option>Electrical Services</option>
+            <option>Electromechanical Services</option>
+            <option>Mechanical Services</option>
+            <option>Inspection Services</option>
+            <option>HVAC Systems</option>
+            <option>Steel Structure Works</option>
+            <option>Heavy Equipment</option>
+            <option>Labware Services</option>
+            <option>Research &amp; Development</option>
+            <option>Material Supply</option>
+            <option>Manpower Supply</option>
+            <option>Logistics Services</option>
+          </select>
+        </div>
+        <div class="f-grp"><label>Message</label><textarea placeholder="Tell us about your project or inquiry..."></textarea></div>
+        <button class="btn-primary" onclick="alert('Thank you! We will get back to you soon.')">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div>
+      <div class="f-logo"><span>AMS</span>CO</div>
+      <div class="f-tagline">Co. Ltd. — Al Khobar, Saudi Arabia</div>
+      <p class="f-about">AMSCO is a 15-year-old company providing industrial maintenance, electrical, mechanical, and logistics services to the oil &amp; gas, locomotive, and fabrication industries across the GCC region.</p>
+    </div>
+    <div>
+      <div class="f-heading">Quick Links</div>
+      <ul class="f-links">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#" onclick="return false;">Supplies</a></li>
+        <li><a href="#" onclick="return false;">Projects</a></li>
+        <li><a href="#" onclick="return false;">Partners</a></li>
+        <li><a href="#" onclick="return false;">Clients</a></li>
+        <li><a href="#" onclick="return false;">Safety Policy</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-heading">Services</div>
+      <ul class="f-links">
+        <li><a href="#">Electrical</a></li>
+        <li><a href="#">Electromechanical</a></li>
+        <li><a href="#">Mechanical</a></li>
+        <li><a href="#">Inspection</a></li>
+        <li><a href="#">HVAC Systems</a></li>
+        <li><a href="#">Steel Structures</a></li>
+        <li><a href="#">Heavy Equipment</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="f-heading">Office Hours</div>
+      <ul class="f-hours">
+        <li><strong>Sunday – Thursday</strong></li>
+        <li>8:00 AM – 4:00 PM</li>
+        <li style="margin-top:14px;"><strong>Friday – Saturday</strong></li>
+        <li>Closed</li>
+      </ul>
+      <div style="margin-top:28px;">
+        <div class="f-heading">Regions</div>
+        <ul class="f-hours">
+          <li>🇸🇦 Saudi Arabia (HQ)</li>
+          <li>🇶🇦 Qatar</li>
+          <li>🇧🇭 Bahrain</li>
+          <li>🇰🇼 Kuwait</li>
+          <li>🇴🇲 Oman</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 AMS Co. Ltd. — All Rights Reserved.</span>
+    <span>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Safety Policy</a>
+    </span>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        e.target.style.transitionDelay = (i % 3) * 0.12 + 's';
+        e.target.classList.add('vis');
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // FAQ toggle
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    const open = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!open) item.classList.add('open');
+  }
+
+  // Nav active state on scroll
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    document.querySelectorAll('section[id]').forEach(s => {
+      if (window.scrollY >= s.offsetTop - 80) cur = s.id;
+    });
+    document.querySelectorAll('.nav-links > li > a').forEach(a => {
+      a.classList.remove('active');
+      if (a.getAttribute('href') === '#' + cur) a.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
