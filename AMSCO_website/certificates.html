@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificates - AMSCO Industrial Services</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+.cert-card{background:var(--white);border:1px solid var(--border);padding:36px 30px;text-align:center;transition:all .25s;position:relative;overflow:hidden}
+.cert-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--cyan);transform:scaleX(0);transform-origin:center;transition:transform .3s}
+.cert-card:hover{border-color:var(--cyan);box-shadow:0 8px 32px rgba(0,174,239,.1);transform:translateY(-4px)}
+.cert-card:hover::before{transform:scaleX(1)}
+.cert-icon{font-size:52px;margin-bottom:20px;display:block}
+.cert-type{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);font-weight:700;margin-bottom:8px}
+.cert-title{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:22px;color:var(--navy);margin-bottom:14px}
+.cert-body{font-size:13.5px;color:var(--text-body);line-height:1.8}
+@media(max-width:1024px){.cert-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.cert-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body data-page="">
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-tag">Quality &amp; Compliance</div>
+    <h1>Our <span>Certificates</span></h1>
+    <p>AMSCO holds key government, ISO, and industry certifications that demonstrate our commitment to quality, safety, and regulatory compliance.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a> › <span>Certificates</span></div>
+  </div>
+</div>
+<section style="background:var(--light);padding:88px 0">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-tag">Our Credentials</div>
+      <h2 class="sec-title">Certifications &amp; <span>Accreditations</span></h2>
+      <div class="sec-line"></div>
+      <p class="sec-desc">Our certifications reflect AMSCO's commitment to international quality standards, regulatory compliance, and operational excellence across all sectors.</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card reveal" id="govt">
+        <span class="cert-icon">&#127970;</span>
+        <div class="cert-type">Government</div>
+        <div class="cert-title">Government Certificate</div>
+        <p class="cert-body">Official government registration and certification authorizing AMSCO to operate as an industrial supplier and service provider in the Kingdom of Saudi Arabia, in full compliance with Saudi government regulations and IKTIVA requirements.</p>
+      </div>
+      <div class="cert-card reveal" id="iso">
+        <span class="cert-icon">&#127942;</span>
+        <div class="cert-type">International Standard</div>
+        <div class="cert-title">ISO Certificate</div>
+        <p class="cert-body">ISO certification confirming that AMSCO's quality management systems meet international standards. Our ISO-certified processes ensure consistent, high-quality service delivery across all our industrial operations and client engagements.</p>
+      </div>
+      <div class="cert-card reveal" id="appreciation">
+        <span class="cert-icon">&#11088;</span>
+        <div class="cert-type">Industry Recognition</div>
+        <div class="cert-title">Appreciation Certificate</div>
+        <p class="cert-body">Industry appreciation certificates received from our prestigious clients including Saudi Aramco and major GCC corporations, recognizing AMSCO's outstanding service delivery, reliability, and commitment to client success.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="background:var(--navy);padding:88px 0">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-tag" style="color:var(--cyan)">Compliance</div>
+      <h2 class="sec-title" style="color:var(--white)">Regulatory <span>Compliance</span></h2>
+      <div class="sec-line"></div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border-dark);margin-top:52px">
+      <div style="background:var(--navy);padding:32px 24px;text-align:center;transition:background .2s" onmouseover="this.style.background='#162a48'" onmouseout="this.style.background='var(--navy)'">
+        <div style="font-size:36px;margin-bottom:14px">&#127466;&#127462;</div>
+        <div style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:1px;color:var(--white);margin-bottom:6px">Saudi Arabia</div>
+        <div style="font-size:12px;color:var(--cyan)">IKTIVA Registered</div>
+      </div>
+      <div style="background:var(--navy);padding:32px 24px;text-align:center;transition:background .2s" onmouseover="this.style.background='#162a48'" onmouseout="this.style.background='var(--navy)'">
+        <div style="font-size:36px;margin-bottom:14px">&#127942;</div>
+        <div style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:1px;color:var(--white);margin-bottom:6px">ISO Certified</div>
+        <div style="font-size:12px;color:var(--cyan)">Quality Management</div>
+      </div>
+      <div style="background:var(--navy);padding:32px 24px;text-align:center;transition:background .2s" onmouseover="this.style.background='#162a48'" onmouseout="this.style.background='var(--navy)'">
+        <div style="font-size:36px;margin-bottom:14px">&#128226;</div>
+        <div style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:1px;color:var(--white);margin-bottom:6px">Aramco Approved</div>
+        <div style="font-size:12px;color:var(--cyan)">Vendor Registration</div>
+      </div>
+      <div style="background:var(--navy);padding:32px 24px;text-align:center;transition:background .2s" onmouseover="this.style.background='#162a48'" onmouseout="this.style.background='var(--navy)'">
+        <div style="font-size:36px;margin-bottom:14px">&#128737;</div>
+        <div style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:1px;color:var(--white);margin-bottom:6px">HSE Compliant</div>
+        <div style="font-size:12px;color:var(--cyan)">Safety Standards</div>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="components.js"></script>
+</body>
+</html>

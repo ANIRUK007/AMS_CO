@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects - AMSCO Industrial Services</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+.project-card{background:var(--white);border:1px solid var(--border);overflow:hidden;transition:all .25s}
+.project-card:hover{border-color:var(--cyan);box-shadow:0 8px 32px rgba(0,174,239,.1);transform:translateY(-4px)}
+.project-img{aspect-ratio:16/9;background:var(--navy3);display:flex;align-items:center;justify-content:center;font-size:52px;position:relative}
+.project-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(13,27,46,.7))}
+.project-sector{position:absolute;top:16px;left:16px;background:var(--cyan);color:var(--navy);font-family:'Rajdhani',sans-serif;font-weight:700;font-size:11px;letter-spacing:2px;text-transform:uppercase;padding:3px 10px}
+.project-body{padding:24px}
+.project-client{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);font-weight:700;margin-bottom:6px}
+.project-title{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:18px;color:var(--navy);margin-bottom:10px}
+.project-desc{font-size:13px;color:var(--text-body);line-height:1.75}
+.project-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.project-tag{background:var(--light);border:1px solid var(--border);padding:3px 10px;font-size:11px;color:var(--muted);font-family:'Rajdhani',sans-serif;font-weight:600;letter-spacing:1px;text-transform:uppercase}
+@media(max-width:1024px){.projects-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.projects-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body data-page="projects">
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-tag">Our Track Record</div>
+    <h1>Our <span>Projects</span></h1>
+    <p>A selection of key projects and ongoing works demonstrating AMSCO's capabilities across industrial sectors in the GCC.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a> › <span>Projects</span></div>
+  </div>
+</div>
+<section style="background:var(--light);padding:88px 0">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-tag">Key Projects</div>
+      <h2 class="sec-title">Projects &amp; <span>Works</span></h2>
+      <div class="sec-line"></div>
+      <p class="sec-desc">AMSCO is a financially sound company capable of sustaining cash flow for major works, as demonstrated by our ongoing projects portfolio.</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <div class="project-img">&#128226;<span class="project-sector">Oil &amp; Gas</span></div>
+        <div class="project-body">
+          <div class="project-client">Saudi Aramco</div>
+          <div class="project-title">Mud Tank Fabrication &amp; Repair</div>
+          <p class="project-desc">Fabrication and repair of mud tanks, equipment baskets, and specialized rig equipment for drilling operations in the Eastern Province.</p>
+          <div class="project-tags"><span class="project-tag">Fabrication</span><span class="project-tag">Oil &amp; Gas</span></div>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-img">&#128642;<span class="project-sector">Railway</span></div>
+        <div class="project-body">
+          <div class="project-client">SAR &mdash; Saudi Railways</div>
+          <div class="project-title">Locomotive Maintenance Services</div>
+          <p class="project-desc">Comprehensive electromechanical maintenance, electrical systems support, and logistics services for railway transportation infrastructure.</p>
+          <div class="project-tags"><span class="project-tag">Maintenance</span><span class="project-tag">Railway</span></div>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-img">&#9889;<span class="project-sector">Power</span></div>
+        <div class="project-body">
+          <div class="project-client">Saudi Electricity Company</div>
+          <div class="project-title">Electrical Systems Maintenance</div>
+          <p class="project-desc">Electrical services, control panel installation, and system maintenance for power generation and distribution infrastructure.</p>
+          <div class="project-tags"><span class="project-tag">Electrical</span><span class="project-tag">Power</span></div>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-img">&#127981;<span class="project-sector">Fabrication</span></div>
+        <div class="project-body">
+          <div class="project-client">Multiple Clients</div>
+          <div class="project-title">Helipad Design &amp; Fabrication</div>
+          <p class="project-desc">Design and fabrication of helipads for oil &amp; gas rigs and offshore facilities using our 12,000 sqm fabrication facility in Dammam.</p>
+          <div class="project-tags"><span class="project-tag">Fabrication</span><span class="project-tag">Engineering</span></div>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-img">&#128295;<span class="project-sector">Maintenance</span></div>
+        <div class="project-body">
+          <div class="project-client">SLB / Halliburton</div>
+          <div class="project-title">Rig Operations Manpower Supply</div>
+          <p class="project-desc">Skilled manpower supply and technical staffing for drilling rig operations, in partnership with Rig Resource Singapore.</p>
+          <div class="project-tags"><span class="project-tag">Manpower</span><span class="project-tag">Drilling</span></div>
+        </div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-img">&#128230;<span class="project-sector">Logistics</span></div>
+        <div class="project-body">
+          <div class="project-client">Qatar Energy / BPACO</div>
+          <div class="project-title">GCC Logistics &amp; Supply Chain</div>
+          <p class="project-desc">Material supply, procurement, and logistics services for Qatar and Bahrain operations, leveraging our branch office network.</p>
+          <div class="project-tags"><span class="project-tag">Logistics</span><span class="project-tag">Supply</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="stat-band">
+  <div class="container">
+    <div class="stat-grid">
+      <div class="stat-cell reveal"><div class="stat-n">10+</div><div class="stat-l">Years of Projects</div></div>
+      <div class="stat-cell reveal"><div class="stat-n">25+</div><div class="stat-l">Major Clients Served</div></div>
+      <div class="stat-cell reveal"><div class="stat-n">4</div><div class="stat-l">Industry Sectors</div></div>
+      <div class="stat-cell reveal"><div class="stat-n">5+</div><div class="stat-l">GCC Countries</div></div>
+    </div>
+  </div>
+</div>
+<script src="components.js"></script>
+</body>
+</html>

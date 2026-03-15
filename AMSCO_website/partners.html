@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partners - AMSCO Industrial Services</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.partners-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:52px}
+.partner-card{background:var(--white);border:1px solid var(--border);padding:32px;transition:all .25s;position:relative;overflow:hidden}
+.partner-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--cyan);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.partner-card:hover{border-color:var(--cyan);box-shadow:0 8px 32px rgba(0,174,239,.1);transform:translateY(-4px)}
+.partner-card:hover::before{transform:scaleX(1)}
+.partner-flag{font-size:32px;margin-bottom:14px;display:block}
+.partner-country{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);font-weight:700;margin-bottom:6px}
+.partner-name{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:20px;color:var(--navy);margin-bottom:8px}
+.partner-role{font-size:13.5px;color:var(--text-body);line-height:1.75;margin-bottom:14px}
+.partner-tag{display:inline-block;background:var(--light);border:1px solid var(--border);padding:3px 10px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-family:'Rajdhani',sans-serif;font-weight:600}
+.regions-section{background:var(--navy);padding:88px 0}
+.regions-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--border-dark);margin-top:52px}
+.region-cell{background:var(--navy);padding:36px 20px;text-align:center;transition:background .2s}
+.region-cell:hover{background:var(--navy3)}
+.region-flag{font-size:36px;margin-bottom:12px;display:block}
+.region-name{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:15px;letter-spacing:1px;text-transform:uppercase;color:var(--white)}
+.region-count{font-size:12px;color:var(--cyan);margin-top:5px}
+@media(max-width:1024px){.partners-grid{grid-template-columns:1fr 1fr}.regions-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:640px){.partners-grid{grid-template-columns:1fr}.regions-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body data-page="partners">
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-tag">Global Network</div>
+    <h1>Our <span>Partners</span></h1>
+    <p>AMSCO maintains strategic partnerships with leading international suppliers and manufacturers to deliver world-class industrial solutions.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a> › <span>Partners</span></div>
+  </div>
+</div>
+<section style="background:var(--light);padding:88px 0">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-tag">Strategic Alliances</div>
+      <h2 class="sec-title">Global <span>Partners</span></h2>
+      <div class="sec-line"></div>
+      <p class="sec-desc">Our international partner network spans Germany, Singapore, South Korea, India, and the Middle East — enabling AMSCO to source and deliver world-class products and services to clients across the GCC.</p>
+    </div>
+    <div class="partners-grid">
+      <div class="partner-card reveal">
+        <span class="partner-flag">&#127465;&#127466;</span>
+        <div class="partner-country">Germany</div>
+        <div class="partner-name">Wilo Pumps</div>
+        <p class="partner-role">Advanced pumping solutions for industrial, oil &amp; gas, and water management applications across the GCC region.</p>
+        <span class="partner-tag">International Supplier</span>
+      </div>
+      <div class="partner-card reveal">
+        <span class="partner-flag">&#127480;&#127468;</span>
+        <div class="partner-country">Singapore</div>
+        <div class="partner-name">Rig Resource</div>
+        <p class="partner-role">Specialized rig manpower supply and technical staffing solutions for oil &amp; gas drilling operations.</p>
+        <span class="partner-tag">Manpower Partner</span>
+      </div>
+      <div class="partner-card reveal">
+        <span class="partner-flag">&#127472;&#127479;</span>
+        <div class="partner-country">South Korea</div>
+        <div class="partner-name">Total Engineering</div>
+        <p class="partner-role">High-quality valve manufacture and engineering solutions for industrial and oil &amp; gas pipeline systems.</p>
+        <span class="partner-tag">Technology Partner</span>
+      </div>
+      <div class="partner-card reveal">
+        <span class="partner-flag">&#127472;&#127479;</span>
+        <div class="partner-country">South Korea</div>
+        <div class="partner-name">KD Valve</div>
+        <p class="partner-role">Precision valve systems and components for upstream and downstream oil &amp; gas operations.</p>
+        <span class="partner-tag">Technology Partner</span>
+      </div>
+      <div class="partner-card reveal">
+        <span class="partner-flag">&#127470;&#127475;</span>
+        <div class="partner-country">India</div>
+        <div class="partner-name">Inco Alloys</div>
+        <p class="partner-role">Fittings, flanges, and industrial equipment supply. Comprehensive alloy and metalwork solutions.</p>
+        <span class="partner-tag">Equipment Supplier</span>
+      </div>
+      <div class="partner-card reveal">
+        <span class="partner-flag">&#127758;</span>
+        <div class="partner-country">International</div>
+        <div class="partner-name">DXG Ltd</div>
+        <p class="partner-role">Gas analyzers and environmental monitoring systems for industrial and oil &amp; gas facilities.</p>
+        <span class="partner-tag">Technology Partner</span>
+      </div>
+      <div class="partner-card reveal">
+        <span class="partner-flag">&#127758;</span>
+        <div class="partner-country">International</div>
+        <div class="partner-name">BOKJU CO LTD</div>
+        <p class="partner-role">Specialized coating technologies including epoxy, anti-corrosion, and industrial protective coatings.</p>
+        <span class="partner-tag">Specialized Coating</span>
+      </div>
+      <div class="partner-card reveal">
+        <span class="partner-flag">&#127758;</span>
+        <div class="partner-country">International</div>
+        <div class="partner-name">Pumps &amp; Rigs Partners</div>
+        <p class="partner-role">Manufacturing partners for pumps, rig equipment, and quality assurance and certification support services.</p>
+        <span class="partner-tag">Equipment Supplier</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="regions-section">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-tag" style="color:var(--cyan)">Partner Distribution</div>
+      <h2 class="sec-title" style="color:var(--white)">Partner Network <span>by Region</span></h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="regions-grid">
+      <div class="region-cell reveal"><span class="region-flag">&#127465;&#127466;</span><div class="region-name">Germany</div><div class="region-count">1 Partner</div></div>
+      <div class="region-cell reveal"><span class="region-flag">&#127480;&#127468;</span><div class="region-name">Singapore</div><div class="region-count">1 Partner</div></div>
+      <div class="region-cell reveal"><span class="region-flag">&#127472;&#127479;</span><div class="region-name">South Korea</div><div class="region-count">2 Partners</div></div>
+      <div class="region-cell reveal"><span class="region-flag">&#127470;&#127475;</span><div class="region-name">India</div><div class="region-count">1 Partner</div></div>
+      <div class="region-cell reveal"><span class="region-flag">&#127758;</span><div class="region-name">Middle East</div><div class="region-count">2+ Partners</div></div>
+    </div>
+  </div>
+</section>
+<script src="components.js"></script>
+</body>
+</html>

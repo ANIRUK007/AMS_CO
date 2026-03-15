@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - AMSCO Industrial Services</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.contact-grid{display:grid;grid-template-columns:1fr 1.5fr;gap:72px;align-items:start;padding:88px 0}
+.c-detail{display:flex;gap:16px;margin-bottom:26px}
+.c-ico{width:44px;height:44px;background:var(--navy);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;color:var(--cyan)}
+.c-lbl{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);font-weight:700;margin-bottom:4px}
+.c-val{font-size:14px;color:var(--navy);line-height:1.65}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.fg{margin-bottom:14px}
+.fg label{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#7a9ab8;font-weight:600;margin-bottom:7px}
+.fg input,.fg textarea,.fg select{width:100%;background:var(--white);border:1px solid var(--border);color:var(--navy);padding:12px 14px;font-family:'Open Sans',sans-serif;font-size:14px;outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,174,239,.08)}
+.fg textarea{resize:vertical;min-height:130px}
+.branches-strip{background:var(--navy);padding:80px 0}
+.branches-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border-dark);margin-top:52px}
+.branch-block{background:var(--navy);padding:36px 28px;transition:background .2s}
+.branch-block:hover{background:var(--navy3)}
+.branch-flag{font-size:30px;margin-bottom:14px;display:block}
+.branch-country{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:18px;letter-spacing:2px;text-transform:uppercase;color:var(--white);margin-bottom:3px}
+.branch-type-label{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--cyan);font-weight:700;margin-bottom:16px}
+.branch-addr-text{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:16px}
+.branch-c-list{list-style:none}
+.branch-c-list li{font-size:13px;color:var(--muted);margin-bottom:7px;display:flex;gap:8px}
+@media(max-width:1024px){.contact-grid{grid-template-columns:1fr;gap:40px}.branches-grid{grid-template-columns:1fr}}
+@media(max-width:640px){.form-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body data-page="">
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <div class="page-hero-tag">Get In Touch</div>
+    <h1>Contact <span>Us</span></h1>
+    <p>Ready to discuss your industrial services requirements? Our team is available Sunday through Thursday to assist you.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a> › <span>Contact Us</span></div>
+  </div>
+</div>
+<section style="background:var(--light)">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="sec-tag">Reach Us</div>
+        <h2 class="sec-title">We're Ready to <span>Help</span></h2>
+        <div class="sec-line"></div>
+        <div class="c-detail">
+          <div class="c-ico">&#128205;</div>
+          <div><div class="c-lbl">Headquarters</div><div class="c-val">Unit 24, P.O Box 7941, 22nd Street,<br>King Faisal Street, Shamaliya,<br>Al Khobar &mdash; 34425-3554, Saudi Arabia</div></div>
+        </div>
+        <div class="c-detail">
+          <div class="c-ico">&#128222;</div>
+          <div><div class="c-lbl">Phone</div><div class="c-val">+966 54 172 0336</div></div>
+        </div>
+        <div class="c-detail">
+          <div class="c-ico">&#9993;</div>
+          <div><div class="c-lbl">Email</div><div class="c-val">operations@shihabksa.com</div></div>
+        </div>
+        <div class="c-detail">
+          <div class="c-ico">&#9200;</div>
+          <div><div class="c-lbl">Working Hours</div><div class="c-val">Sunday &ndash; Thursday<br>8:00 AM &ndash; 4:00 PM</div></div>
+        </div>
+        <div style="background:var(--navy);padding:24px;margin-top:8px">
+          <div style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:12px">Serving Regions</div>
+          <p style="font-size:13.5px;color:var(--muted);line-height:2">&#127480;&#127462; Saudi Arabia &nbsp; &#127478;&#127462; Qatar<br>&#127463;&#127469; Bahrain &nbsp; &#127472;&#127484; Kuwait &nbsp; &#127476;&#127474; Oman</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <div style="background:var(--white);border:1px solid var(--border);padding:40px">
+          <div style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:20px;color:var(--navy);margin-bottom:28px;padding-bottom:16px;border-bottom:2px solid var(--border)">Send Us a Message</div>
+          <div class="form-row">
+            <div class="fg"><label>First Name</label><input type="text" placeholder="First name"></div>
+            <div class="fg"><label>Last Name</label><input type="text" placeholder="Last name"></div>
+          </div>
+          <div class="form-row">
+            <div class="fg"><label>Email Address</label><input type="email" placeholder="your@email.com"></div>
+            <div class="fg"><label>Phone Number</label><input type="tel" placeholder="+966 ..."></div>
+          </div>
+          <div class="fg"><label>Company Name</label><input type="text" placeholder="Your company"></div>
+          <div class="fg">
+            <label>Service Required</label>
+            <select>
+              <option value="">Select a service...</option>
+              <option>Oil &amp; Gas Services</option>
+              <option>Electricity &amp; Power</option>
+              <option>Railway Transportation</option>
+              <option>Fabrication Services</option>
+              <option>Industrial Maintenance</option>
+              <option>Material Supply</option>
+              <option>Manpower Supply</option>
+              <option>Logistics Services</option>
+              <option>Hydro Jetting / Blasting</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="fg"><label>Message</label><textarea placeholder="Describe your project or inquiry..."></textarea></div>
+          <button class="btn-primary" style="width:100%;justify-content:center" onclick="alert('Thank you! We will contact you within 24 hours.')">Send Message ›</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="branches-strip">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-tag" style="color:var(--cyan)">Our Offices</div>
+      <h2 class="sec-title" style="color:var(--white)">Office <span>Locations</span></h2>
+      <div class="sec-line"></div>
+    </div>
+    <div class="branches-grid">
+      <div class="branch-block reveal">
+        <span class="branch-flag">&#127480;&#127462;</span>
+        <div class="branch-country">Saudi Arabia</div>
+        <div class="branch-type-label">Headquarters</div>
+        <p class="branch-addr-text">Unit 24, P.O Box 7941, 22nd Street, King Faisal Street, Shamaliya, Al Khobar &mdash; 34425-3554</p>
+        <ul class="branch-c-list">
+          <li>&#128222; +966 54 172 0336</li>
+          <li>&#9993; operations@shihabksa.com</li>
+        </ul>
+      </div>
+      <div class="branch-block reveal">
+        <span class="branch-flag">&#127478;&#127462;</span>
+        <div class="branch-country">Qatar</div>
+        <div class="branch-type-label">Branch Office</div>
+        <p class="branch-addr-text">Building 127, Unit 2, Area 71, Street 750, Qatar</p>
+        <ul class="branch-c-list">
+          <li>&#128222; +974 30005862</li>
+          <li>&#128222; +966 54 172 0336</li>
+          <li>&#9993; operations@shihabksa.com</li>
+        </ul>
+      </div>
+      <div class="branch-block reveal">
+        <span class="branch-flag">&#127463;&#127469;</span>
+        <div class="branch-country">Bahrain</div>
+        <div class="branch-type-label">Branch Office</div>
+        <p class="branch-addr-text">Building No. 4130, Block-1014, Road 1454, Al Hamalah, Kingdom of Bahrain</p>
+        <ul class="branch-c-list">
+          <li>&#128222; +966 54 172 0336</li>
+          <li>&#9993; operations@shihabksa.com</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="components.js"></script>
+</body>
+</html>
