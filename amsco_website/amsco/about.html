@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — AMSCO Industrial Services</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.about-mission { padding:100px 5%; background:var(--navy-mid); }
+.about-mission-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+.about-image-stack { position:relative; height:500px; }
+.aim-a { position:absolute; top:0; left:0; width:80%; height:82%; object-fit:cover; filter:saturate(0.75); }
+.aim-b { position:absolute; bottom:0; right:0; width:52%; height:50%; object-fit:cover; filter:saturate(0.75); border:5px solid var(--navy-mid); }
+.aim-badge { position:absolute; bottom:28px; left:20px; background:var(--gold); color:var(--navy); padding:18px 22px; text-align:center; }
+.aim-badge-n { font-family:'Bebas Neue',sans-serif; font-size:44px; line-height:1; display:block; }
+.aim-badge-l { font-size:9px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
+
+.mv-cards { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:32px; }
+.mv-card { background:rgba(255,255,255,0.03); border:1px solid var(--border-dim); padding:28px 24px; transition:all 0.3s var(--ease); }
+.mv-card:hover { border-color:var(--border); background:rgba(245,166,35,0.04); }
+.mv-label { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+.mv-text { font-size:14px; color:var(--gray); line-height:1.72; }
+
+.about-capabilities { padding:100px 5%; background:var(--navy); }
+.cap-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; margin-top:52px; }
+.cap-card { background:var(--navy-card); padding:36px 28px; border:1px solid transparent; transition:all 0.3s var(--ease); }
+.cap-card:hover { border-color:var(--border); background:var(--navy-light); }
+.cap-icon { width:48px; height:48px; background:var(--gold-dim); display:flex; align-items:center; justify-content:center; margin-bottom:20px; }
+.cap-icon svg { width:22px; height:22px; fill:var(--gold); }
+.cap-title { font-family:'Barlow Condensed',sans-serif; font-size:18px; font-weight:700; margin-bottom:12px; }
+.cap-body { font-size:13px; color:var(--gray); line-height:1.65; }
+
+.about-services-list { padding:100px 5%; background:var(--navy-mid); }
+.svc-list-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:52px; }
+.svc-list-item { background:var(--navy-card); padding:32px 28px; display:flex; gap:20px; border:1px solid transparent; transition:all 0.3s var(--ease); }
+.svc-list-item:hover { border-color:var(--border); background:var(--navy-light); }
+.svc-list-num { font-family:'Bebas Neue',sans-serif; font-size:40px; color:var(--gold-dim); flex-shrink:0; line-height:1; }
+.svc-list-body {}
+.svc-list-title { font-family:'Barlow Condensed',sans-serif; font-size:18px; font-weight:700; margin-bottom:10px; }
+.svc-list-desc { font-size:13px; color:var(--gray); line-height:1.65; }
+
+.about-offices { padding:100px 5%; background:var(--navy); }
+.offices-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:52px; }
+.office-card { background:var(--navy-card); padding:40px 32px; border:1px solid transparent; transition:all 0.3s var(--ease); }
+.office-card:hover { border-color:var(--border); }
+.office-flag { font-family:'Barlow Condensed',sans-serif; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
+.office-type { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gray); margin-bottom:20px; display:block; }
+.office-title { font-family:'Bebas Neue',sans-serif; font-size:26px; letter-spacing:1px; margin-bottom:14px; }
+.office-address { font-size:14px; color:var(--gray); line-height:1.75; }
+
+@media(max-width:1024px){
+  .about-mission-grid { grid-template-columns:1fr; }
+  .about-image-stack { height:340px; }
+  .mv-cards { grid-template-columns:1fr; }
+  .cap-grid { grid-template-columns:1fr 1fr; }
+  .offices-grid { grid-template-columns:1fr 1fr; }
+}
+@media(max-width:768px){
+  .svc-list-grid { grid-template-columns:1fr; }
+  .cap-grid { grid-template-columns:1fr 1fr; }
+  .offices-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-mark">A</div>
+    <div><div class="nav-logo-name">AMS<span>CO</span></div><span class="nav-logo-sub">Industrial Services</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="clients.html">Clients</a></li>
+    <li><a href="partners.html">Partners</a></li>
+    <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <span class="mobile-close" onclick="toggleMenu()">&#x2715;</span>
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a>
+  <a href="projects.html">Projects</a><a href="clients.html">Clients</a>
+  <a href="partners.html">Partners</a><a href="contact.html">Contact Us</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-glow"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-title">About <span class="gold">AMSCO</span></div>
+    <p class="page-hero-desc">An established industrial supplier and service provider based in Al Khobar, Saudi Arabia — serving major industries across the GCC with a decade of proven expertise.</p>
+  </div>
+</div>
+
+<!-- MISSION & VISION -->
+<section class="about-mission">
+  <div class="container">
+    <div class="about-mission-grid">
+      <div class="about-image-stack" data-reveal="left">
+        <img class="aim-a" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="AMSCO Facility">
+        <img class="aim-b" src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=500&q=80" alt="Engineering Team">
+        <div class="aim-badge"><span class="aim-badge-n">10+</span><span class="aim-badge-l">Years in Operation</span></div>
+      </div>
+      <div data-reveal="right">
+        <div class="section-label">Our Foundation</div>
+        <h2 class="section-heading">Mission, Vision <span class="gold">&amp; Values</span></h2>
+        <p class="section-body">AMSCO was founded with a clear purpose: to provide world-class industrial services and supply solutions to the GCC's most demanding sectors. We combine international standards with deep local knowledge to deliver outcomes that drive client success.</p>
+        <div class="mv-cards">
+          <div class="mv-card">
+            <div class="mv-label">Our Vision</div>
+            <p class="mv-text">To be the top performing and most admired industrial supplier and support services provider in the region, recognized for excellence and reliability.</p>
+          </div>
+          <div class="mv-card">
+            <div class="mv-label">Our Mission</div>
+            <p class="mv-text">Integrating advanced technologies, understanding client needs, and believing that client success equals AMSCO success through innovative industrial solutions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-bar-item"><div class="stats-bar-num">10+</div><div class="stats-bar-label">Years of Experience</div></div>
+  <div class="stats-bar-item"><div class="stats-bar-num">25+</div><div class="stats-bar-label">Major Corporations Served</div></div>
+  <div class="stats-bar-item"><div class="stats-bar-num">50+</div><div class="stats-bar-label">Active Partnerships</div></div>
+  <div class="stats-bar-item"><div class="stats-bar-num">3</div><div class="stats-bar-label">GCC Countries</div></div>
+</div>
+
+<!-- CAPABILITIES -->
+<section class="about-capabilities">
+  <div class="container">
+    <div class="section-label">Infrastructure</div>
+    <h2 class="section-heading">Core <span class="gold">Capabilities</span></h2>
+    <p class="section-body">AMSCO's physical infrastructure and operational capabilities underpin every project we deliver — from large-scale fabrication to logistics and business support.</p>
+    <div class="cap-grid">
+      <div class="cap-card" data-reveal data-delay="1">
+        <div class="cap-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14H7v-2h5v2zm5-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
+        <div class="cap-title">12,000 Sqm Fabrication Shop</div>
+        <p class="cap-body">State-of-the-art fabrication facility in the 2nd Industrial City, Dammam — with full welding, sand blasting, coating, and painting capabilities.</p>
+      </div>
+      <div class="cap-card" data-reveal data-delay="2">
+        <div class="cap-icon"><svg viewBox="0 0 24 24"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></div>
+        <div class="cap-title">2,000 Sqm Warehouse</div>
+        <p class="cap-body">Dedicated warehousing and chemical storage laboratory enabling efficient logistics, procurement management, and just-in-time supply delivery.</p>
+      </div>
+      <div class="cap-card" data-reveal data-delay="3">
+        <div class="cap-icon"><svg viewBox="0 0 24 24"><path d="M22 9V7h-2V5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-2h2v-2h-2v-2h2v-2h-2V9h2zm-4 10H4V5h14v14z"/></svg></div>
+        <div class="cap-title">10-Ton Crane Capacity</div>
+        <p class="cap-body">Heavy lifting and material handling capabilities within our fabrication shop for efficient production of large industrial components and equipment.</p>
+      </div>
+      <div class="cap-card" data-reveal data-delay="4">
+        <div class="cap-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+        <div class="cap-title">Skilled Workforce</div>
+        <p class="cap-body">A specialized team spanning engineering, fabrication, electrical, logistics, and administration — with Saudization and IKTIVA compliance built into our staffing model.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES LIST -->
+<section class="about-services-list">
+  <div class="container">
+    <div class="section-label">What We Offer</div>
+    <h2 class="section-heading">Our <span class="gold">Service Areas</span></h2>
+    <div class="svc-list-grid">
+      <div class="svc-list-item" data-reveal data-delay="1">
+        <div class="svc-list-num">01</div>
+        <div class="svc-list-body">
+          <div class="svc-list-title">Oil &amp; Gas Services</div>
+          <p class="svc-list-desc">Drilling, logging, well integrity, mud tank fabrication, equipment baskets, helipad design, valve and pipe supply, and rig manpower.</p>
+        </div>
+      </div>
+      <div class="svc-list-item" data-reveal data-delay="2">
+        <div class="svc-list-num">02</div>
+        <div class="svc-list-body">
+          <div class="svc-list-title">Electricity &amp; Power</div>
+          <p class="svc-list-desc">Electrical system maintenance, power distribution support, control panel design and installation, and technical services for power generation facilities.</p>
+        </div>
+      </div>
+      <div class="svc-list-item" data-reveal data-delay="3">
+        <div class="svc-list-num">03</div>
+        <div class="svc-list-body">
+          <div class="svc-list-title">Railway Transportation</div>
+          <p class="svc-list-desc">Locomotive maintenance, electromechanical services, infrastructure support, logistics, and material supply for railway and transportation systems.</p>
+        </div>
+      </div>
+      <div class="svc-list-item" data-reveal data-delay="4">
+        <div class="svc-list-num">04</div>
+        <div class="svc-list-body">
+          <div class="svc-list-title">Fabrication Services</div>
+          <p class="svc-list-desc">Gas welding, epoxy and anti-corrosion coating, reverse engineering, portable container fabrication, and complete industrial component manufacturing.</p>
+        </div>
+      </div>
+      <div class="svc-list-item" data-reveal data-delay="1">
+        <div class="svc-list-num">05</div>
+        <div class="svc-list-body">
+          <div class="svc-list-title">Specialized Industrial Solutions</div>
+          <p class="svc-list-desc">Hydro jetting, hydro blasting, industrial vacuuming, waste management, and logistics services for specialized industrial cleaning and environmental operations.</p>
+        </div>
+      </div>
+      <div class="svc-list-item" data-reveal data-delay="2">
+        <div class="svc-list-num">06</div>
+        <div class="svc-list-body">
+          <div class="svc-list-title">Business Support Services</div>
+          <p class="svc-list-desc">Business development, HR and administration, finance, bookkeeping and payroll, government and public relations, legal consultation, and Aramco ID services.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFICES -->
+<section class="about-offices">
+  <div class="container">
+    <div class="section-label">Presence</div>
+    <h2 class="section-heading">Our <span class="gold">Locations</span></h2>
+    <p class="section-body">AMSCO operates from its headquarters in Saudi Arabia with branch offices in Qatar and Bahrain, enabling responsive regional coverage across the GCC.</p>
+    <div class="offices-grid">
+      <div class="office-card" data-reveal data-delay="1">
+        <div class="office-flag">Kingdom of Saudi Arabia</div>
+        <span class="office-type">Headquarters</span>
+        <div class="office-title">Al Khobar</div>
+        <p class="office-address">Unit 24, P.O Box 7941, 22nd Street,<br>King Faisal Street, 22nd, Shamaliya,<br>Al Khobar – 34425-3554</p>
+      </div>
+      <div class="office-card" data-reveal data-delay="2">
+        <div class="office-flag">State of Qatar</div>
+        <span class="office-type">Branch Office</span>
+        <div class="office-title">Doha</div>
+        <p class="office-address">Building 127, Unit 2,<br>Area 71, Street 750,<br>Doha, Qatar</p>
+      </div>
+      <div class="office-card" data-reveal data-delay="3">
+        <div class="office-flag">Kingdom of Bahrain</div>
+        <span class="office-type">Branch Office</span>
+        <div class="office-title">Manama</div>
+        <p class="office-address">Building No. 4130, Block-1014,<br>Road 1454, Al Hamalah,<br>Kingdom of Bahrain</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="nav-logo"><div class="nav-logo-mark">A</div><div><div class="nav-logo-name">AMS<span>CO</span></div><span class="nav-logo-sub">Industrial Services</span></div></a>
+        <p class="footer-brand-desc">Leading industrial supplier and service provider in Al Khobar, Saudi Arabia — delivering comprehensive solutions across critical infrastructure sectors for over a decade.</p>
+      </div>
+      <div class="footer-col"><h5>Services</h5><ul class="footer-links"><li><a href="services.html">Oil &amp; Gas Services</a></li><li><a href="services.html">Electricity &amp; Power</a></li><li><a href="services.html">Railway Transportation</a></li><li><a href="services.html">Fabrication Services</a></li><li><a href="services.html">Specialized Solutions</a></li></ul></div>
+      <div class="footer-col"><h5>Company</h5><ul class="footer-links"><li><a href="about.html">About AMSCO</a></li><li><a href="projects.html">Our Projects</a></li><li><a href="clients.html">Our Clients</a></li><li><a href="partners.html">Our Partners</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+      <div class="footer-col"><h5>Contact</h5><ul class="footer-links"><li><a href="tel:+966541720336">+966 541 720 336</a></li><li><a href="mailto:operations@shihabksa.com">operations@shihabksa.com</a></li><li><a href="contact.html">Al Khobar, Saudi Arabia</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 <span class="gold">AMSCO Industrial Services</span>. All rights reserved.</p>
+      <div class="footer-social"><a href="mailto:operations@shihabksa.com" title="Email">&#9993;</a><a href="tel:+966541720336" title="Phone">&#9743;</a><a href="#" title="LinkedIn">in</a></div>
+    </div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

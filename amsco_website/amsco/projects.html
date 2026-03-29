@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — AMSCO Industrial Services</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.projects-filter { padding:60px 5% 40px; background:var(--navy-mid); }
+.filter-bar { display:flex; gap:6px; flex-wrap:wrap; margin-top:32px; }
+.filter-btn { padding:9px 22px; background:transparent; border:1px solid var(--border-dim); color:var(--gray); font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; transition:all 0.25s; }
+.filter-btn.active, .filter-btn:hover { background:var(--gold); border-color:var(--gold); color:var(--navy); }
+
+.projects-grid-section { padding:60px 5% 100px; background:var(--navy-mid); }
+.projects-masonry { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+
+.proj-card { position:relative; overflow:hidden; cursor:pointer; }
+.proj-card.tall { grid-row:span 2; }
+.proj-card img { width:100%; height:300px; object-fit:cover; filter:saturate(0.6); transition:all 0.5s var(--ease); display:block; }
+.proj-card.tall img { height:602px; }
+.proj-card:hover img { filter:saturate(1); transform:scale(1.04); }
+.proj-card-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(8,18,31,0.95) 0%,rgba(8,18,31,0.2) 55%,transparent 100%); display:flex; flex-direction:column; justify-content:flex-end; padding:28px; transition:opacity 0.3s; }
+.proj-tag { font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); margin-bottom:7px; }
+.proj-title { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:700; margin-bottom:7px; }
+.proj-client { font-size:12px; color:var(--gray-light); }
+
+.process-section { padding:100px 5%; background:var(--navy); }
+.process-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; margin-top:52px; }
+.proc-step { background:var(--navy-card); padding:40px 28px; position:relative; border:1px solid transparent; transition:all 0.3s var(--ease); }
+.proc-step:hover { border-color:var(--border); background:var(--navy-light); }
+.proc-num { font-family:'Bebas Neue',sans-serif; font-size:72px; color:rgba(245,166,35,0.08); position:absolute; top:12px; right:16px; line-height:1; }
+.proc-step:hover .proc-num { color:rgba(245,166,35,0.16); }
+.proc-icon { width:50px; height:50px; background:var(--gold-dim); display:flex; align-items:center; justify-content:center; margin-bottom:20px; }
+.proc-icon svg { width:22px; height:22px; fill:var(--gold); }
+.proc-title { font-family:'Barlow Condensed',sans-serif; font-size:19px; font-weight:700; margin-bottom:12px; }
+.proc-body { font-size:13px; color:var(--gray); line-height:1.7; }
+
+@media(max-width:1024px){ .projects-masonry { grid-template-columns:1fr 1fr; } .process-steps { grid-template-columns:1fr 1fr; } }
+@media(max-width:768px){ .projects-masonry { grid-template-columns:1fr; } .proj-card.tall img { height:300px; } .process-steps { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo"><div class="nav-logo-mark">A</div><div><div class="nav-logo-name">AMS<span>CO</span></div><span class="nav-logo-sub">Industrial Services</span></div></a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html" class="active">Projects</a></li><li><a href="clients.html">Clients</a></li><li><a href="partners.html">Partners</a></li><li><a href="contact.html" class="nav-cta">Contact Us</a></li></ul>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-nav" id="mobileNav"><span class="mobile-close" onclick="toggleMenu()">&#x2715;</span><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="clients.html">Clients</a><a href="partners.html">Partners</a><a href="contact.html">Contact Us</a></div>
+
+<div class="page-hero">
+  <div class="page-hero-grid"></div><div class="page-hero-glow"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-title">Featured <span class="gold">Projects</span></div>
+    <p class="page-hero-desc">A selection of the industrial projects AMSCO has delivered across Oil &amp; Gas, Power, Railway, and Fabrication — serving some of the region's most demanding clients.</p>
+  </div>
+</div>
+
+<section class="projects-filter">
+  <div class="container">
+    <div class="section-label">Portfolio</div>
+    <h2 class="section-heading">Browse by <span class="gold">Sector</span></h2>
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterProjects(this,'all')">All Projects</button>
+      <button class="filter-btn" onclick="filterProjects(this,'oil')">Oil &amp; Gas</button>
+      <button class="filter-btn" onclick="filterProjects(this,'power')">Electricity &amp; Power</button>
+      <button class="filter-btn" onclick="filterProjects(this,'railway')">Railway</button>
+      <button class="filter-btn" onclick="filterProjects(this,'fab')">Fabrication</button>
+    </div>
+  </div>
+</section>
+
+<section class="projects-grid-section">
+  <div class="container">
+    <div class="projects-masonry" id="projectGrid">
+      <div class="proj-card tall" data-cat="oil">
+        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80" alt="Offshore Rig">
+        <div class="proj-card-overlay"><div class="proj-tag">Oil &amp; Gas</div><div class="proj-title">Offshore Rig Support Package</div><div class="proj-client">Client: Saudi Aramco Drilling Division</div></div>
+      </div>
+      <div class="proj-card" data-cat="power">
+        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80" alt="Substation">
+        <div class="proj-card-overlay"><div class="proj-tag">Electricity &amp; Power</div><div class="proj-title">Substation Maintenance Contract</div><div class="proj-client">Client: Saudi Electricity Company</div></div>
+      </div>
+      <div class="proj-card" data-cat="fab">
+        <img src="https://images.unsplash.com/photo-1565715101293-9a0cf16e5a63?w=800&q=80" alt="Fabrication">
+        <div class="proj-card-overlay"><div class="proj-tag">Fabrication</div><div class="proj-title">Custom Industrial Container Build</div><div class="proj-client">Client: Major Drilling Contractor</div></div>
+      </div>
+      <div class="proj-card" data-cat="railway">
+        <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80" alt="Railway">
+        <div class="proj-card-overlay"><div class="proj-tag">Railway Transportation</div><div class="proj-title">Locomotive Fleet Overhaul</div><div class="proj-client">Client: SAR — Saudi Railways Company</div></div>
+      </div>
+      <div class="proj-card tall" data-cat="oil">
+        <img src="https://images.unsplash.com/photo-1590004987778-bece5c9adab6?w=800&q=80" alt="Downstream">
+        <div class="proj-card-overlay"><div class="proj-tag">Oil &amp; Gas</div><div class="proj-title">Downstream Valve Supply &amp; Installation</div><div class="proj-client">Client: Qatar Energy</div></div>
+      </div>
+      <div class="proj-card" data-cat="fab">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Industrial">
+        <div class="proj-card-overlay"><div class="proj-tag">Fabrication</div><div class="proj-title">Petrochemical Equipment Repair</div><div class="proj-client">Client: SABIC</div></div>
+      </div>
+      <div class="proj-card" data-cat="oil">
+        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80" alt="Engineering">
+        <div class="proj-card-overlay"><div class="proj-tag">Oil &amp; Gas</div><div class="proj-title">Helipad Design &amp; Installation</div><div class="proj-client">Client: International Drilling Contractor</div></div>
+      </div>
+      <div class="proj-card" data-cat="power">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Industrial Cleaning">
+        <div class="proj-card-overlay"><div class="proj-tag">Specialized</div><div class="proj-title">Industrial Hydro Blasting Program</div><div class="proj-client">Client: SLB — Schlumberger</div></div>
+      </div>
+      <div class="proj-card" data-cat="fab">
+        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Mining">
+        <div class="proj-card-overlay"><div class="proj-tag">Industrial</div><div class="proj-title">Mining Support Equipment Supply</div><div class="proj-client">Client: Ma'aden</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section">
+  <div class="container">
+    <div style="text-align:center; max-width:580px; margin:0 auto;">
+      <div class="section-label" style="justify-content:center;">How We Work</div>
+      <h2 class="section-heading">The AMSCO <span class="gold">Delivery Process</span></h2>
+    </div>
+    <div class="process-steps">
+      <div class="proc-step" data-reveal data-delay="1">
+        <div class="proc-num">01</div>
+        <div class="proc-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+        <div class="proc-title">Assessment &amp; Planning</div>
+        <p class="proc-body">Comprehensive project assessment, understanding client requirements, and developing tailored solutions specific to each industrial sector and operational environment.</p>
+      </div>
+      <div class="proc-step" data-reveal data-delay="2">
+        <div class="proc-num">02</div>
+        <div class="proc-icon"><svg viewBox="0 0 24 24"><path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"/></svg></div>
+        <div class="proc-title">Implementation &amp; Execution</div>
+        <p class="proc-body">Professional implementation using advanced equipment, a skilled and certified workforce, and proven methodologies refined across more than a decade of project delivery.</p>
+      </div>
+      <div class="proc-step" data-reveal data-delay="3">
+        <div class="proc-num">03</div>
+        <div class="proc-icon"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
+        <div class="proc-title">Quality Assurance</div>
+        <p class="proc-body">Rigorous quality control, safety compliance, and performance monitoring to ensure every deliverable meets the highest industrial standards and client expectations.</p>
+      </div>
+      <div class="proc-step" data-reveal data-delay="4">
+        <div class="proc-num">04</div>
+        <div class="proc-icon"><svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg></div>
+        <div class="proc-title">Ongoing Support</div>
+        <p class="proc-body">Continuous maintenance services and a long-term partnership approach that maximizes client uptime, satisfaction, and overall return on investment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><a href="index.html" class="nav-logo"><div class="nav-logo-mark">A</div><div><div class="nav-logo-name">AMS<span>CO</span></div><span class="nav-logo-sub">Industrial Services</span></div></a><p class="footer-brand-desc">Leading industrial supplier and service provider in Al Khobar, Saudi Arabia.</p></div>
+      <div class="footer-col"><h5>Services</h5><ul class="footer-links"><li><a href="services.html">Oil &amp; Gas</a></li><li><a href="services.html">Electricity &amp; Power</a></li><li><a href="services.html">Railway</a></li><li><a href="services.html">Fabrication</a></li></ul></div>
+      <div class="footer-col"><h5>Company</h5><ul class="footer-links"><li><a href="about.html">About</a></li><li><a href="projects.html">Projects</a></li><li><a href="clients.html">Clients</a></li><li><a href="partners.html">Partners</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Contact</h5><ul class="footer-links"><li><a href="tel:+966541720336">+966 541 720 336</a></li><li><a href="mailto:operations@shihabksa.com">operations@shihabksa.com</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 <span class="gold">AMSCO Industrial Services</span>. All rights reserved.</p><div class="footer-social"><a href="mailto:operations@shihabksa.com">&#9993;</a><a href="#">in</a></div></div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+<script>
+function filterProjects(btn, cat) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.proj-card').forEach(c => {
+    c.style.display = (cat === 'all' || c.dataset.cat === cat) ? 'block' : 'none';
+  });
+}
+</script>
+</body>
+</html>

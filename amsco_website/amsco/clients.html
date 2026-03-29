@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clients — AMSCO Industrial Services</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.clients-section { padding:100px 5%; }
+.clients-section:nth-child(odd) { background:var(--navy-mid); }
+.clients-section:nth-child(even) { background:var(--navy); }
+
+.clients-category-header { margin-bottom:40px; padding-bottom:20px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:12px; }
+.clients-cat-label { font-family:'Bebas Neue',sans-serif; font-size:28px; letter-spacing:1px; }
+.clients-cat-count { font-size:12px; color:var(--gold); font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
+
+.client-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:2px; }
+.client-card { background:var(--navy-card); padding:36px 28px; border:1px solid transparent; transition:all 0.3s var(--ease); display:flex; flex-direction:column; gap:12px; }
+.client-card:hover { border-color:var(--border); background:var(--navy-light); }
+.client-card-name { font-family:'Barlow Condensed',sans-serif; font-size:20px; font-weight:700; }
+.client-card-country { font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--gray); }
+.client-card-desc { font-size:13px; color:var(--gray); line-height:1.6; border-top:1px solid var(--border-dim); padding-top:12px; }
+
+.sector-label { display:inline-block; font-size:9px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--gold); background:var(--gold-dim); padding:4px 10px; margin-bottom:8px; }
+
+@media(max-width:1024px){ .client-cards { grid-template-columns:1fr 1fr; } }
+@media(max-width:600px){ .client-cards { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo"><div class="nav-logo-mark">A</div><div><div class="nav-logo-name">AMS<span>CO</span></div><span class="nav-logo-sub">Industrial Services</span></div></a>
+  <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="clients.html" class="active">Clients</a></li><li><a href="partners.html">Partners</a></li><li><a href="contact.html" class="nav-cta">Contact Us</a></li></ul>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-nav" id="mobileNav"><span class="mobile-close" onclick="toggleMenu()">&#x2715;</span><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="clients.html">Clients</a><a href="partners.html">Partners</a><a href="contact.html">Contact Us</a></div>
+
+<div class="page-hero">
+  <div class="page-hero-grid"></div><div class="page-hero-glow"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-title">Clients Who <span class="gold">Trust Us</span></div>
+    <p class="page-hero-desc">AMSCO serves national oil companies, international drilling contractors, power utilities, railway operators, and major industrial corporations across the GCC — building long-term relationships grounded in consistent delivery.</p>
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stats-bar-item"><div class="stats-bar-num">25+</div><div class="stats-bar-label">Major Corporations</div></div>
+  <div class="stats-bar-item"><div class="stats-bar-num">15+</div><div class="stats-bar-label">Oil &amp; Gas Companies</div></div>
+  <div class="stats-bar-item"><div class="stats-bar-num">50+</div><div class="stats-bar-label">Active Partnerships</div></div>
+  <div class="stats-bar-item"><div class="stats-bar-num">10+</div><div class="stats-bar-label">Years Track Record</div></div>
+</div>
+
+<!-- OIL & GAS CLIENTS -->
+<section class="clients-section">
+  <div class="container">
+    <div class="clients-category-header">
+      <div class="clients-cat-label">Oil &amp; Gas <span class="gold">Leaders</span></div>
+      <div class="clients-cat-count">National &amp; International Operators</div>
+    </div>
+    <div class="client-cards">
+      <div class="client-card" data-reveal data-delay="1">
+        <div class="sector-label">National Oil Company</div>
+        <div class="client-card-name">Saudi Aramco</div>
+        <div class="client-card-country">Kingdom of Saudi Arabia</div>
+        <p class="client-card-desc">AMSCO's largest and most longstanding client relationship — providing fabrication, supply, manpower, and maintenance services across Aramco's drilling and upstream operations.</p>
+      </div>
+      <div class="client-card" data-reveal data-delay="2">
+        <div class="sector-label">State Energy Company</div>
+        <div class="client-card-name">Qatar Energy</div>
+        <div class="client-card-country">State of Qatar</div>
+        <p class="client-card-desc">Regional energy leader and key AMSCO client — receiving comprehensive valve, pipe, and maintenance support for downstream and LNG-related operations.</p>
+      </div>
+      <div class="client-card" data-reveal data-delay="3">
+        <div class="sector-label">National Oil Company</div>
+        <div class="client-card-name">KOC &amp; KNPC</div>
+        <div class="client-card-country">State of Kuwait</div>
+        <p class="client-card-desc">Kuwait Oil Company and Kuwait National Petroleum Company — receiving industrial supply and services in support of their extensive refining and production operations.</p>
+      </div>
+      <div class="client-card" data-reveal data-delay="4">
+        <div class="sector-label">National Oil Company</div>
+        <div class="client-card-name">BAPCO</div>
+        <div class="client-card-country">Kingdom of Bahrain</div>
+        <p class="client-card-desc">Bahrain Petroleum Company — one of the region's established refining operators, receiving AMSCO's technical support and industrial supply solutions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DRILLING & SERVICES -->
+<section class="clients-section">
+  <div class="container">
+    <div class="clients-category-header">
+      <div class="clients-cat-label">Drilling &amp; <span class="gold">Oilfield Services</span></div>
+      <div class="clients-cat-count">International Service Companies</div>
+    </div>
+    <div class="client-cards">
+      <div class="client-card" data-reveal data-delay="1">
+        <div class="sector-label">Oilfield Services</div>
+        <div class="client-card-name">SLB — Schlumberger</div>
+        <div class="client-card-country">Global Operations</div>
+        <p class="client-card-desc">The world's largest oilfield services company — AMSCO provides on-site support, fabrication, and supply solutions for SLB's operations throughout the Arabian Peninsula.</p>
+      </div>
+      <div class="client-card" data-reveal data-delay="2">
+        <div class="sector-label">Drilling Technology</div>
+        <div class="client-card-name">Halliburton</div>
+        <div class="client-card-country">Global Operations</div>
+        <p class="client-card-desc">A leading drilling and completion services provider — AMSCO supports Halliburton's GCC operations with rig equipment, manpower, and industrial supply services.</p>
+      </div>
+      <div class="client-card" data-reveal data-delay="3">
+        <div class="sector-label">Energy Technology</div>
+        <div class="client-card-name">Baker Hughes</div>
+        <div class="client-card-country">Global Operations</div>
+        <p class="client-card-desc">An energy technology company serving oil, gas, and clean energy — AMSCO provides supply chain and operational support for Baker Hughes activities in the region.</p>
+      </div>
+      <div class="client-card" data-reveal data-delay="4">
+        <div class="sector-label">Equipment Manufacturer</div>
+        <div class="client-card-name">NOV — National Oilwell Varco</div>
+        <div class="client-card-country">Global Operations</div>
+        <p class="client-card-desc">A leading provider of drilling technology and rig equipment — AMSCO collaborates with NOV on fabrication, repair, and field support services across the GCC.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIAL & INFRASTRUCTURE -->
+<section class="clients-section">
+  <div class="container">
+    <div class="clients-category-header">
+      <div class="clients-cat-label">Industrial &amp; <span class="gold">Infrastructure</span></div>
+      <div class="clients-cat-count">Power, Railway, Petrochemical &amp; Mining</div>
+    </div>
+    <div class="client-cards">
+      <div class="client-card" data-reveal data-delay="1">
+        <div class="sector-label">Power Sector</div>
+        <div class="client-card-name">Saudi Electricity Company</div>
+        <div class="client-card-country">Kingdom of Saudi Arabia</div>
+        <p class="client-card-desc">The Kingdom's primary electricity generation and distribution utility — AMSCO delivers electrical system maintenance, equipment supply, and control panel services in support of the national grid.</p>
+      </div>
+      <div class="client-card" data-reveal data-delay="2">
+        <div class="sector-label">Railway Transportation</div>
+        <div class="client-card-name">SAR — Saudi Railways</div>
+        <div class="client-card-country">Kingdom of Saudi Arabia</div>
+        <p class="client-card-desc">Saudi Arabia's national railway operator — AMSCO provides locomotive maintenance, electromechanical services, and infrastructure support across the SAR rail network.</p>
+      </div>
+      <div class="client-card" data-reveal data-delay="3">
+        <div class="sector-label">Petrochemical</div>
+        <div class="client-card-name">SABIC</div>
+        <div class="client-card-country">Kingdom of Saudi Arabia</div>
+        <p class="client-card-desc">One of the world's largest petrochemical manufacturers — AMSCO supports SABIC with industrial fabrication, equipment repair, and operational maintenance services.</p>
+      </div>
+      <div class="client-card" data-reveal data-delay="4">
+        <div class="sector-label">Mining &amp; Metals</div>
+        <div class="client-card-name">Ma'aden</div>
+        <div class="client-card-country">Kingdom of Saudi Arabia</div>
+        <p class="client-card-desc">Saudi Arabia's national mining company — AMSCO provides specialized equipment, fabrication services, and operational support for Ma'aden's mineral extraction and processing facilities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><a href="index.html" class="nav-logo"><div class="nav-logo-mark">A</div><div><div class="nav-logo-name">AMS<span>CO</span></div><span class="nav-logo-sub">Industrial Services</span></div></a><p class="footer-brand-desc">Leading industrial supplier and service provider in Al Khobar, Saudi Arabia.</p></div>
+      <div class="footer-col"><h5>Services</h5><ul class="footer-links"><li><a href="services.html">Oil &amp; Gas</a></li><li><a href="services.html">Electricity &amp; Power</a></li><li><a href="services.html">Railway</a></li><li><a href="services.html">Fabrication</a></li></ul></div>
+      <div class="footer-col"><h5>Company</h5><ul class="footer-links"><li><a href="about.html">About</a></li><li><a href="projects.html">Projects</a></li><li><a href="clients.html">Clients</a></li><li><a href="partners.html">Partners</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Contact</h5><ul class="footer-links"><li><a href="tel:+966541720336">+966 541 720 336</a></li><li><a href="mailto:operations@shihabksa.com">operations@shihabksa.com</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2025 <span class="gold">AMSCO Industrial Services</span>. All rights reserved.</p><div class="footer-social"><a href="mailto:operations@shihabksa.com">&#9993;</a><a href="#">in</a></div></div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+</body>
+</html>

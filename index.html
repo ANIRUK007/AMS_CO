@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMSCO Industrial Services – Al Khobar, Saudi Arabia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue:    #0B6FA4;
+  --blue-lt: #38A8D8;
+  --yellow:  #F5A623;
+  --navy:    #0A1628;
+  --navy-2:  #0D1F3C;
+  --white:   #FFFFFF;
+  --off:     #F4F7FA;
+  --gray:    #6B7A8D;
+  --border:  #D0DDE8;
+  --text:    #1A2636;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Barlow',sans-serif;color:var(--text);background:var(--white);}
+img{max-width:100%;}
+a{text-decoration:none;color:inherit;}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  background:var(--navy);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 5%;height:68px;
+  border-bottom:2px solid var(--blue);
+}
+.logo{display:flex;align-items:center;gap:12px;}
+.logo-mark{
+  width:40px;height:40px;background:var(--yellow);
+  clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;
+  color:var(--navy);font-size:14px;letter-spacing:0.5px;
+}
+.logo-text{
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:800;font-size:22px;color:var(--white);letter-spacing:2px;
+}
+.logo-text span{color:var(--yellow);}
+
+.nav-links{display:flex;gap:0;list-style:none;}
+.nav-links li a{
+  display:block;padding:0 18px;height:68px;
+  font-family:'Barlow Condensed',sans-serif;font-weight:600;
+  font-size:14px;letter-spacing:1.5px;text-transform:uppercase;
+  color:rgba(255,255,255,0.8);
+  display:flex;align-items:center;
+  border-bottom:3px solid transparent;
+  transition:all 0.2s;
+}
+.nav-links li a:hover,
+.nav-links li a.active{color:var(--yellow);border-bottom-color:var(--yellow);}
+
+.nav-cta{
+  background:var(--yellow);color:var(--navy);
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:13px;letter-spacing:1.5px;text-transform:uppercase;
+  padding:10px 22px;border:none;cursor:pointer;
+  transition:background 0.2s;
+}
+.nav-cta:hover{background:#e09400;}
+
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
+.hamburger span{display:block;width:26px;height:2px;background:var(--white);}
+
+.mobile-menu{
+  display:none;position:fixed;top:68px;left:0;right:0;
+  background:var(--navy);z-index:998;padding:20px 5%;
+  border-bottom:2px solid var(--blue);
+}
+.mobile-menu.open{display:block;}
+.mobile-menu a{
+  display:block;padding:14px 0;
+  font-family:'Barlow Condensed',sans-serif;font-weight:600;
+  font-size:16px;letter-spacing:1.5px;text-transform:uppercase;
+  color:rgba(255,255,255,0.85);border-bottom:1px solid rgba(255,255,255,0.1);
+}
+.mobile-menu a:hover{color:var(--yellow);}
+
+/* ── PAGE SECTIONS ── */
+.page{display:none;padding-top:68px;}
+.page.active{display:block;}
+
+/* ── HERO ── */
+.hero{
+  min-height:92vh;
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 50%,#0E2A50 100%);
+  display:flex;align-items:center;
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M0 0h80v80H0z' fill='none'/%3E%3Ccircle cx='40' cy='40' r='1' fill='%2338A8D8' opacity='0.12'/%3E%3C/svg%3E") repeat;
+}
+.hero-grid{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(rgba(56,168,216,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(56,168,216,0.04) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+.hero-accent{
+  position:absolute;right:-100px;top:50%;transform:translateY(-50%);
+  width:700px;height:700px;
+  border:1px solid rgba(56,168,216,0.1);border-radius:50%;
+}
+.hero-accent::before{
+  content:'';position:absolute;inset:60px;
+  border:1px solid rgba(245,166,35,0.08);border-radius:50%;
+}
+.hero-accent::after{
+  content:'';position:absolute;inset:140px;
+  border:1px solid rgba(56,168,216,0.06);border-radius:50%;
+}
+.hero-inner{
+  position:relative;z-index:1;
+  padding:0 5%;max-width:900px;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(245,166,35,0.12);border:1px solid rgba(245,166,35,0.3);
+  color:var(--yellow);padding:6px 16px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+  margin-bottom:28px;
+}
+.hero-tag span{width:6px;height:6px;background:var(--yellow);border-radius:50%;display:inline-block;}
+h1.hero-title{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(52px,7vw,90px);
+  font-weight:800;line-height:0.92;
+  color:var(--white);letter-spacing:-1px;
+  margin-bottom:8px;
+}
+h1.hero-title em{color:var(--yellow);font-style:normal;}
+.hero-sub{
+  font-size:18px;font-weight:300;color:rgba(255,255,255,0.65);
+  margin:24px 0 40px;max-width:560px;line-height:1.7;
+}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;}
+.btn-primary{
+  background:var(--yellow);color:var(--navy);
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:15px;letter-spacing:2px;text-transform:uppercase;
+  padding:14px 32px;border:none;cursor:pointer;
+  transition:all 0.2s;
+}
+.btn-primary:hover{background:#e09400;transform:translateY(-1px);}
+.btn-outline{
+  background:transparent;color:var(--white);
+  font-family:'Barlow Condensed',sans-serif;font-weight:600;
+  font-size:15px;letter-spacing:2px;text-transform:uppercase;
+  padding:14px 32px;border:1px solid rgba(255,255,255,0.3);cursor:pointer;
+  transition:all 0.2s;
+}
+.btn-outline:hover{border-color:var(--blue-lt);color:var(--blue-lt);}
+
+/* STATS BAND */
+.stats-band{
+  background:var(--blue);
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.stat-item{
+  padding:32px 20px;text-align:center;
+  border-right:1px solid rgba(255,255,255,0.15);
+}
+.stat-item:last-child{border-right:none;}
+.stat-num{
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;
+  font-size:44px;color:var(--white);line-height:1;
+}
+.stat-label{
+  font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,0.75);margin-top:6px;
+}
+
+/* ── SECTIONS ── */
+.section{padding:90px 5%;}
+.section-alt{background:var(--off);}
+.section-dark{background:var(--navy);color:var(--white);}
+
+.section-label{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:'Barlow Condensed',sans-serif;font-weight:600;
+  font-size:12px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--blue);margin-bottom:16px;
+}
+.section-label::before{
+  content:'';width:28px;height:2px;background:var(--yellow);
+}
+h2.sec-title{
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;
+  font-size:clamp(36px,4vw,54px);line-height:1;
+  letter-spacing:-0.5px;margin-bottom:20px;
+}
+.sec-desc{
+  font-size:16px;font-weight:400;color:var(--gray);
+  line-height:1.75;max-width:620px;
+}
+.sec-desc.dark{color:rgba(255,255,255,0.65);}
+
+/* TWO COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.two-col.reverse{direction:rtl;}
+.two-col.reverse > *{direction:ltr;}
+
+/* CARD GRID */
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:48px;}
+.card-grid-2{grid-template-columns:repeat(2,1fr);}
+.card-grid-4{grid-template-columns:repeat(4,1fr);}
+
+.service-card{
+  background:var(--white);padding:36px 32px;
+  border-top:3px solid transparent;
+  transition:all 0.25s;
+  position:relative;
+}
+.section-alt .service-card{background:var(--white);}
+.service-card:hover{border-top-color:var(--yellow);transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,0.08);}
+.card-icon{
+  width:48px;height:48px;background:var(--blue);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:20px;
+}
+.card-icon svg{width:24px;height:24px;fill:none;stroke:var(--white);stroke-width:2;}
+.card-title{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:20px;letter-spacing:0.5px;margin-bottom:12px;
+  color:var(--navy);
+}
+.card-body{font-size:14px;color:var(--gray);line-height:1.7;}
+
+/* IMAGE SLOT */
+.img-slot{
+  background:var(--border);
+  aspect-ratio:4/3;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:10px;color:var(--gray);font-size:13px;font-weight:500;
+  border:2px dashed var(--border);
+}
+.img-slot svg{width:36px;height:36px;opacity:0.4;}
+
+/* SECTOR TABS */
+.sector-tabs{display:flex;gap:0;border-bottom:2px solid var(--border);margin-bottom:48px;overflow-x:auto;}
+.tab-btn{
+  font-family:'Barlow Condensed',sans-serif;font-weight:600;
+  font-size:14px;letter-spacing:1.5px;text-transform:uppercase;
+  padding:14px 28px;background:none;border:none;cursor:pointer;
+  color:var(--gray);border-bottom:2px solid transparent;margin-bottom:-2px;
+  white-space:nowrap;transition:all 0.2s;
+}
+.tab-btn.active{color:var(--blue);border-bottom-color:var(--blue);}
+.tab-btn:hover{color:var(--blue);}
+.tab-panel{display:none;}
+.tab-panel.active{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+
+/* PROCESS STEPS */
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;position:relative;}
+.process-steps::before{
+  content:'';position:absolute;top:28px;left:14%;right:14%;
+  height:2px;background:var(--border);
+}
+.step{text-align:center;padding:0 16px;}
+.step-num{
+  width:56px;height:56px;background:var(--white);border:2px solid var(--blue);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  margin:0 auto 20px;position:relative;z-index:1;
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;
+  font-size:22px;color:var(--blue);
+}
+.step-title{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:17px;color:var(--navy);margin-bottom:8px;
+}
+.step-body{font-size:13px;color:var(--gray);line-height:1.65;}
+
+/* PARTNER LOGOS GRID */
+.partner-grid{
+  display:grid;grid-template-columns:repeat(5,1fr);gap:2px;margin-top:48px;
+}
+.partner-slot{
+  background:var(--white);padding:32px 20px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:12px;border:1px solid var(--border);
+  min-height:130px;transition:all 0.2s;
+}
+.partner-slot:hover{border-color:var(--blue);box-shadow:0 4px 20px rgba(11,111,164,0.08);}
+.partner-logo-img{width:100%;max-width:120px;height:50px;object-fit:contain;}
+.partner-name{
+  font-family:'Barlow Condensed',sans-serif;font-weight:600;
+  font-size:13px;letter-spacing:1px;color:var(--navy);text-align:center;
+}
+.partner-country{font-size:11px;color:var(--gray);text-align:center;}
+
+/* CLIENT GRID */
+.client-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:48px;
+}
+.client-slot{
+  background:var(--off);padding:28px 20px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:10px;border:1px solid var(--border);min-height:120px;
+  transition:all 0.2s;
+}
+.client-slot:hover{background:var(--white);border-color:var(--blue);}
+.client-logo-img{width:100%;max-width:110px;height:45px;object-fit:contain;}
+.client-name{
+  font-family:'Barlow Condensed',sans-serif;font-weight:600;
+  font-size:12px;letter-spacing:1px;color:var(--gray);text-align:center;
+}
+
+/* MAP / LOCATIONS */
+.locations-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px;}
+.loc-card{
+  padding:36px;border:1px solid var(--border);
+  border-top:3px solid var(--blue);
+}
+.loc-tag{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:11px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--yellow);margin-bottom:10px;
+}
+.loc-title{
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;
+  font-size:24px;color:var(--navy);margin-bottom:16px;
+}
+.loc-addr{font-size:14px;color:var(--gray);line-height:1.75;}
+
+/* CONTACT FORM */
+.contact-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;margin-top:48px;}
+.contact-info h3{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:22px;color:var(--navy);margin-bottom:8px;
+}
+.contact-detail{
+  display:flex;align-items:flex-start;gap:14px;
+  margin-bottom:24px;padding-bottom:24px;
+  border-bottom:1px solid var(--border);
+}
+.contact-detail:last-child{border-bottom:none;}
+.cd-icon{
+  width:40px;height:40px;min-width:40px;background:var(--blue);
+  display:flex;align-items:center;justify-content:center;
+}
+.cd-icon svg{width:18px;height:18px;stroke:var(--white);stroke-width:2;fill:none;}
+.cd-label{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gray);}
+.cd-val{font-size:15px;color:var(--navy);margin-top:4px;font-weight:500;}
+
+.form-group{margin-bottom:20px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+label{
+  display:block;font-size:12px;font-weight:600;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--navy);margin-bottom:8px;
+}
+input,select,textarea{
+  width:100%;padding:12px 16px;
+  border:1px solid var(--border);background:var(--white);
+  font-family:'Barlow',sans-serif;font-size:15px;color:var(--text);
+  outline:none;transition:border-color 0.2s;
+}
+input:focus,select:focus,textarea:focus{border-color:var(--blue);}
+textarea{resize:vertical;min-height:130px;}
+.form-submit{
+  background:var(--blue);color:var(--white);
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:15px;letter-spacing:2px;text-transform:uppercase;
+  padding:14px 36px;border:none;cursor:pointer;
+  transition:background 0.2s;width:100%;
+}
+.form-submit:hover{background:#094f78;}
+.form-msg{
+  margin-top:12px;padding:14px;font-size:14px;font-weight:500;
+  display:none;
+}
+.form-msg.success{background:#e6f7ee;color:#1a7a42;display:block;}
+.form-msg.error{background:#fdecea;color:#b02020;display:block;}
+
+/* ABOUT PAGE */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.about-half{padding:64px 5%;}
+.about-half.left{background:var(--navy);}
+.about-half.right{padding-left:60px;}
+
+.value-items{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px;}
+.value-item{
+  border-left:3px solid var(--yellow);padding-left:16px;
+}
+.value-item h4{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:17px;color:var(--navy);margin-bottom:6px;
+}
+.value-item p{font-size:14px;color:var(--gray);line-height:1.65;}
+
+/* PIE CHART (CSS) */
+.pie-wrap{display:flex;align-items:center;gap:40px;margin-top:32px;flex-wrap:wrap;}
+.pie-chart{
+  width:180px;height:180px;border-radius:50%;min-width:180px;
+  background:conic-gradient(
+    var(--blue-lt) 0% 35%,
+    var(--yellow) 35% 65%,
+    #7BC67E 65% 90%,
+    #E05A5A 90% 100%
+  );
+}
+.pie-legend{display:flex;flex-direction:column;gap:12px;}
+.legend-item{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text);}
+.legend-dot{width:12px;height:12px;border-radius:50%;min-width:12px;}
+
+/* FOOTER */
+footer{
+  background:var(--navy);color:rgba(255,255,255,0.7);
+  padding:60px 5% 30px;
+}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer-brand .logo-text{font-size:26px;margin-bottom:16px;}
+.footer-desc{font-size:14px;line-height:1.8;margin-top:12px;max-width:280px;}
+.footer-col h4{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:12px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--yellow);margin-bottom:20px;
+}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:10px;}
+.footer-col ul li a{font-size:14px;color:rgba(255,255,255,0.65);transition:color 0.2s;}
+.footer-col ul li a:hover{color:var(--yellow);}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,0.1);
+  padding-top:24px;display:flex;justify-content:space-between;align-items:center;
+  font-size:13px;flex-wrap:wrap;gap:12px;
+}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .card-grid{grid-template-columns:repeat(2,1fr);}
+  .partner-grid{grid-template-columns:repeat(3,1fr);}
+  .client-grid{grid-template-columns:repeat(3,1fr);}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none;}
+  .hamburger{display:flex;}
+  .two-col,.contact-wrap,.about-grid{grid-template-columns:1fr;}
+  .about-half.right{padding-left:5%;}
+  .tab-panel.active{grid-template-columns:1fr;}
+  .process-steps{grid-template-columns:1fr 1fr;gap:32px;}
+  .process-steps::before{display:none;}
+  .stats-band{grid-template-columns:1fr 1fr;}
+  .stat-item{border-right:none;border-bottom:1px solid rgba(255,255,255,0.15);}
+  .locations-grid{grid-template-columns:1fr;}
+  .partner-grid{grid-template-columns:repeat(2,1fr);}
+  .client-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-grid{grid-template-columns:1fr;}
+  .card-grid-4{grid-template-columns:repeat(2,1fr);}
+  .value-items{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+}
+@media(max-width:480px){
+  .card-grid{grid-template-columns:1fr;}
+  .card-grid-2{grid-template-columns:1fr;}
+  .hero-btns{flex-direction:column;}
+}
+
+/* YELLOW RULE DIVIDER */
+.rule{
+  display:flex;align-items:center;gap:16px;margin-bottom:48px;
+}
+.rule::before,.rule::after{content:'';flex:1;height:1px;background:var(--border);}
+.rule span{
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:12px;letter-spacing:3px;text-transform:uppercase;
+  color:var(--yellow);white-space:nowrap;
+}
+
+/* SECTOR BADGE */
+.sector-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--blue);color:var(--white);
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+  padding:4px 12px;margin-bottom:16px;
+}
+
+/* HIGHLIGHT BOX */
+.highlight-box{
+  border-left:4px solid var(--yellow);
+  background:rgba(245,166,35,0.06);
+  padding:20px 24px;margin:24px 0;
+  font-size:15px;color:var(--text);line-height:1.75;
+  font-style:italic;
+}
+
+/* CHECKLIST */
+.checklist{list-style:none;margin-top:16px;}
+.checklist li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:15px;color:var(--gray);padding:8px 0;
+  border-bottom:1px solid var(--border);
+  line-height:1.6;
+}
+.checklist li:last-child{border-bottom:none;}
+.checklist li::before{
+  content:'✓';color:var(--blue);font-weight:700;
+  font-family:'Barlow Condensed',sans-serif;font-size:18px;
+  min-width:18px;margin-top:1px;
+}
+
+/* SECTOR PAGE HERO */
+.page-hero{
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 100%);
+  padding:72px 5% 56px;
+  border-bottom:3px solid var(--blue);
+}
+.page-hero h1{
+  font-family:'Barlow Condensed',sans-serif;font-weight:800;
+  font-size:clamp(42px,5vw,72px);color:var(--white);
+  letter-spacing:-0.5px;line-height:1;margin-bottom:16px;
+}
+.page-hero p{
+  font-size:17px;color:rgba(255,255,255,0.65);
+  max-width:600px;line-height:1.7;
+}
+
+/* NOTCH ACCENT */
+.notch{
+  display:inline-block;
+  background:var(--yellow);
+  padding:2px 10px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:13px;letter-spacing:1px;
+  color:var(--navy);margin-bottom:12px;
+}
+
+/* Upload placeholder images for partners/clients */
+.upload-img-slot{
+  width:100%;height:54px;
+  background:var(--off);
+  border:1px dashed var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:11px;color:var(--gray);letter-spacing:1px;text-transform:uppercase;
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">
+    <div class="logo-mark">AMS</div>
+    <div class="logo-text">AMS<span>CO</span></div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#" onclick="showPage('home')" class="active" id="nav-home">Home</a></li>
+    <li><a href="#" onclick="showPage('about')" id="nav-about">About Us</a></li>
+    <li><a href="#" onclick="showPage('services')" id="nav-services">Services</a></li>
+    <li><a href="#" onclick="showPage('clients')" id="nav-clients">Clients & Partners</a></li>
+    <li><a href="#" onclick="showPage('contact')" id="nav-contact">Contact</a></li>
+  </ul>
+  <button class="nav-cta" onclick="showPage('contact')">Get In Touch</button>
+  <div class="hamburger" onclick="toggleMenu()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#" onclick="showPage('home');toggleMenu()">Home</a>
+  <a href="#" onclick="showPage('about');toggleMenu()">About Us</a>
+  <a href="#" onclick="showPage('services');toggleMenu()">Services</a>
+  <a href="#" onclick="showPage('clients');toggleMenu()">Clients & Partners</a>
+  <a href="#" onclick="showPage('contact');toggleMenu()">Contact</a>
+</div>
+
+<!-- ═══════════════════════════════════════════════ HOME ═══ -->
+<div class="page active" id="page-home">
+
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-accent"></div>
+    <div class="hero-inner">
+      <div class="hero-tag"><span></span>Al Khobar, Saudi Arabia — Est. 10+ Years</div>
+      <h1 class="hero-title">Industrial<br>Excellence<br><em>Delivered.</em></h1>
+      <p class="hero-sub">Leading industrial supplier and service provider across Oil & Gas, Power, Railway Transportation, and Advanced Fabrication sectors across the GCC.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="showPage('services')">Explore Services</button>
+        <button class="btn-outline" onclick="showPage('contact')">Contact Us</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats-band">
+    <div class="stat-item">
+      <div class="stat-num">10+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">12,000</div>
+      <div class="stat-label">Sqm Fabrication Shop</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">2,000</div>
+      <div class="stat-label">Sqm Warehouse</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">10T</div>
+      <div class="stat-label">Crane Capacity</div>
+    </div>
+  </div>
+
+  <!-- Who We Are -->
+  <section class="section">
+    <div class="two-col">
+      <div>
+        <div class="section-label">Who We Are</div>
+        <h2 class="sec-title">AMSCO Industrial Services</h2>
+        <p class="sec-desc">AMSCO is an established industrial supplier and service provider based in Al Khobar, Saudi Arabia, with approximately 10 years of proven experience in the local market. We serve major industries including Oil & Gas, Railway Transportation, Electricity & Power, and Industrial Fabrication with the financial strength to handle large-scale projects.</p>
+        <div class="highlight-box">
+          "Integrating advanced technologies, understanding client needs, and believing that client success equals AMSCO success through innovative industrial solutions."
+        </div>
+        <div style="display:flex;gap:16px;margin-top:24px;">
+          <button class="btn-primary" onclick="showPage('about')">About AMSCO</button>
+          <button class="btn-outline" style="color:var(--navy);border-color:var(--border);" onclick="showPage('services')">Our Services</button>
+        </div>
+      </div>
+      <div>
+        <div class="img-slot" style="height:420px;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="1.5"/></svg>
+          <span>Company Image Placeholder</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Services -->
+  <section class="section section-alt">
+    <div style="text-align:center;margin-bottom:48px;">
+      <div class="section-label" style="justify-content:center;">Core Sectors</div>
+      <h2 class="sec-title">Comprehensive Industrial Solutions</h2>
+      <p class="sec-desc" style="margin:0 auto;">AMSCO delivers end-to-end industrial services across four critical infrastructure sectors in the GCC region.</p>
+    </div>
+    <div class="card-grid">
+      <div class="service-card" onclick="showPage('services');setTab('oil')" style="cursor:pointer;">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+        </div>
+        <div class="card-title">Oil & Gas Services</div>
+        <div class="card-body">Drilling, well integrity, mud tank fabrication, maintenance & repair, equipment supply, and specialized manpower for upstream and downstream operations.</div>
+      </div>
+      <div class="service-card" onclick="showPage('services');setTab('power')" style="cursor:pointer;">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M13 3L4 14h7l-2 7 9-11h-7l2-7z"/></svg>
+        </div>
+        <div class="card-title">Electricity & Power</div>
+        <div class="card-body">Electrical services, system maintenance, power distribution support, control panel design & installation, and technical services for power generation infrastructure.</div>
+      </div>
+      <div class="service-card" onclick="showPage('services');setTab('railway')" style="cursor:pointer;">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="17" rx="2"/><path d="M6 13h12M9 2v6M15 2v6M7 19l-2 3M17 19l2 3"/></svg>
+        </div>
+        <div class="card-title">Railway Transportation</div>
+        <div class="card-body">Locomotive maintenance, electromechanical services, electrical systems, and infrastructure support for railway operations and transportation systems.</div>
+      </div>
+      <div class="service-card" onclick="showPage('services');setTab('fab')" style="cursor:pointer;">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3-3a1 1 0 000-1.4l-1.6-1.6a1 1 0 00-1.4 0l-3 3zM5 20l3-1 9-9-2-2-9 9-1 3z"/></svg>
+        </div>
+        <div class="card-title">Fabrication Services</div>
+        <div class="card-body">State-of-the-art 12,000 sqm fabrication facility in Dammam with welding, sand blasting, coating, painting, and reverse engineering capabilities.</div>
+      </div>
+      <div class="service-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <div class="card-title">Specialized Solutions</div>
+        <div class="card-body">Hydro jetting, hydro blasting, industrial vacuuming, waste management, industrial cleaning, and logistics procurement support.</div>
+      </div>
+      <div class="service-card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="card-title">Support Services</div>
+        <div class="card-body">Business development, HR & administration, finance & bookkeeping, government relations, legal consultation, Aramco ID services, and IKTIVA/Saudization support.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients snapshot -->
+  <section class="section section-dark">
+    <div style="text-align:center;margin-bottom:48px;">
+      <div class="section-label" style="justify-content:center;color:var(--blue-lt);">Trusted By</div>
+      <h2 class="sec-title" style="color:var(--white);">25+ Major Corporations</h2>
+      <p class="sec-desc dark" style="margin:0 auto;">AMSCO is a trusted partner to national oil companies, international drilling contractors, and leading industrial corporations across the GCC.</p>
+    </div>
+    <div class="client-grid">
+      <!-- Each slot holds a logo image; images to be uploaded via URL -->
+      <div class="client-slot"><div class="upload-img-slot">Saudi Aramco Logo</div><div class="client-name">Saudi Aramco</div></div>
+      <div class="client-slot"><div class="upload-img-slot">Qatar Energy Logo</div><div class="client-name">Qatar Energy</div></div>
+      <div class="client-slot"><div class="upload-img-slot">SLB Schlumberger Logo</div><div class="client-name">SLB – Schlumberger</div></div>
+      <div class="client-slot"><div class="upload-img-slot">Halliburton Logo</div><div class="client-name">Halliburton</div></div>
+      <div class="client-slot"><div class="upload-img-slot">Baker Hughes Logo</div><div class="client-name">Baker Hughes</div></div>
+      <div class="client-slot"><div class="upload-img-slot">NOV Logo</div><div class="client-name">NOV</div></div>
+      <div class="client-slot"><div class="upload-img-slot">SABIC Logo</div><div class="client-name">SABIC</div></div>
+      <div class="client-slot"><div class="upload-img-slot">SAR Logo</div><div class="client-name">Saudi Railways (SAR)</div></div>
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <button class="btn-primary" onclick="showPage('clients')">View All Clients & Partners</button>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section">
+    <div style="text-align:center;margin-bottom:16px;">
+      <div class="section-label" style="justify-content:center;">How We Work</div>
+      <h2 class="sec-title">Service Excellence Process</h2>
+    </div>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">Assessment & Planning</div>
+        <div class="step-body">Comprehensive project assessment, understanding client requirements, and developing tailored solutions for each industrial sector.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">Implementation & Execution</div>
+        <div class="step-body">Professional implementation using advanced equipment, skilled workforce, and proven methodologies across all service categories.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Quality Assurance</div>
+        <div class="step-body">Rigorous quality control, safety compliance, and performance monitoring to ensure excellence in all deliverables.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title">Ongoing Support</div>
+        <div class="step-body">Continuous support, maintenance services, and long-term partnership approach to maximize client success and satisfaction.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section style="background:var(--blue);padding:64px 5%;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;">
+    <div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:8px;">Ready to partner with AMSCO?</div>
+      <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:40px;color:var(--white);line-height:1;">Let's Build Something Great Together.</h2>
+    </div>
+    <button class="btn-primary" style="background:var(--white);color:var(--blue);" onclick="showPage('contact')">Contact Our Team</button>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════════ ABOUT ═══ -->
+<div class="page" id="page-about">
+  <div class="page-hero">
+    <div class="notch">About AMSCO</div>
+    <h1>Built on a Decade<br>of Industrial Trust.</h1>
+    <p>AMSCO is an established industrial supplier and service provider based in Al Khobar, Saudi Arabia, serving critical infrastructure sectors across the GCC.</p>
+  </div>
+
+  <section class="section">
+    <div class="two-col">
+      <div>
+        <div class="section-label">Our Story</div>
+        <h2 class="sec-title">A Trusted Name in Saudi Industrial Services</h2>
+        <p class="sec-desc">AMSCO is an established industrial supplier and service provider based in Al Khobar, Saudi Arabia, with approximately 10 years of proven experience in the local market. The company serves major industries including Oil & Gas, Railway Transportation, and Industrial Fabrication with financial strength to handle large-scale projects.</p>
+        <p style="font-size:15px;color:var(--gray);line-height:1.75;margin-top:16px;">Headquartered in Al Khobar with branches in Qatar and Bahrain, AMSCO operates a world-class 12,000 sqm fabrication facility in Dammam's 2nd Industrial City, equipped with a 10-ton crane capacity and full capabilities including welding, sand blasting, coating, and painting.</p>
+      </div>
+      <div>
+        <div class="img-slot" style="height:380px;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="1.5"/></svg>
+          <span>Facility / Team Photo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;" class="two-col">
+      <div style="background:var(--navy);padding:48px;color:var(--white);">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--yellow);margin-bottom:16px;">Our Vision</div>
+        <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:32px;color:var(--white);margin-bottom:16px;">Top Performing & Most Admired</h3>
+        <p style="color:rgba(255,255,255,0.7);font-size:15px;line-height:1.75;">To be the top performing and most admired industrial supplier and support services provider in the region, recognized for excellence and reliability.</p>
+      </div>
+      <div style="background:var(--blue);padding:48px;color:var(--white);">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--yellow);margin-bottom:16px;">Our Mission</div>
+        <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:32px;color:var(--white);margin-bottom:16px;">Client Success = AMSCO Success</h3>
+        <p style="color:rgba(255,255,255,0.85);font-size:15px;line-height:1.75;">Integrating advanced technologies, understanding client needs, and believing that client success equals AMSCO success through innovative industrial solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-label">Capabilities</div>
+    <h2 class="sec-title">Services & Capabilities</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:32px;">
+      <ul class="checklist">
+        <li>Business Development</li>
+        <li>Sales and Marketing</li>
+        <li>Contract Management</li>
+        <li>IKTIVA, Saudization and Localization</li>
+        <li>Operation Support</li>
+        <li>Logistic & Warehouse</li>
+      </ul>
+      <ul class="checklist">
+        <li>Chemical Warehouse & Lab</li>
+        <li>HR and Administration</li>
+        <li>Government & Public Relation</li>
+        <li>Legal Consultation</li>
+        <li>Finance, Bookkeeping, Taxes & Payroll</li>
+        <li>Local Manufacturing</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div style="text-align:center;margin-bottom:48px;">
+      <div class="section-label" style="justify-content:center;">Infrastructure</div>
+      <h2 class="sec-title">Core Capabilities at a Glance</h2>
+    </div>
+    <div class="card-grid card-grid-4">
+      <div class="service-card" style="text-align:center;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:52px;color:var(--blue);line-height:1;">10+</div>
+        <div class="card-title" style="justify-content:center;">Years Experience</div>
+        <div class="card-body">Proven track record in the Saudi industrial market</div>
+      </div>
+      <div class="service-card" style="text-align:center;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:52px;color:var(--blue);line-height:1;">12K</div>
+        <div class="card-title">Sqm Fabrication</div>
+        <div class="card-body">2nd Industrial City, Dammam — full fabrication facility</div>
+      </div>
+      <div class="service-card" style="text-align:center;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:52px;color:var(--blue);line-height:1;">2K</div>
+        <div class="card-title">Sqm Warehouse</div>
+        <div class="card-body">Chemical warehouse & lab with full logistics support</div>
+      </div>
+      <div class="service-card" style="text-align:center;">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:52px;color:var(--blue);line-height:1;">10T</div>
+        <div class="card-title">Crane Capacity</div>
+        <div class="card-body">Heavy-lift capability for large-scale industrial projects</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════════ SERVICES ═══ -->
+<div class="page" id="page-services">
+  <div class="page-hero">
+    <div class="notch">What We Do</div>
+    <h1>Industrial Services<br>Across Every Sector.</h1>
+    <p>Comprehensive solutions for Oil & Gas, Electricity & Power, Railway Transportation, and Advanced Fabrication — backed by 10+ years of regional expertise.</p>
+  </div>
+
+  <section class="section">
+    <div class="sector-tabs" id="sector-tabs">
+      <button class="tab-btn active" onclick="setTab('oil')">Oil & Gas</button>
+      <button class="tab-btn" onclick="setTab('power')">Electricity & Power</button>
+      <button class="tab-btn" onclick="setTab('railway')">Railway</button>
+      <button class="tab-btn" onclick="setTab('fab')">Fabrication</button>
+      <button class="tab-btn" onclick="setTab('support')">Support Services</button>
+    </div>
+
+    <!-- OIL & GAS -->
+    <div class="tab-panel active" id="tab-oil">
+      <div>
+        <div class="sector-badge">Oil & Gas Sector</div>
+        <h2 class="sec-title" style="font-size:36px;">Oil & Gas Sector Excellence</h2>
+        <p class="sec-desc" style="margin-bottom:24px;">AMSCO provides comprehensive drilling, maintenance, and specialized services for upstream and downstream operations. Trusted partner for Saudi Aramco, Qatar Energy, and major international drilling companies.</p>
+        <div style="margin-bottom:28px;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--navy);margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--yellow);">Drilling & Logging Services</div>
+          <ul class="checklist">
+            <li>Well Integrity Solutions</li>
+            <li>Mud tank fabrication and repair</li>
+            <li>Equipment baskets fabrication and repair</li>
+            <li>Helipad design and fabrication services</li>
+          </ul>
+        </div>
+        <div style="margin-bottom:28px;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--navy);margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--yellow);">Maintenance & Repair</div>
+          <ul class="checklist">
+            <li>Gas welding and specialized coating</li>
+            <li>Electrical panels and installation</li>
+            <li>Manpower services for rig operations</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--navy);margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--yellow);">Equipment & Supply</div>
+          <ul class="checklist">
+            <li>Pipes, fittings, and valve systems</li>
+            <li>Pumps and specialized spare parts</li>
+            <li>Welding materials and specialized PPE</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="img-slot" style="height:300px;margin-bottom:16px;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="1.5"/></svg>
+          <span>Drilling Operations Photo</span>
+        </div>
+        <div class="img-slot" style="height:220px;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="1.5"/></svg>
+          <span>Maintenance Work Photo</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- POWER -->
+    <div class="tab-panel" id="tab-power">
+      <div>
+        <div class="sector-badge">Electricity & Power</div>
+        <h2 class="sec-title" style="font-size:36px;">Electricity & Power Sector Services</h2>
+        <p class="sec-desc" style="margin-bottom:24px;">Electrical services, maintenance, and support for power generation and distribution infrastructure across the Kingdom and GCC.</p>
+        <div style="margin-bottom:28px;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--navy);margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--yellow);">Power Infrastructure Support</div>
+          <ul class="checklist">
+            <li>Electrical services and system maintenance</li>
+            <li>Power distribution and transmission support</li>
+            <li>Electrical equipment installation and repair</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--navy);margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--yellow);">Electrical Systems & Controls</div>
+          <ul class="checklist">
+            <li>Control panel design and installation</li>
+            <li>Electrical equipment supply and maintenance</li>
+            <li>Technical services for power generation</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="img-slot" style="height:300px;margin-bottom:16px;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="1.5"/></svg>
+          <span>Power Distribution Photo</span>
+        </div>
+        <div class="img-slot" style="height:220px;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="1.5"/></svg>
+          <span>Control Panels Photo</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RAILWAY -->
+    <div class="tab-panel" id="tab-railway">
+      <div>
+        <div class="sector-badge">Railway Transportation</div>
+        <h2 class="sec-title" style="font-size:36px;">Railway Transportation Solutions</h2>
+        <p class="sec-desc" style="margin-bottom:24px;">Locomotive maintenance, electromechanical services, and transportation infrastructure solutions supporting railway operations across Saudi Arabia.</p>
+        <div style="margin-bottom:28px;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--navy);margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--yellow);">Locomotive Services</div>
+          <ul class="checklist">
+            <li>Comprehensive maintenance services for railway locomotives and transportation equipment</li>
+            <li>Electromechanical services, electrical systems, and specialized railway infrastructure support</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--navy);margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--yellow);">Transportation Infrastructure</div>
+          <ul class="checklist">
+            <li>Infrastructure support services for railway operations and transportation systems</li>
+            <li>Logistics services, material supply, and technical support for railway projects</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="img-slot" style="height:300px;margin-bottom:16px;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="1.5"/></svg>
+          <span>Railway Photo</span>
+        </div>
+        <div class="img-slot" style="height:220px;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="1.5"/></svg>
+          <span>Track Infrastructure Photo</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FABRICATION -->
+    <div class="tab-panel" id="tab-fab">
+      <div>
+        <div class="sector-badge">Fabrication</div>
+        <h2 class="sec-title" style="font-size:36px;">Advanced Fabrication Services & Capabilities</h2>
+        <p class="sec-desc" style="margin-bottom:24px;">State-of-the-art fabrication facility in 2nd Industrial City, Dammam, spanning 12,000 sqm with 10-ton crane capacity and complete fabrication capabilities.</p>
+        <div style="margin-bottom:28px;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--navy);margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--yellow);">Fabrication Shop</div>
+          <ul class="checklist">
+            <li>Welding, sand blasting, coating, and painting services for industrial applications</li>
+            <li>12,000 sqm facility with 10-ton crane capacity</li>
+            <li>Located in 2nd Industrial City, Dammam</li>
+          </ul>
+        </div>
+        <div style="margin-bottom:28px;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--navy);margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--yellow);">Specialized Processes</div>
+          <ul class="checklist">
+            <li>Gas welding and specialized epoxy and anti-corrosion coating</li>
+            <li>Reverse engineering for spare parts and tools</li>
+            <li>Portable container fabrication for rig housing, offices, and canteen facilities</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--navy);margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--yellow);">Equipment Manufacturing</div>
+          <ul class="checklist">
+            <li>Mud tanks, equipment baskets, helipad design and fabrication</li>
+            <li>Reverse engineering capabilities for manufacturing spare parts and specialized tools</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="img-slot" style="height:280px;margin-bottom:16px;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          <span>Fabrication Shop Photo</span>
+        </div>
+        <div class="img-slot" style="height:200px;margin-bottom:16px;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          <span>Coating / Blasting Photo</span>
+        </div>
+        <div class="img-slot" style="height:140px;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
+          <span>Equipment Manufacturing Photo</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUPPORT -->
+    <div class="tab-panel" id="tab-support">
+      <div>
+        <div class="sector-badge">Support Services</div>
+        <h2 class="sec-title" style="font-size:36px;">Comprehensive Business Support Services</h2>
+        <p class="sec-desc" style="margin-bottom:24px;">Complete business support including administrative, HR, finance, and government relations for seamless operations across all sectors.</p>
+        <div style="margin-bottom:28px;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--navy);margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--yellow);">Industrial Services</div>
+          <ul class="checklist">
+            <li>Industrial maintenance and mechanical services</li>
+            <li>Electromechanical and electrical system services</li>
+            <li>Material supply and skilled manpower</li>
+          </ul>
+        </div>
+        <div style="margin-bottom:28px;">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--navy);margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--yellow);">Specialized Cleaning Solutions</div>
+          <ul class="checklist">
+            <li>Hydro jetting and hydro blasting services</li>
+            <li>Industrial vacuuming and waste management</li>
+            <li>Logistics services and procurement support</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:16px;color:var(--navy);margin-bottom:10px;padding-bottom:8px;border-bottom:2px solid var(--yellow);">Business Support</div>
+          <ul class="checklist">
+            <li>Administrative support and human resources</li>
+            <li>Finance, logistics, and procurement</li>
+            <li>Government relations and Aramco ID services</li>
+            <li>IKTIVA, Saudization and Localization support</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="img-slot" style="height:440px;">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5L5 21" stroke="currentColor" stroke-width="1.5"/></svg>
+          <span>Support Services / Team Photo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════════ CLIENTS ═══ -->
+<div class="page" id="page-clients">
+  <div class="page-hero">
+    <div class="notch">Clients & Partners</div>
+    <h1>Trusted by Industry<br>Leaders Across the GCC.</h1>
+    <p>25+ major corporations, 15+ oil & gas companies, and 50+ active partnerships — built on a decade of reliable industrial service.</p>
+  </div>
+
+  <section class="section">
+    <div style="text-align:center;margin-bottom:48px;">
+      <div class="section-label" style="justify-content:center;">Our Clients</div>
+      <h2 class="sec-title">Oil & Gas Leaders</h2>
+      <p class="sec-desc" style="margin:0 auto;">Serving national oil companies and international drilling contractors across the Middle East region.</p>
+    </div>
+    <div style="margin-bottom:40px;">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--border);">National & Regional Operating Companies</div>
+      <div class="client-grid">
+        <div class="client-slot"><div class="upload-img-slot">Saudi Aramco</div><div class="client-name">Saudi Aramco</div></div>
+        <div class="client-slot"><div class="upload-img-slot">Qatar Energy</div><div class="client-name">Qatar Energy</div></div>
+        <div class="client-slot"><div class="upload-img-slot">KOC Logo</div><div class="client-name">KOC – Kuwait</div></div>
+        <div class="client-slot"><div class="upload-img-slot">KNPC Logo</div><div class="client-name">KNPC – Kuwait</div></div>
+        <div class="client-slot"><div class="upload-img-slot">BAPCO Logo</div><div class="client-name">BAPCO – Bahrain</div></div>
+        <div class="client-slot"><div class="upload-img-slot">Saudi Electricity Company</div><div class="client-name">Saudi Electricity Co.</div></div>
+        <div class="client-slot"><div class="upload-img-slot">SAR Logo</div><div class="client-name">SAR – Saudi Railways</div></div>
+        <div class="client-slot"><div class="upload-img-slot">SABIC Logo</div><div class="client-name">SABIC</div></div>
+      </div>
+    </div>
+    <div style="margin-bottom:40px;">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid var(--border);">Drilling & Oilfield Service Companies</div>
+      <div class="client-grid">
+        <div class="client-slot"><div class="upload-img-slot">SLB Logo</div><div class="client-name">SLB – Schlumberger</div></div>
+        <div class="client-slot"><div class="upload-img-slot">Halliburton Logo</div><div class="client-name">Halliburton</div></div>
+        <div class="client-slot"><div class="upload-img-slot">Baker Hughes Logo</div><div class="client-name">Baker Hughes</div></div>
+        <div class="client-slot"><div class="upload-img-slot">NOV Logo</div><div class="client-name">NOV – National Oilwell Varco</div></div>
+        <div class="client-slot"><div class="upload-img-slot">Maaden Logo</div><div class="client-name">Maaden</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENT DISTRIBUTION -->
+  <section class="section section-alt">
+    <div class="two-col">
+      <div>
+        <div class="section-label">Distribution</div>
+        <h2 class="sec-title" style="font-size:40px;">Client Distribution by Category</h2>
+        <p class="sec-desc" style="margin-bottom:32px;">Our diversified client base spans four major categories across the GCC industrial landscape.</p>
+        <div class="pie-wrap">
+          <div class="pie-chart"></div>
+          <div class="pie-legend">
+            <div class="legend-item"><div class="legend-dot" style="background:var(--blue-lt);"></div><strong>35%</strong> &nbsp;Operating Companies</div>
+            <div class="legend-item"><div class="legend-dot" style="background:var(--yellow);"></div><strong>30%</strong> &nbsp;Drilling Companies</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#7BC67E;"></div><strong>25%</strong> &nbsp;Service Companies</div>
+            <div class="legend-item"><div class="legend-dot" style="background:#E05A5A;"></div><strong>10%</strong> &nbsp;Other Industries</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="card-grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:0;">
+          <div class="service-card" style="text-align:center;">
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:48px;color:var(--blue);">25+</div>
+            <div class="card-title">Major Corporations</div>
+          </div>
+          <div class="service-card" style="text-align:center;">
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:48px;color:var(--blue);">15+</div>
+            <div class="card-title">Oil & Gas Companies</div>
+          </div>
+          <div class="service-card" style="text-align:center;">
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:48px;color:var(--blue);">50+</div>
+            <div class="card-title">Active Partnerships</div>
+          </div>
+          <div class="service-card" style="text-align:center;">
+            <div style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:48px;color:var(--blue);">10+</div>
+            <div class="card-title">Years Track Record</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GLOBAL PARTNERS -->
+  <section class="section">
+    <div style="text-align:center;margin-bottom:48px;">
+      <div class="section-label" style="justify-content:center;">Global Partnerships</div>
+      <h2 class="sec-title">Strategic Global Partners</h2>
+      <p class="sec-desc" style="margin:0 auto;">AMSCO maintains strategic partnerships with leading international suppliers and manufacturers to deliver world-class solutions across all sectors.</p>
+    </div>
+    <div class="partner-grid">
+      <div class="partner-slot">
+        <div class="upload-img-slot" style="width:120px;height:54px;">Wilo Logo</div>
+        <div class="partner-name">Wilo Pumps</div>
+        <div class="partner-country">Germany · Advanced Pumping Solutions</div>
+      </div>
+      <div class="partner-slot">
+        <div class="upload-img-slot" style="width:120px;height:54px;">Rig Resource Logo</div>
+        <div class="partner-name">Rig Resource</div>
+        <div class="partner-country">Singapore · Specialized Rig Manpower</div>
+      </div>
+      <div class="partner-slot">
+        <div class="upload-img-slot" style="width:120px;height:54px;">Total Engineering Logo</div>
+        <div class="partner-name">Total Engineering</div>
+        <div class="partner-country">South Korea · Valve Manufacture</div>
+      </div>
+      <div class="partner-slot">
+        <div class="upload-img-slot" style="width:120px;height:54px;">KD Valve Logo</div>
+        <div class="partner-name">KD Valve</div>
+        <div class="partner-country">South Korea · Valve Systems</div>
+      </div>
+      <div class="partner-slot">
+        <div class="upload-img-slot" style="width:120px;height:54px;">Inco Alloys Logo</div>
+        <div class="partner-name">Inco Alloys</div>
+        <div class="partner-country">India · Fittings, Flanges & Equipment</div>
+      </div>
+      <div class="partner-slot">
+        <div class="upload-img-slot" style="width:120px;height:54px;">BOKJU Logo</div>
+        <div class="partner-name">BOKJU CO LTD</div>
+        <div class="partner-country">Specialized Coating Technologies</div>
+      </div>
+      <div class="partner-slot">
+        <div class="upload-img-slot" style="width:120px;height:54px;">DXG Ltd Logo</div>
+        <div class="partner-name">DXG Ltd</div>
+        <div class="partner-country">Gas Analyzers & Monitoring</div>
+      </div>
+    </div>
+    <div style="margin-top:32px;padding:24px;background:var(--off);border-left:4px solid var(--blue);">
+      <p style="font-size:14px;color:var(--gray);line-height:1.7;">
+        <strong style="color:var(--navy);">Note to site admin:</strong> Replace each logo placeholder above by adding an <code>&lt;img src="YOUR_URL"&gt;</code> inside the respective partner slot. Each slot is clearly labeled with the partner name.
+      </p>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════════ CONTACT ═══ -->
+<div class="page" id="page-contact">
+  <div class="page-hero">
+    <div class="notch">Get In Touch</div>
+    <h1>Let's Start a<br>Conversation.</h1>
+    <p>Reach out to AMSCO's team for inquiries, partnerships, or project consultations across any of our industrial service sectors.</p>
+  </div>
+
+  <section class="section">
+    <div class="contact-wrap">
+      <!-- INFO -->
+      <div>
+        <div class="section-label">Contact Information</div>
+        <h2 class="sec-title" style="font-size:36px;">How to Reach Us</h2>
+        <p class="sec-desc" style="margin-bottom:36px;">We operate across Saudi Arabia, Qatar, and Bahrain. Contact our central team and we'll direct your inquiry to the right specialist.</p>
+
+        <div class="contact-detail">
+          <div class="cd-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014 12.54a19.79 19.79 0 01-3.07-8.67A2 2 0 012.91 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="cd-label">Phone / WhatsApp</div>
+            <div class="cd-val">+966 54 172 0336</div>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="cd-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="cd-label">Email</div>
+            <div class="cd-val">operations@shihabksa.com</div>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="cd-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="cd-label">Head Office — Saudi Arabia</div>
+            <div class="cd-val" style="font-size:14px;">Unit 24, P.O Box 7941, 22nd Street,<br>King Faisal Street, 22nd, Shamaliya,<br>Al Khobar – 34425-3554, Saudi Arabia</div>
+          </div>
+        </div>
+
+        <div style="margin-top:32px;padding:20px;background:var(--off);border-top:3px solid var(--yellow);">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);margin-bottom:12px;">Branch Offices</div>
+          <div style="font-size:14px;color:var(--gray);line-height:1.8;">
+            <strong style="color:var(--navy);">Qatar:</strong> Building 127 Unit 2, Area 71 Street 750, Qatar<br>
+            <strong style="color:var(--navy);">Bahrain:</strong> Building No. 4130, Block-1014, Road 1454, Al Hamalah, Kingdom of Bahrain
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div>
+        <div style="background:var(--off);padding:40px;">
+          <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:28px;color:var(--navy);margin-bottom:4px;">Send Us a Message</h3>
+          <p style="font-size:14px;color:var(--gray);margin-bottom:28px;">Complete the form below and our team will respond within 24 business hours.</p>
+          <form id="contact-form" onsubmit="handleSubmit(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name *</label>
+                <input type="text" id="fname" name="fname" required placeholder="Your first name">
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name *</label>
+                <input type="text" id="lname" name="lname" required placeholder="Your last name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required placeholder="your@company.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone / WhatsApp</label>
+              <input type="tel" id="phone" name="phone" placeholder="+966 XX XXX XXXX">
+            </div>
+            <div class="form-group">
+              <label for="company">Company Name</label>
+              <input type="text" id="company" name="company" placeholder="Your company">
+            </div>
+            <div class="form-group">
+              <label for="service">Service of Interest</label>
+              <select id="service" name="service">
+                <option value="">— Select a service —</option>
+                <option>Oil & Gas Services</option>
+                <option>Electricity & Power</option>
+                <option>Railway Transportation</option>
+                <option>Fabrication Services</option>
+                <option>Specialized / Hydro Services</option>
+                <option>Support Services</option>
+                <option>General Inquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required placeholder="Describe your project or inquiry…"></textarea>
+            </div>
+            <button type="submit" class="form-submit">Send Message</button>
+            <div class="form-msg" id="form-msg"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Locations -->
+  <section class="section section-alt">
+    <div class="section-label">Our Offices</div>
+    <h2 class="sec-title">Office Locations</h2>
+    <div class="locations-grid">
+      <div class="loc-card">
+        <div class="loc-tag">Head Quarters</div>
+        <div class="loc-title">Saudi Arabia</div>
+        <div class="loc-addr">
+          Unit 24, P.O Box 7941, 22nd Street,<br>
+          King Faisal Street, 22nd, Shamaliya,<br>
+          Al Khobar – 34425-3554<br>
+          Kingdom of Saudi Arabia
+        </div>
+      </div>
+      <div class="loc-card">
+        <div class="loc-tag">Branch Office</div>
+        <div class="loc-title">Qatar</div>
+        <div class="loc-addr">
+          Building 127 Unit 2,<br>
+          Area 71 Street 750,<br>
+          Qatar
+        </div>
+      </div>
+      <div class="loc-card">
+        <div class="loc-tag">Branch Office</div>
+        <div class="loc-title">Bahrain</div>
+        <div class="loc-addr">
+          Building No. 4130, Block-1014,<br>
+          Road 1454, Al Hamalah,<br>
+          Kingdom of Bahrain
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ═══════════════════════════════════════════════ FOOTER ═══ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">
+        <div class="logo-mark">AMS</div>
+        <div class="logo-text">AMS<span>CO</span></div>
+      </div>
+      <p class="footer-desc">Leading industrial supplier and service provider based in Al Khobar, Saudi Arabia. Serving Oil & Gas, Power, Railway, and Fabrication sectors across the GCC for 10+ years.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#" onclick="showPage('home')">Home</a></li>
+        <li><a href="#" onclick="showPage('about')">About Us</a></li>
+        <li><a href="#" onclick="showPage('services')">Services</a></li>
+        <li><a href="#" onclick="showPage('clients')">Clients & Partners</a></li>
+        <li><a href="#" onclick="showPage('contact')">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#" onclick="showPage('services');setTab('oil')">Oil & Gas</a></li>
+        <li><a href="#" onclick="showPage('services');setTab('power')">Electricity & Power</a></li>
+        <li><a href="#" onclick="showPage('services');setTab('railway')">Railway Transportation</a></li>
+        <li><a href="#" onclick="showPage('services');setTab('fab')">Fabrication</a></li>
+        <li><a href="#" onclick="showPage('services');setTab('support')">Support Services</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+966541720336">+966 54 172 0336</a></li>
+        <li><a href="mailto:operations@shihabksa.com">operations@shihabksa.com</a></li>
+        <li><a href="#">Al Khobar, Saudi Arabia</a></li>
+        <li><a href="#">Qatar Branch</a></li>
+        <li><a href="#">Bahrain Branch</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 AMSCO Industrial Services. All Rights Reserved.</span>
+    <span style="color:rgba(255,255,255,0.4);">Al Khobar, Saudi Arabia</span>
+  </div>
+</footer>
+
+<script>
+// ── PAGE ROUTING ──
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  const navEl = document.getElementById('nav-' + name);
+  if (navEl) navEl.classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+// ── TAB SWITCHING ──
+function setTab(id) {
+  // wait a tick so the services page is visible first
+  setTimeout(function(){
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    const panel = document.getElementById('tab-' + id);
+    if (panel) panel.classList.add('active');
+    const btns = document.querySelectorAll('.tab-btn');
+    const map = {oil:0, power:1, railway:2, fab:3, support:4};
+    if (map[id] !== undefined && btns[map[id]]) btns[map[id]].classList.add('active');
+    const tabsEl = document.getElementById('sector-tabs');
+    if (tabsEl) tabsEl.scrollIntoView({behavior:'smooth', block:'start'});
+  }, 80);
+}
+
+// ── HAMBURGER ──
+function toggleMenu(){
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+
+// ── CONTACT FORM ──
+async function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const msg  = document.getElementById('form-msg');
+
+  const data = {
+    fname:   form.fname.value,
+    lname:   form.lname.value,
+    email:   form.email.value,
+    phone:   form.phone.value,
+    company: form.company.value,
+    service: form.service.value,
+    message: form.message.value,
+    _to:     'operations@shihabksa.com',
+    _subject: 'AMSCO Website Enquiry – ' + form.service.value
+  };
+
+  try {
+    // Using Formspree as a no-backend mail relay.
+    // Replace YOUR_FORMSPREE_ID below with your Formspree endpoint ID.
+    // Sign up free at https://formspree.io and create a form pointed to operations@shihabksa.com
+    const res = await fetch('https://formspree.io/f/YOUR_FORMSPREE_ID', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json', 'Accept':'application/json'},
+      body: JSON.stringify(data)
+    });
+
+    if (res.ok) {
+      msg.className = 'form-msg success';
+      msg.textContent = '✓ Message sent successfully! Our team will respond within 24 business hours.';
+      form.reset();
+    } else {
+      throw new Error('Server error');
+    }
+  } catch {
+    // Fallback: open mail client
+    const body = encodeURIComponent(
+      `Name: ${data.fname} ${data.lname}\nCompany: ${data.company}\nPhone: ${data.phone}\nService: ${data.service}\n\n${data.message}`
+    );
+    window.location.href = `mailto:operations@shihabksa.com?subject=${encodeURIComponent(data._subject)}&body=${body}`;
+    msg.className = 'form-msg success';
+    msg.textContent = '✓ Opening your mail client… Alternatively, email us directly at operations@shihabksa.com';
+  }
+  msg.style.display = 'block';
+}
+</script>
+</body>
+</html>
