@@ -15,19 +15,43 @@
 .partners-grid-section { padding:100px 5%; background:var(--navy); }
 .partners-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; margin-top:52px; }
 
-.partner-card { background:var(--navy-card); padding:40px 32px; border:1px solid transparent; position:relative; overflow:hidden; transition:all 0.35s var(--ease); }
+.partner-card { background:var(--navy-card); padding:32px 28px; border:1px solid transparent; position:relative; overflow:hidden; transition:all 0.35s; }
 .partner-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:var(--gold); transform:scaleX(0); transition:transform 0.4s ease; }
 .partner-card:hover { border-color:var(--border); transform:translateY(-5px); box-shadow:0 20px 50px rgba(0,0,0,0.4); }
 .partner-card:hover::after { transform:scaleX(1); }
 
-.partner-region { font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
-.partner-name { font-family:'Bebas Neue',sans-serif; font-size:26px; letter-spacing:1px; margin-bottom:8px; color:var(--white); }
-.partner-category { font-size:11px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--gray); margin-bottom:18px; padding-bottom:18px; border-bottom:1px solid var(--border-dim); }
-.partner-desc { font-size:13px; color:var(--gray); line-height:1.7; }
+/* Logo slot — replace the src with your local file path or URL */
+.partner-logo-slot {
+  height:52px;
+  display:flex;
+  align-items:center;
+  margin-bottom:18px;
+}
+.partner-logo-slot img {
+  max-height:52px;
+  max-width:150px;
+  width:auto;
+  object-fit:contain;
+  filter:brightness(10);
+  opacity:0.55;
+  transition:opacity 0.3s;
+}
+.partner-card:hover .partner-logo-slot img { opacity:1; }
 
-.partner-logo-slot { height:40px; display:flex; align-items:center; margin-bottom:20px; }
-.partner-logo-slot img { max-height:40px; max-width:140px; object-fit:contain; filter:brightness(10); opacity:0.5; transition:opacity 0.3s; }
-.partner-card:hover .partner-logo-slot img { opacity:0.9; }
+/* Fallback text shown when no logo image is set */
+.partner-logo-slot .logo-fallback {
+  font-family:inherit;
+  font-weight:800;
+  font-size:18px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.35);
+}
+
+.partner-region { font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+.partner-name { font-family:'Bebas Neue',sans-serif; font-size:24px; letter-spacing:1px; margin-bottom:6px; color:var(--white); }
+.partner-category { font-size:11px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--gray); margin-bottom:14px; padding-bottom:14px; border-bottom:1px solid var(--border-dim); }
+.partner-desc { font-size:13px; color:var(--gray); line-height:1.65; }
 
 .global-map { padding:100px 5%; background:var(--navy-mid); }
 .map-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:2px; margin-top:52px; }
@@ -42,7 +66,7 @@
 </head>
 <body>
 <nav class="site-nav">
-  <a href="index.html" class="nav-logo"><div class="nav-logo-mark">A</div><div><div class="nav-logo-name">AMS<span>CO</span></div><span class="nav-logo-sub">Industrial Services</span></div></a>
+  <img src="" alt="Company Logo" class="nav-logo-img">
   <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="clients.html">Clients</a></li><li><a href="partners.html" class="active">Partners</a></li><li><a href="contact.html" class="nav-cta">Contact Us</a></li></ul>
   <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
@@ -60,32 +84,20 @@
 <section class="partners-intro">
   <div class="container">
     <div class="partners-intro-grid">
-      <div data-reveal="left">
+      <div>
         <div class="partners-intro-img">
           <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80" alt="Global Partners">
         </div>
       </div>
-      <div data-reveal="right">
+      <div>
         <div class="section-label">Our Philosophy</div>
         <h2 class="section-heading">Partnerships Built on <span class="gold">Trust &amp; Quality</span></h2>
-        <p class="section-body">Every AMSCO partnership is selected based on product quality, technical capability, and alignment with our commitment to delivering reliable, compliant solutions to the most demanding industrial clients in the region. Our global network allows us to source best-in-class materials and expertise from around the world — while maintaining full accountability as the local point of contact.</p>
+        <p class="section-body">Every AMSCO partnership is selected based on product quality, technical capability, and alignment with our commitment to delivering reliable, compliant solutions to the most demanding industrial clients in the region.</p>
         <div style="margin-top:32px; display:flex; flex-direction:column; gap:14px;">
-          <div style="display:flex; gap:14px; align-items:flex-start; font-size:14px; color:var(--gray);">
-            <span style="width:3px; height:3px; border-radius:50%; background:var(--gold); flex-shrink:0; margin-top:8px;"></span>
-            Rigorous supplier qualification and vetting process
-          </div>
-          <div style="display:flex; gap:14px; align-items:flex-start; font-size:14px; color:var(--gray);">
-            <span style="width:3px; height:3px; border-radius:50%; background:var(--gold); flex-shrink:0; margin-top:8px;"></span>
-            Long-term exclusive and preferred supply arrangements
-          </div>
-          <div style="display:flex; gap:14px; align-items:flex-start; font-size:14px; color:var(--gray);">
-            <span style="width:3px; height:3px; border-radius:50%; background:var(--gold); flex-shrink:0; margin-top:8px;"></span>
-            Joint technical support and knowledge transfer programs
-          </div>
-          <div style="display:flex; gap:14px; align-items:flex-start; font-size:14px; color:var(--gray);">
-            <span style="width:3px; height:3px; border-radius:50%; background:var(--gold); flex-shrink:0; margin-top:8px;"></span>
-            Full compliance with Saudi Aramco and GCC procurement standards
-          </div>
+          <div style="display:flex; gap:14px; align-items:flex-start; font-size:14px; color:var(--gray);"><span style="width:3px; height:3px; border-radius:50%; background:var(--gold); flex-shrink:0; margin-top:8px;"></span>Rigorous supplier qualification and vetting process</div>
+          <div style="display:flex; gap:14px; align-items:flex-start; font-size:14px; color:var(--gray);"><span style="width:3px; height:3px; border-radius:50%; background:var(--gold); flex-shrink:0; margin-top:8px;"></span>Long-term exclusive and preferred supply arrangements</div>
+          <div style="display:flex; gap:14px; align-items:flex-start; font-size:14px; color:var(--gray);"><span style="width:3px; height:3px; border-radius:50%; background:var(--gold); flex-shrink:0; margin-top:8px;"></span>Joint technical support and knowledge transfer programs</div>
+          <div style="display:flex; gap:14px; align-items:flex-start; font-size:14px; color:var(--gray);"><span style="width:3px; height:3px; border-radius:50%; background:var(--gold); flex-shrink:0; margin-top:8px;"></span>Full compliance with Saudi Aramco and GCC procurement standards</div>
         </div>
       </div>
     </div>
@@ -97,70 +109,114 @@
   <div class="container">
     <div class="section-label">Our Partners</div>
     <h2 class="section-heading">International <span class="gold">Alliances</span></h2>
-    <p class="section-body">Trusted suppliers and technology partners who work alongside AMSCO to deliver excellence across every service category.</p>
+    <p class="section-body">Trusted suppliers and technology partners working alongside AMSCO to deliver excellence across every service category.</p>
     <div class="partners-cards">
 
-      <div class="partner-card" data-reveal data-delay="1">
-        <div class="partner-region">Kingdom of Saudi Arabia</div>
-        <div class="partner-name">Saudi Aramco</div>
-        <div class="partner-category">Petroleum &amp; Energy Partner</div>
-        <p class="partner-desc">As AMSCO's most significant client and strategic partner, Saudi Aramco represents the benchmark for quality, safety, and compliance that underpins all AMSCO operations. Our long-standing relationship reflects consistent delivery across fabrication, supply, and field services.</p>
-      </div>
+      <!-- ─────────────────────────────────────────────────────────────
+           HOW TO ADD LOGOS:
+           Replace the src="" value with either:
+             • A local path:  src="images/partners/hydrocarbon-solutions.png"
+             • A full URL:    src="https://yourdomain.com/logo.png"
+           If no logo is available, the fallback text will show instead.
+           The image is automatically inverted to white via CSS filter.
+      ───────────────────────────────────────────────────────────────── -->
 
-      <div class="partner-card" data-reveal data-delay="2">
+      <div class="partner-card">
+        <div class="partner-logo-slot">
+          <!-- LOGO: Hydrocarbon Solutions Inc. — replace src below -->
+          <img src="partner_pictures/HCSLOGO-removebg-preview.png" alt="Hydrocarbon Solutions Inc." onerror="this.style.display='none'">
+        </div>
         <div class="partner-region">International</div>
         <div class="partner-name">Hydrocarbon Solutions Inc.</div>
         <div class="partner-category">Technology &amp; Solutions Partner</div>
-        <p class="partner-desc">A strategic technology and solutions partner supporting AMSCO's hydrocarbon exploration and production service offerings. Hydrocarbon Solutions Inc. contributes specialized technical expertise and product solutions to AMSCO's oil and gas portfolio.</p>
+        <p class="partner-desc">Specialized technical expertise and product solutions supporting AMSCO's oil and gas exploration and production service portfolio.</p>
       </div>
 
-      <div class="partner-card" data-reveal data-delay="3">
+      <div class="partner-card">
+        <div class="partner-logo-slot">
+          <!-- LOGO: WELLSURE — replace src below -->
+          <img src="partner_pictures/SVES_LOGO-removebg-preview.png" alt="SVES" onerror="this.style.display='none'">
+        </div>
+        <div class="partner-region">Regional — GCC</div>
+        <div class="partner-name">SVES</div>
+        <div class="partner-category">Well Integrity Specialist</div>
+        <p class="partner-desc">Well integrity and assurance specialist extending AMSCO's upstream capabilities with monitoring, integrity management, and compliance expertise.</p>
+      </div>
+      <div class="partner-card">
+        <div class="partner-logo-slot">
+          <!-- LOGO: WELLSURE — replace src below -->
+          <img src="partner_pictures/well_sure_logo-removebg-preview.png" alt="WELLSURE" onerror="this.style.display='none'">
+        </div>
         <div class="partner-region">Regional — GCC</div>
         <div class="partner-name">WELLSURE</div>
         <div class="partner-category">Well Integrity Specialist</div>
-        <p class="partner-desc">A well integrity and assurance specialist that complements AMSCO's upstream oil and gas capabilities. WELLSURE brings deep technical knowledge in well monitoring, integrity management, and compliance — extending AMSCO's service offering to clients in the drilling sector.</p>
+        <p class="partner-desc">Well integrity and assurance specialist extending AMSCO's upstream capabilities with monitoring, integrity management, and compliance expertise.</p>
       </div>
 
-      <div class="partner-card" data-reveal data-delay="1">
+      <div class="partner-card">
+        <div class="partner-logo-slot">
+          <!-- LOGO: Wilo Pumps — replace src below -->
+          <img src="partner_pictures/wilo-removebg-preview.png" alt="Wilo Pumps" onerror="this.style.display='none'">
+        </div>
         <div class="partner-region">Germany</div>
         <div class="partner-name">Wilo Pumps</div>
         <div class="partner-category">Advanced Pumping Solutions</div>
-        <p class="partner-desc">A world-leading manufacturer of pumps and pump systems, Wilo provides AMSCO with high-performance pumping solutions for water supply, HVAC, and industrial fluid management applications across the GCC energy sector.</p>
+        <p class="partner-desc">World-leading pump manufacturer providing high-performance pumping systems for water supply, HVAC, and industrial fluid management across the GCC energy sector.</p>
       </div>
 
-      <div class="partner-card" data-reveal data-delay="2">
+      <div class="partner-card">
+        <div class="partner-logo-slot">
+          <!-- LOGO: Rig Resource — replace src below -->
+          <img src="partner_pictures/rig_resources_logo-removebg-preview.png" alt="Rig Resource" onerror="this.style.display='none'">
+        </div>
         <div class="partner-region">Singapore</div>
         <div class="partner-name">Rig Resource</div>
         <div class="partner-category">Specialized Rig Manpower</div>
-        <p class="partner-desc">A specialist in offshore and onshore drilling personnel, Rig Resource supplies AMSCO with certified rig crews, drilling supervisors, and technical specialists — ensuring our manpower offerings meet international safety and competency standards.</p>
+        <p class="partner-desc">Specialist in offshore and onshore drilling personnel — supplying certified rig crews, drilling supervisors, and technical specialists to AMSCO's manpower offering.</p>
       </div>
 
-      <div class="partner-card" data-reveal data-delay="3">
+      <div class="partner-card">
+        <div class="partner-logo-slot">
+          <!-- LOGO: Total Engineering & KD Valve — replace src below -->
+          <img src="client_pictures\total engineering logo.jpg" alt="Total Engineering" onerror="this.style.display='none'">
+        </div>
         <div class="partner-region">South Korea</div>
         <div class="partner-name">Total Engineering &amp; KD Valve</div>
         <div class="partner-category">Valve Systems &amp; Engineering</div>
-        <p class="partner-desc">South Korean manufacturers renowned for precision valve manufacturing and engineering services. Their product lines — covering gate, ball, check, and control valves — meet the demanding specifications required by Saudi Aramco and international operators.</p>
+        <p class="partner-desc">Precision valve manufacturers covering gate, ball, check, and control valves — meeting Saudi Aramco and international operator specifications.</p>
       </div>
 
-      <div class="partner-card" data-reveal data-delay="1">
+      <div class="partner-card">
+        <div class="partner-logo-slot">
+          <!-- LOGO: Inco Alloys — replace src below -->
+          <img src="client_pictures\inco_logo-removebg-preview.png" alt="Inco Alloys" onerror="this.style.display='none'">
+        </div>
         <div class="partner-region">India</div>
         <div class="partner-name">Inco Alloys</div>
         <div class="partner-category">Fittings, Flanges &amp; Equipment</div>
-        <p class="partner-desc">A reliable supplier of high-quality pipe fittings, flanges, and industrial equipment manufactured to ASME and international standards. Inco Alloys supports AMSCO's oil and gas supply requirements across multiple client sites in the Kingdom and beyond.</p>
+        <p class="partner-desc">Reliable supplier of pipe fittings, flanges, and industrial equipment manufactured to ASME and international standards for AMSCO's oil and gas supply requirements.</p>
       </div>
 
-      <div class="partner-card" data-reveal data-delay="2">
+      <div class="partner-card">
+        <div class="partner-logo-slot">
+          <!-- LOGO: BOKJU CO LTD — replace src below -->
+          <img src="partner_pictures/logo.png" alt="BOKJU CO LTD" onerror="this.style.display='none'">
+        </div>
         <div class="partner-region">Asia</div>
         <div class="partner-name">BOKJU CO LTD</div>
         <div class="partner-category">Specialized Coating Technologies</div>
-        <p class="partner-desc">A specialist in industrial coating technologies, BOKJU provides AMSCO with epoxy, anti-corrosion, and protective coating products and systems suited to the harsh environmental demands of oil and gas infrastructure in the Arabian Gulf region.</p>
+        <p class="partner-desc">Industrial coating specialist supplying epoxy, anti-corrosion, and protective coating systems suited to the harsh environmental demands of Arabian Gulf oil and gas infrastructure.</p>
       </div>
 
-      <div class="partner-card" data-reveal data-delay="3">
+      <div class="partner-card">
+        <div class="partner-logo-slot">
+          <!-- LOGO: DXG Ltd — replace src below -->
+          <img src="client_pictures\DXG-_LOGO-removebg-preview.png" alt="DXG Ltd" onerror="this.style.display='none'">
+        </div>
         <div class="partner-region">International</div>
         <div class="partner-name">DXG Ltd</div>
         <div class="partner-category">Gas Analyzers &amp; Monitoring</div>
-        <p class="partner-desc">A provider of gas analysis and environmental monitoring equipment, DXG Ltd supports AMSCO's industrial safety and process control requirements — supplying instruments used across oil and gas facilities, refineries, and industrial plants throughout the region.</p>
+        <p class="partner-desc">Provider of gas analysis and environmental monitoring equipment supporting AMSCO's industrial safety and process control requirements across oil, gas, and refinery facilities.</p>
       </div>
 
     </div>
@@ -175,11 +231,11 @@
       <h2 class="section-heading">Partner <span class="gold">Regions</span></h2>
     </div>
     <div class="map-grid">
-      <div class="map-region" data-reveal data-delay="1"><div class="map-region-name">Germany</div><div class="map-region-count">1 Partner</div></div>
-      <div class="map-region" data-reveal data-delay="2"><div class="map-region-name">South Korea</div><div class="map-region-count">2 Partners</div></div>
-      <div class="map-region" data-reveal data-delay="3"><div class="map-region-name">Singapore</div><div class="map-region-count">1 Partner</div></div>
-      <div class="map-region" data-reveal data-delay="4"><div class="map-region-name">India</div><div class="map-region-count">1 Partner</div></div>
-      <div class="map-region" data-reveal data-delay="5"><div class="map-region-name">Middle East</div><div class="map-region-count">Multiple Partners</div></div>
+      <div class="map-region"><div class="map-region-name">Germany</div><div class="map-region-count">1 Partner</div></div>
+      <div class="map-region"><div class="map-region-name">South Korea</div><div class="map-region-count">2 Partners</div></div>
+      <div class="map-region"><div class="map-region-name">Singapore</div><div class="map-region-count">1 Partner</div></div>
+      <div class="map-region"><div class="map-region-name">India</div><div class="map-region-count">1 Partner</div></div>
+      <div class="map-region"><div class="map-region-name">Middle East</div><div class="map-region-count">Multiple Partners</div></div>
     </div>
   </div>
 </section>
