@@ -1,25 +1,37 @@
 /* ────────────────────────────────────────
-   AMSCO Industrial Services — Global Styles
+   AMSCO Industrial Services — Global Styles (Light Theme)
    ──────────────────────────────────────── */
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@300;400;600;700&display=swap');
 
 :root {
---navy:       #1a2e4a;
---navy-mid:   #1e3554;
---navy-light: #243d5e;
---navy-card:  #213859;
---gold:       #f7b731;
---gold-light: #f9cc72;
---gold-dim:   rgba(247,183,49,0.14);
---sky:        #30b8f0;
---white:      #ffffff;
---off-white:  #edf2f8;
---gray:       #8da3be;
---gray-light: #b2c2d8;
---border:     rgba(247,183,49,0.22);
---border-dim: rgba(255,255,255,0.09);
---ease:       cubic-bezier(0.4,0,0.2,1);
+  /* ── Backgrounds (were deep navy, now clean whites/light grays) ── */
+  --navy:       #f0f4f9;          /* was #1a2e4a — page background */
+  --navy-mid:   #e6edf6;          /* was #1e3554 — hero/section bg  */
+  --navy-light: #dce6f2;          /* was #243d5e — hover states      */
+  --navy-card:  #ffffff;          /* was #213859 — card surface      */
+
+  /* ── Accent (gold stays bold — it pops on light bg) ── */
+  --gold:       #d4920a;          /* slightly deeper for contrast on white */
+  --gold-light: #e8aa2a;
+  --gold-dim:   rgba(212,146,10,0.10);
+
+  /* ── Sky stays as a mid-blue accent ── */
+  --sky:        #1a8fc7;
+
+  /* ── Text colours (inverted — dark on light) ── */
+  --white:      #1a2e4a;          /* was #ffffff — now primary text (dark navy) */
+  --off-white:  #2c4264;          /* was #edf2f8 — secondary dark text  */
+
+  /* ── Supporting tones ── */
+  --gray:       #5a7190;          /* body / muted text */
+  --gray-light: #8daabb;          /* lighter muted text */
+
+  /* ── Borders ── */
+  --border:     rgba(212,146,10,0.28);
+  --border-dim: rgba(26,46,74,0.12);
+
+  --ease: cubic-bezier(0.4,0,0.2,1);
 }
 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
@@ -74,12 +86,12 @@ button { border:none; cursor:pointer; font-family:'Barlow',sans-serif; }
   font-size:12px; font-weight:700; letter-spacing:1.8px;
   text-transform:uppercase; transition:all 0.3s var(--ease);
 }
-.btn-gold { background:var(--gold); color:var(--navy); }
-.btn-gold:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 14px 40px rgba(245,166,35,0.28); }
-.btn-outline { background:transparent; color:var(--white); border:1px solid rgba(255,255,255,0.22); }
+.btn-gold { background:var(--gold); color:#fff; }
+.btn-gold:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 14px 40px rgba(212,146,10,0.28); }
+.btn-outline { background:transparent; color:var(--white); border:1px solid rgba(26,46,74,0.22); }
 .btn-outline:hover { border-color:var(--gold); color:var(--gold); transform:translateY(-2px); }
 .btn-outline-gold { background:transparent; color:var(--gold); border:1px solid var(--gold); }
-.btn-outline-gold:hover { background:var(--gold); color:var(--navy); transform:translateY(-2px); }
+.btn-outline-gold:hover { background:var(--gold); color:#fff; transform:translateY(-2px); }
 
 /* ── NAV ── */
 .site-nav {
@@ -87,9 +99,10 @@ button { border:none; cursor:pointer; font-family:'Barlow',sans-serif; }
   height:70px;
   display:flex; align-items:center; justify-content:space-between;
   padding:0 5%;
-  background:rgba(8,18,31,0.96);
+  background:rgba(240,244,249,0.96);
   border-bottom:1px solid var(--border);
   backdrop-filter:blur(16px);
+  box-shadow:0 1px 20px rgba(26,46,74,0.08);
   transition:background 0.3s ease;
 }
 
@@ -101,7 +114,7 @@ button { border:none; cursor:pointer; font-family:'Barlow',sans-serif; }
   background:var(--gold);
   clip-path:polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
   display:flex; align-items:center; justify-content:center;
-  font-family:'Bebas Neue',sans-serif; font-size:16px; color:var(--navy);
+  font-family:'Bebas Neue',sans-serif; font-size:16px; color:#fff;
   flex-shrink:0;
 }
 .nav-logo-name {
@@ -134,7 +147,7 @@ button { border:none; cursor:pointer; font-family:'Barlow',sans-serif; }
 .nav-links a.active::after { transform:scaleX(1); transform-origin:left; }
 
 .nav-cta {
-  background:var(--gold); color:var(--navy) !important;
+  background:var(--gold); color:#fff !important;
   padding:9px 22px; font-size:11px !important; font-weight:700 !important;
   transition:background 0.25s ease, box-shadow 0.25s ease !important;
 }
@@ -149,7 +162,7 @@ button { border:none; cursor:pointer; font-family:'Barlow',sans-serif; }
 /* ── MOBILE NAV ── */
 .mobile-nav {
   display:none; position:fixed; inset:0; z-index:999;
-  background:rgba(8,18,31,0.98);
+  background:rgba(240,244,249,0.98);
   flex-direction:column; align-items:center; justify-content:center; gap:36px;
 }
 .mobile-nav.open { display:flex; }
@@ -174,14 +187,14 @@ button { border:none; cursor:pointer; font-family:'Barlow',sans-serif; }
 .page-hero-grid {
   position:absolute; inset:0;
   background-image:
-    linear-gradient(rgba(245,166,35,0.04) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(245,166,35,0.04) 1px,transparent 1px);
+    linear-gradient(rgba(212,146,10,0.07) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(212,146,10,0.07) 1px,transparent 1px);
   background-size:60px 60px;
 }
 .page-hero-glow {
   position:absolute; top:-30%; right:-10%;
   width:600px; height:600px;
-  background:radial-gradient(circle,rgba(26,159,212,0.08) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(26,143,199,0.10) 0%,transparent 65%);
 }
 .page-hero-content { position:relative; z-index:2; max-width:700px; }
 .page-hero-title {
@@ -202,7 +215,7 @@ button { border:none; cursor:pointer; font-family:'Barlow',sans-serif; }
 
 /* ── FOOTER ── */
 .site-footer {
-  background:var(--navy);
+  background:var(--navy-mid);
   border-top:1px solid var(--border);
   padding:70px 5% 32px;
 }
@@ -256,18 +269,18 @@ button { border:none; cursor:pointer; font-family:'Barlow',sans-serif; }
 }
 .stats-bar-item {
   padding:28px 32px; text-align:center;
-  border-right:1px solid rgba(8,18,31,0.15);
+  border-right:1px solid rgba(255,255,255,0.25);
   transition:background 0.25s;
 }
 .stats-bar-item:last-child { border-right:none; }
 .stats-bar-item:hover { background:var(--gold-light); }
 .stats-bar-num {
   font-family:'Bebas Neue',sans-serif;
-  font-size:48px; color:var(--navy); line-height:1;
+  font-size:48px; color:#fff; line-height:1;
 }
 .stats-bar-label {
   font-size:10px; font-weight:700; letter-spacing:1.5px;
-  text-transform:uppercase; color:rgba(8,18,31,0.62);
+  text-transform:uppercase; color:rgba(255,255,255,0.72);
   margin-top:4px;
 }
 
@@ -279,9 +292,10 @@ button { border:none; cursor:pointer; font-family:'Barlow',sans-serif; }
 .card {
   background:var(--navy-card);
   padding:36px 30px;
-  border:1px solid transparent;
+  border:1px solid var(--border-dim);
   position:relative; overflow:hidden;
   transition:all 0.3s var(--ease);
+  box-shadow:0 2px 12px rgba(26,46,74,0.06);
 }
 .card::before {
   content:''; position:absolute; top:0; left:0; right:0;
@@ -289,14 +303,14 @@ button { border:none; cursor:pointer; font-family:'Barlow',sans-serif; }
   transform:scaleX(0); transform-origin:left;
   transition:transform 0.4s ease;
 }
-.card:hover { background:var(--navy-light); border-color:var(--border); }
+.card:hover { background:var(--navy-light); border-color:var(--border); box-shadow:0 8px 32px rgba(26,46,74,0.12); }
 .card:hover::before { transform:scaleX(1); }
 
-.card-img { width:100%; height:210px; object-fit:cover; margin-bottom:24px; filter:saturate(0.75); transition:filter 0.4s; }
+.card-img { width:100%; height:210px; object-fit:cover; margin-bottom:24px; filter:saturate(0.85); transition:filter 0.4s; }
 .card:hover .card-img { filter:saturate(1); }
 
 .card-tag { font-size:10px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
-.card-title { font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:700; margin-bottom:12px; }
+.card-title { font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:700; margin-bottom:12px; color:var(--white); }
 .card-body { font-size:13px; line-height:1.7; color:var(--gray); }
 
 .card-list { margin-top:16px; display:flex; flex-direction:column; gap:7px; }

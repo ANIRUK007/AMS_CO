@@ -17,10 +17,9 @@
 
 .partner-card { background:var(--navy-card); padding:32px 28px; border:1px solid transparent; position:relative; overflow:hidden; transition:all 0.35s; }
 .partner-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:var(--gold); transform:scaleX(0); transition:transform 0.4s ease; }
-.partner-card:hover { border-color:var(--border); transform:translateY(-5px); box-shadow:0 20px 50px rgba(0,0,0,0.4); }
+.partner-card:hover { border-color:var(--border); transform:translateY(-5px); box-shadow:0 20px 50px rgba(26,46,74,0.12); }
 .partner-card:hover::after { transform:scaleX(1); }
 
-/* Logo slot — replace the src with your local file path or URL */
 .partner-logo-slot {
   height:52px;
   display:flex;
@@ -32,11 +31,7 @@
   max-width:150px;
   width:auto;
   object-fit:contain;
-  filter:brightness(10);
-  opacity:0.55;
-  transition:opacity 0.3s;
 }
-.partner-card:hover .partner-logo-slot img { opacity:1; }
 
 /* Fallback text shown when no logo image is set */
 .partner-logo-slot .logo-fallback {
@@ -45,7 +40,7 @@
   font-size:18px;
   letter-spacing:1.5px;
   text-transform:uppercase;
-  color:rgba(255,255,255,0.35);
+  color:var(--gray);
 }
 
 .partner-region { font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
@@ -112,19 +107,9 @@
     <p class="section-body">Trusted suppliers and technology partners working alongside AMSCO to deliver excellence across every service category.</p>
     <div class="partners-cards">
 
-      <!-- ─────────────────────────────────────────────────────────────
-           HOW TO ADD LOGOS:
-           Replace the src="" value with either:
-             • A local path:  src="images/partners/hydrocarbon-solutions.png"
-             • A full URL:    src="https://yourdomain.com/logo.png"
-           If no logo is available, the fallback text will show instead.
-           The image is automatically inverted to white via CSS filter.
-      ───────────────────────────────────────────────────────────────── -->
-
       <div class="partner-card">
         <div class="partner-logo-slot">
-          <!-- LOGO: Hydrocarbon Solutions Inc. — replace src below -->
-          <img src="partner_pictures/HCSLOGO-removebg-preview.png" alt="Hydrocarbon Solutions Inc." onerror="this.style.display='none'">
+          <img src="partner_pictures\HCSLOGO.jpg" alt="Hydrocarbon Solutions Inc." onerror="this.style.display='none'">
         </div>
         <div class="partner-region">International</div>
         <div class="partner-name">Hydrocarbon Solutions Inc.</div>
@@ -134,7 +119,6 @@
 
       <div class="partner-card">
         <div class="partner-logo-slot">
-          <!-- LOGO: WELLSURE — replace src below -->
           <img src="partner_pictures/SVES_LOGO-removebg-preview.png" alt="SVES" onerror="this.style.display='none'">
         </div>
         <div class="partner-region">Regional — GCC</div>
@@ -142,9 +126,9 @@
         <div class="partner-category">Well Integrity Specialist</div>
         <p class="partner-desc">Well integrity and assurance specialist extending AMSCO's upstream capabilities with monitoring, integrity management, and compliance expertise.</p>
       </div>
+
       <div class="partner-card">
         <div class="partner-logo-slot">
-          <!-- LOGO: WELLSURE — replace src below -->
           <img src="partner_pictures/well_sure_logo-removebg-preview.png" alt="WELLSURE" onerror="this.style.display='none'">
         </div>
         <div class="partner-region">Regional — GCC</div>
@@ -155,7 +139,6 @@
 
       <div class="partner-card">
         <div class="partner-logo-slot">
-          <!-- LOGO: Wilo Pumps — replace src below -->
           <img src="partner_pictures/wilo-removebg-preview.png" alt="Wilo Pumps" onerror="this.style.display='none'">
         </div>
         <div class="partner-region">Germany</div>
@@ -166,7 +149,6 @@
 
       <div class="partner-card">
         <div class="partner-logo-slot">
-          <!-- LOGO: Rig Resource — replace src below -->
           <img src="partner_pictures/rig_resources_logo-removebg-preview.png" alt="Rig Resource" onerror="this.style.display='none'">
         </div>
         <div class="partner-region">Singapore</div>
@@ -177,7 +159,6 @@
 
       <div class="partner-card">
         <div class="partner-logo-slot">
-          <!-- LOGO: Total Engineering & KD Valve — replace src below -->
           <img src="client_pictures\total engineering logo.jpg" alt="Total Engineering" onerror="this.style.display='none'">
         </div>
         <div class="partner-region">South Korea</div>
@@ -188,7 +169,6 @@
 
       <div class="partner-card">
         <div class="partner-logo-slot">
-          <!-- LOGO: Inco Alloys — replace src below -->
           <img src="client_pictures\inco_logo-removebg-preview.png" alt="Inco Alloys" onerror="this.style.display='none'">
         </div>
         <div class="partner-region">India</div>
@@ -199,7 +179,6 @@
 
       <div class="partner-card">
         <div class="partner-logo-slot">
-          <!-- LOGO: BOKJU CO LTD — replace src below -->
           <img src="partner_pictures/logo.png" alt="BOKJU CO LTD" onerror="this.style.display='none'">
         </div>
         <div class="partner-region">Asia</div>
@@ -210,7 +189,6 @@
 
       <div class="partner-card">
         <div class="partner-logo-slot">
-          <!-- LOGO: DXG Ltd — replace src below -->
           <img src="client_pictures\DXG-_LOGO-removebg-preview.png" alt="DXG Ltd" onerror="this.style.display='none'">
         </div>
         <div class="partner-region">International</div>
