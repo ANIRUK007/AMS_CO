@@ -33,7 +33,6 @@
   object-fit:contain;
 }
 
-/* Fallback text shown when no logo image is set */
 .partner-logo-slot .logo-fallback {
   font-family:inherit;
   font-weight:800;
@@ -55,13 +54,23 @@
 .map-region-name { font-family:'Bebas Neue',sans-serif; font-size:20px; letter-spacing:1px; margin-bottom:6px; }
 .map-region-count { font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); }
 
+/* ── NAV LOGO — image version ── */
+.nav-logo { display:flex; align-items:center; text-decoration:none; }
+.nav-logo-img { height:44px; width:auto; display:block; }
+
+/* ── FOOTER LOGO — image version ── */
+.footer-logo-img { height:48px; width:auto; display:block; margin-bottom:14px; }
+
 @media(max-width:1024px){ .partners-intro-grid { grid-template-columns:1fr; } .partners-cards { grid-template-columns:1fr 1fr; } .map-grid { grid-template-columns:1fr 1fr; } }
-@media(max-width:768px){ .partners-cards { grid-template-columns:1fr; } .map-grid { grid-template-columns:1fr 1fr; } }
+@media(max-width:768px){ .partners-cards { grid-template-columns:1fr; } .map-grid { grid-template-columns:1fr 1fr; } .nav-logo-img { height:36px; } .footer-logo-img { height:40px; } }
 </style>
 </head>
 <body>
+
 <nav class="site-nav">
-  <img src="" alt="Company Logo" class="nav-logo-img">
+  <a href="index.html" class="nav-logo">
+    <img src="company_details\AMSLogo.png" alt="AMSCO Industrial Services" class="nav-logo-img">
+  </a>
   <ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="projects.html">Projects</a></li><li><a href="clients.html">Clients</a></li><li><a href="partners.html" class="active">Partners</a></li><li><a href="contact.html" class="nav-cta">Contact Us</a></li></ul>
   <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
@@ -221,7 +230,12 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
-      <div><a href="index.html" class="nav-logo"><div class="nav-logo-mark">A</div><div><div class="nav-logo-name">AMS<span>CO</span></div><span class="nav-logo-sub">Industrial Services</span></div></a><p class="footer-brand-desc">Leading industrial supplier and service provider in Al Khobar, Saudi Arabia.</p></div>
+      <div>
+        <a href="index.html">
+          <img src="AMSLogo.png" alt="AMSCO Industrial Services" class="footer-logo-img">
+        </a>
+        <p class="footer-brand-desc">Leading industrial supplier and service provider in Al Khobar, Saudi Arabia.</p>
+      </div>
       <div class="footer-col"><h5>Services</h5><ul class="footer-links"><li><a href="services.html">Oil &amp; Gas</a></li><li><a href="services.html">Electricity &amp; Power</a></li><li><a href="services.html">Railway</a></li><li><a href="services.html">Fabrication</a></li></ul></div>
       <div class="footer-col"><h5>Company</h5><ul class="footer-links"><li><a href="about.html">About</a></li><li><a href="projects.html">Projects</a></li><li><a href="clients.html">Clients</a></li><li><a href="partners.html">Partners</a></li><li><a href="contact.html">Contact</a></li></ul></div>
       <div class="footer-col"><h5>Contact</h5><ul class="footer-links"><li><a href="tel:+966541720336">+966 541 720 336</a></li><li><a href="mailto:operations@shihabksa.com">operations@shihabksa.com</a></li></ul></div>
@@ -229,6 +243,7 @@
     <div class="footer-bottom"><p>&copy; 2025 <span class="gold">AMSCO Industrial Services</span>. All rights reserved.</p><div class="footer-social"><a href="mailto:operations@shihabksa.com">&#9993;</a><a href="#">in</a></div></div>
   </div>
 </footer>
+
 <script src="js/main.js"></script>
 </body>
 </html>

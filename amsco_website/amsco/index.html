@@ -13,7 +13,7 @@
 }
 .hero-bg {
   position:absolute; inset:0;
-  background:linear-gradient(135deg,#08121f 0%,#0c1b30 50%,#091626 100%);
+  background:linear-gradient(135deg,#0f2238 0%,#163052 50%,#112843 100%);
 }
 .hero-grid {
   position:absolute; inset:0;
@@ -64,15 +64,16 @@
   font-size:clamp(60px,9vw,108px);
   line-height:0.9; letter-spacing:3px;
   margin-bottom:10px;
+  color:#ffffff;
 }
 .hero-title .ghost {
-  -webkit-text-stroke:1.5px rgba(255,255,255,0.22);
+  -webkit-text-stroke:2px rgba(255,255,255,0.6);
   color:transparent;
 }
 
 .hero-tagline {
   font-family:'Barlow Condensed',sans-serif;
-  font-size:18px; font-weight:400; letter-spacing:4px;
+  font-size:18px; font-weight:800; letter-spacing:4px;
   text-transform:uppercase; color:var(--sky);
   margin-bottom:24px;
 }
@@ -100,147 +101,352 @@
 .scroll-cue-line { width:1px; height:38px; background:linear-gradient(to bottom,var(--gold),transparent); }
 
 /* ── INTRO STRIP ── */
-.intro {
-  padding:100px 5%;
-  background:var(--navy-mid);
-}
-.intro-grid {
-  display:grid; grid-template-columns:1fr 1fr;
-  gap:80px; align-items:center;
-}
+.intro { padding:100px 5%; background:var(--navy-mid); }
+.intro-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
 .intro-image-stack { position:relative; height:480px; }
-.intro-img-a {
-  position:absolute; top:0; left:0;
-  width:78%; height:80%; object-fit:cover; filter:saturate(0.75);
-}
-.intro-img-b {
-  position:absolute; bottom:0; right:0;
-  width:55%; height:52%; object-fit:cover; filter:saturate(0.75);
-  border:5px solid var(--navy-mid);
-}
-.intro-badge {
-  position:absolute; bottom:30px; left:30px;
-  background:var(--gold); color:var(--navy);
-  padding:18px 22px; text-align:center; z-index:2;
-}
+.intro-img-a { position:absolute; top:0; left:0; width:78%; height:80%; object-fit:cover; filter:saturate(0.75); }
+.intro-img-b { position:absolute; bottom:0; right:0; width:55%; height:52%; object-fit:cover; filter:saturate(0.75); border:5px solid var(--navy-mid); }
+.intro-badge { position:absolute; bottom:30px; left:30px; background:var(--gold); color:var(--navy); padding:18px 22px; text-align:center; z-index:2; }
 .intro-badge-num { font-family:'Bebas Neue',sans-serif; font-size:40px; line-height:1; display:block; }
 .intro-badge-txt { font-size:9px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
 
 .intro-features { margin-top:32px; display:flex; flex-direction:column; gap:14px; }
-.ifeat {
-  display:flex; gap:16px; align-items:flex-start;
-  padding:18px 20px; background:rgba(255,255,255,0.025);
-  border:1px solid var(--border-dim);
-  transition:all 0.3s var(--ease);
-}
+.ifeat { display:flex; gap:16px; align-items:flex-start; padding:18px 20px; background:rgba(255,255,255,0.025); border:1px solid var(--border-dim); transition:all 0.3s var(--ease); }
 .ifeat:hover { background:rgba(245,166,35,0.05); border-color:var(--border); }
-.ifeat-icon {
-  width:38px; height:38px; flex-shrink:0;
-  background:var(--gold-dim); display:flex; align-items:center; justify-content:center;
-}
+.ifeat-icon { width:38px; height:38px; flex-shrink:0; background:var(--gold-dim); display:flex; align-items:center; justify-content:center; }
 .ifeat-icon svg { width:18px; height:18px; fill:var(--gold); }
 .ifeat h4 { font-size:14px; font-weight:700; margin-bottom:4px; }
 .ifeat p { font-size:13px; color:var(--gray); line-height:1.55; }
 
 /* ── SERVICES PREVIEW ── */
 .services-prev { padding:100px 5%; background:var(--navy); }
-.services-prev-header {
-  display:flex; justify-content:space-between; align-items:flex-end;
-  margin-bottom:52px; flex-wrap:wrap; gap:20px;
-}
+.services-prev-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:52px; flex-wrap:wrap; gap:20px; }
 .services-prev-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
-.svc-card {
-  background:var(--navy-card); padding:0;
-  overflow:hidden; position:relative;
-  transition:all 0.3s var(--ease);
-  display:flex; flex-direction:column;
-  border:1px solid transparent;
-}
+.svc-card { background:var(--navy-card); padding:0; overflow:hidden; position:relative; transition:all 0.3s var(--ease); display:flex; flex-direction:column; border:1px solid transparent; }
 .svc-card:hover { border-color:var(--border); }
 .svc-card-top { position:relative; }
 .svc-card-top img { width:100%; height:200px; object-fit:cover; filter:saturate(0.65); transition:filter 0.4s; }
 .svc-card:hover .svc-card-top img { filter:saturate(1); }
-.svc-card-num {
-  position:absolute; top:14px; left:14px;
-  background:var(--gold); color:var(--navy);
-  font-family:'Bebas Neue',sans-serif; font-size:13px; letter-spacing:1px;
-  padding:3px 10px;
-}
+.svc-card-num { position:absolute; top:14px; left:14px; background:var(--gold); color:var(--navy); font-family:'Bebas Neue',sans-serif; font-size:13px; letter-spacing:1px; padding:3px 10px; }
 .svc-card-body { padding:28px 28px 32px; flex:1; display:flex; flex-direction:column; }
-.svc-card-title {
-  font-family:'Bebas Neue',sans-serif;
-  font-size:24px; letter-spacing:1px; margin-bottom:10px;
-}
+.svc-card-title { font-family:'Bebas Neue',sans-serif; font-size:24px; letter-spacing:1px; margin-bottom:10px; }
 .svc-card-desc { font-size:13px; color:var(--gray); line-height:1.65; flex:1; }
-.svc-card-link {
-  display:inline-flex; align-items:center; gap:8px;
-  margin-top:20px; font-size:11px; font-weight:700;
-  letter-spacing:1.5px; text-transform:uppercase; color:var(--gold);
-  transition:gap 0.25s;
-}
+.svc-card-link { display:inline-flex; align-items:center; gap:8px; margin-top:20px; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); transition:gap 0.25s; }
 .svc-card:hover .svc-card-link { gap:12px; }
 
 /* ── CLIENTS STRIP ── */
-.clients-strip {
-  padding:80px 5%;
-  background:var(--navy-mid);
-}
+.clients-strip { padding:80px 5%; background:var(--navy-mid); }
 .clients-strip-header { text-align:center; margin-bottom:52px; }
 .clients-marquee-wrap { overflow:hidden; position:relative; }
-.clients-marquee-wrap::before,
-.clients-marquee-wrap::after {
-  content:''; position:absolute; top:0; bottom:0; width:80px; z-index:2;
-}
+.clients-marquee-wrap::before, .clients-marquee-wrap::after { content:''; position:absolute; top:0; bottom:0; width:80px; z-index:2; }
 .clients-marquee-wrap::before { left:0; background:linear-gradient(to right,var(--navy-mid),transparent); }
 .clients-marquee-wrap::after { right:0; background:linear-gradient(to left,var(--navy-mid),transparent); }
 .clients-marquee { display:flex; gap:0; animation:marquee 28s linear infinite; width:max-content; }
 @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-.client-chip {
-  padding:18px 40px; white-space:nowrap;
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:16px; font-weight:600; letter-spacing:1px;
-  color:var(--gray); border-right:1px solid var(--border-dim);
-  transition:color 0.25s;
-}
+.client-chip { padding:18px 40px; white-space:nowrap; font-family:'Barlow Condensed',sans-serif; font-size:16px; font-weight:600; letter-spacing:1px; color:var(--gray); border-right:1px solid var(--border-dim); transition:color 0.25s; }
 .client-chip:hover { color:var(--gold); }
 
 /* ── WHY AMSCO ── */
 .why-section { padding:100px 5%; background:var(--navy); }
 .why-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; margin-top:52px; }
-.why-card {
-  background:var(--navy-mid); padding:40px 36px;
-  border:1px solid transparent; transition:all 0.3s var(--ease);
-}
+.why-card { background:var(--navy-mid); padding:40px 36px; border:1px solid transparent; transition:all 0.3s var(--ease); }
 .why-card:hover { border-color:var(--border); background:var(--navy-light); }
-.why-num {
-  font-family:'Bebas Neue',sans-serif;
-  font-size:64px; color:var(--gold-dim); line-height:1;
-  margin-bottom:12px;
-}
+.why-num { font-family:'Bebas Neue',sans-serif; font-size:64px; color:var(--gold-dim); line-height:1; margin-bottom:12px; }
 .why-title { font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:700; margin-bottom:12px; }
 .why-desc { font-size:14px; color:var(--gray); line-height:1.7; }
 
 /* ── CTA BANNER ── */
-.cta-banner {
-  padding:90px 5%;
-  background:linear-gradient(135deg,var(--navy-mid),var(--navy-light));
-  border-top:1px solid var(--border); border-bottom:1px solid var(--border);
-  text-align:center; position:relative; overflow:hidden;
-}
-.cta-banner::before {
-  content:''; position:absolute; inset:0;
-  background-image:
-    linear-gradient(rgba(245,166,35,0.04) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(245,166,35,0.04) 1px,transparent 1px);
-  background-size:60px 60px;
-}
+.cta-banner { padding:90px 5%; background:linear-gradient(135deg,var(--navy-mid),var(--navy-light)); border-top:1px solid var(--border); border-bottom:1px solid var(--border); text-align:center; position:relative; overflow:hidden; }
+.cta-banner::before { content:''; position:absolute; inset:0; background-image: linear-gradient(rgba(245,166,35,0.04) 1px,transparent 1px), linear-gradient(90deg,rgba(245,166,35,0.04) 1px,transparent 1px); background-size:60px 60px; }
 .cta-banner-content { position:relative; z-index:1; }
-.cta-banner h2 {
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(40px,6vw,72px); letter-spacing:2px; margin-bottom:16px;
-}
+.cta-banner h2 { font-family:'Bebas Neue',sans-serif; font-size:clamp(40px,6vw,72px); letter-spacing:2px; margin-bottom:16px; }
 .cta-banner p { font-size:16px; color:var(--gray); max-width:500px; margin:0 auto 36px; }
 .cta-banner-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+
+/* ── NAV LOGO — image version ── */
+.nav-logo { display:flex; align-items:center; text-decoration:none; }
+.nav-logo-img { height:44px; width:auto; display:block; }
+
+/* ── FOOTER LOGO — image version ── */
+.footer-logo-img { height:48px; width:auto; display:block; margin-bottom:14px; }
+
+/* ═══════════════════════════════════════════════
+   FLOATING WHATSAPP — pill expands from the icon
+   ═══════════════════════════════════════════════ */
+.wa-float { position:fixed; bottom:32px; right:32px; z-index:9999; text-decoration:none; display:flex; align-items:center; justify-content:flex-end; }
+.wa-float__pill { position:absolute; right:0; top:0; height:54px; border-radius:27px; background:#25D366; width:54px; overflow:hidden; display:flex; align-items:center; justify-content:flex-start; transition:width 0.38s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s; box-shadow:0 4px 18px rgba(37,211,102,0.35); }
+.wa-float:hover .wa-float__pill { width:210px; box-shadow:0 6px 28px rgba(37,211,102,0.55); }
+.wa-float__label { font-family:'Barlow',sans-serif; font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#fff; white-space:nowrap; padding-left:20px; opacity:0; transform:translateX(6px); transition:opacity 0.2s 0.15s, transform 0.25s 0.12s; pointer-events:none; flex-shrink:0; }
+.wa-float:hover .wa-float__label { opacity:1; transform:translateX(0); }
+.wa-float__icon { position:relative; z-index:2; width:54px; height:54px; border-radius:50%; background:#20c05c; display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 2px 8px rgba(0,0,0,0.18); }
+.wa-float__icon svg { width:28px; height:28px; }
+
+/* ═══════════════════════════════════════════════
+   WELCOME POPUP MODAL
+   ═══════════════════════════════════════════════ */
+#welcome-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  animation: modalFadeIn 0.6s ease 0.4s forwards;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+#welcome-modal.closing {
+  animation: modalFadeOut 0.4s ease forwards;
+}
+
+@keyframes modalFadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; pointer-events: none; }
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 10, 20, 0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  cursor: pointer;
+}
+
+.modal-box {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(160deg, #0d1f35 0%, #0a1828 100%);
+  border: 1px solid rgba(245, 166, 35, 0.3);
+  max-width: 680px;
+  width: 100%;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(245,166,35,0.08),
+    0 32px 80px rgba(0,0,0,0.7),
+    0 0 60px rgba(245,166,35,0.06);
+  transform: translateY(24px) scale(0.97);
+  animation: boxSlideIn 0.55s cubic-bezier(0.22,1,0.36,1) 0.5s forwards;
+}
+
+@keyframes boxSlideIn {
+  from { transform: translateY(24px) scale(0.97); }
+  to   { transform: translateY(0) scale(1); }
+}
+
+/* Gold top accent bar */
+.modal-box::before {
+  content: '';
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #f5a623, #1a9fd4, transparent);
+}
+
+/* Corner decorations */
+.modal-box::after {
+  content: '';
+  position: absolute;
+  top: 16px; right: 16px;
+  width: 32px; height: 32px;
+  border-top: 2px solid rgba(245,166,35,0.25);
+  border-right: 2px solid rgba(245,166,35,0.25);
+  pointer-events: none;
+}
+
+.modal-corner-bl {
+  position: absolute;
+  bottom: 16px; left: 16px;
+  width: 32px; height: 32px;
+  border-bottom: 2px solid rgba(245,166,35,0.25);
+  border-left: 2px solid rgba(245,166,35,0.25);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Close button */
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.2s, border-color 0.2s, color 0.2s, transform 0.2s;
+  font-size: 18px;
+  line-height: 1;
+  font-family: sans-serif;
+}
+
+.modal-close:hover {
+  background: rgba(245,166,35,0.15);
+  border-color: rgba(245,166,35,0.5);
+  color: #f5a623;
+  transform: rotate(90deg);
+}
+
+/* Image area */
+.modal-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  overflow: hidden;
+}
+
+.modal-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.85);
+  transition: transform 8s ease;
+}
+
+#welcome-modal:not(.closing) .modal-image-wrap img {
+  animation: slowZoom 8s ease forwards;
+}
+
+@keyframes slowZoom {
+  from { transform: scale(1.06); }
+  to   { transform: scale(1); }
+}
+
+/* Image overlay gradient */
+.modal-image-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to top, #0a1828 0%, rgba(10,24,40,0.4) 50%, transparent 100%),
+    linear-gradient(to right, rgba(10,24,40,0.3), transparent 60%);
+}
+
+/* Floating label on image */
+.modal-img-label {
+  position: absolute;
+  bottom: 20px;
+  left: 24px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-img-label-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f5a623;
+  animation: pulse 1.6s ease infinite;
+}
+
+.modal-img-label-text {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(245,166,35,0.9);
+}
+
+/* Content area below image */
+.modal-content {
+  padding: 28px 32px 32px;
+  text-align: center;
+}
+
+.modal-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 5vw, 42px);
+  letter-spacing: 2px;
+  color: #ffffff;
+  line-height: 1.05;
+  margin-bottom: 10px;
+}
+
+.modal-title .gold {
+  color: #f5a623;
+}
+
+.modal-subtitle {
+  font-size: 13px;
+  color: rgba(180,200,220,0.7);
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  max-width: 460px;
+  margin: 0 auto 24px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.modal-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 28px;
+  background: linear-gradient(135deg, #f5a623, #e09310);
+  color: #0a1828;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: box-shadow 0.25s, transform 0.2s;
+}
+
+.modal-btn-primary:hover {
+  box-shadow: 0 6px 24px rgba(245,166,35,0.45);
+  transform: translateY(-1px);
+}
+
+.modal-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 28px;
+  background: transparent;
+  color: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.2);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.25s, color 0.25s, background 0.25s;
+}
+
+.modal-btn-secondary:hover {
+  border-color: rgba(245,166,35,0.5);
+  color: #f5a623;
+  background: rgba(245,166,35,0.05);
+}
+
+/* Dismiss hint */
+.modal-dismiss-hint {
+  margin-top: 16px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.5px;
+}
 
 @media(max-width:1024px){
   .intro-grid { grid-template-columns:1fr; }
@@ -248,24 +454,63 @@
   .services-prev-grid { grid-template-columns:1fr 1fr; }
   .why-grid { grid-template-columns:1fr 1fr; }
   .hero-image { display:none; }
+  .wa-float { bottom:20px; right:20px; }
+  .wa-float:hover .wa-float__pill { width:190px; }
 }
 @media(max-width:768px){
   .services-prev-grid { grid-template-columns:1fr; }
   .why-grid { grid-template-columns:1fr; }
   .hero-stats { gap:28px; }
+  .nav-logo-img { height:36px; }
+  .footer-logo-img { height:40px; }
+  .modal-image-wrap { height:220px; }
+  .modal-content { padding:22px 20px 24px; }
 }
 </style>
 </head>
 <body>
 
+<!-- ═══════════════════════════════════════════
+     WELCOME POPUP MODAL
+     Replace src="company_details\AMSLogo.png" with
+     your desired popup image path.
+     ═══════════════════════════════════════════ -->
+<div id="welcome-modal" role="dialog" aria-modal="true" aria-label="Welcome to AMSCO">
+  <div class="modal-backdrop" onclick="closeWelcomeModal()"></div>
+  <div class="modal-box">
+    <!-- Close button -->
+    <button class="modal-close" onclick="closeWelcomeModal()" aria-label="Close">&times;</button>
+
+    <!-- Corner decoration (bottom-left) -->
+    <div class="modal-corner-bl"></div>
+
+    <!-- Hero image — replace src with your popup image -->
+    <div class="modal-image-wrap">
+      <img src="company_details\cover page.jpg" alt="AMSCO Industrial Services">
+      <div class="modal-img-label">
+        <span class="modal-img-label-dot"></span>
+      </div>
+    </div>
+
+    <!-- Text + actions -->
+    <div class="modal-content">
+      <div class="modal-title">Welcome to <span class="gold">AMSCO</span></div>
+      <p class="modal-subtitle">
+        Your trusted industrial partner across Oil &amp; Gas, Power, Railway &amp; Fabrication — serving the Middle East for over a decade.
+      </p>
+      <div class="modal-actions">
+        <a href="services.html" class="modal-btn-primary" onclick="closeWelcomeModal()">Explore Services</a>
+        <button class="modal-btn-secondary" onclick="closeWelcomeModal()">Continue to Site</button>
+      </div>
+      <p class="modal-dismiss-hint">Click anywhere outside to dismiss</p>
+    </div>
+  </div>
+</div>
+
 <!-- NAV -->
 <nav class="site-nav">
   <a href="index.html" class="nav-logo">
-    <div class="nav-logo-mark">A</div>
-    <div>
-      <div class="nav-logo-name">AMS<span>CO</span></div>
-      <span class="nav-logo-sub">Industrial Services</span>
-    </div>
+    <img src="company_details\AMSLogo.png" alt="AMSCO Industrial Services" class="nav-logo-img">
   </a>
   <ul class="nav-links">
     <li><a href="index.html" class="active">Home</a></li>
@@ -278,7 +523,6 @@
   </ul>
   <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </nav>
-
 <div class="mobile-nav" id="mobileNav">
   <span class="mobile-close" onclick="toggleMenu()">&#x2715;</span>
   <a href="index.html" onclick="toggleMenu()">Home</a>
@@ -299,7 +543,6 @@
     <img src="company_details\cover page.jpg" alt="Oil Platform">
     <div class="hero-image-fade"></div>
   </div>
-
   <div class="hero-content">
     <div class="hero-badge">
       <span class="badge-pulse"></span>
@@ -317,14 +560,7 @@
       <a href="services.html" class="btn btn-gold">Explore Services</a>
       <a href="contact.html" class="btn btn-outline">Get In Touch</a>
     </div>
-    <!-- <div class="hero-stats">
-      <div><div class="hstat-num">10+</div><div class="hstat-lbl">Years Experience</div></div>
-      <div><div class="hstat-num">25+</div><div class="hstat-lbl">Major Clients</div></div>
-      <div><div class="hstat-num">12K</div><div class="hstat-lbl">Sqm Fabrication</div></div>
-      <div><div class="hstat-num">50+</div><div class="hstat-lbl">Active Partnerships</div></div>
-    </div> -->
   </div>
-
   <div class="scroll-cue" onclick="document.getElementById('intro').scrollIntoView({behavior:'smooth'})">
     <div class="scroll-cue-line"></div>
     <span>Scroll</span>
@@ -359,31 +595,16 @@
         </p>
         <div class="intro-features">
           <div class="ifeat" data-delay="1">
-            <div class="ifeat-icon">
-              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
-            </div>
-            <div>
-              <h4>Our Vision</h4>
-              <p>To be the top performing and most admired industrial supplier and support services provider in the region, recognized for excellence and reliability.</p>
-            </div>
+            <div class="ifeat-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+            <div><h4>Our Vision</h4><p>To be the top performing and most admired industrial supplier and support services provider in the region, recognized for excellence and reliability.</p></div>
           </div>
           <div class="ifeat" data-delay="2">
-            <div class="ifeat-icon">
-              <svg viewBox="0 0 24 24"><path d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"/></svg>
-            </div>
-            <div>
-              <h4>Our Mission</h4>
-              <p>Integrating advanced technologies, understanding client needs, and believing that client success equals AMSCO success through innovative industrial solutions.</p>
-            </div>
+            <div class="ifeat-icon"><svg viewBox="0 0 24 24"><path d="M9 3L5 6.99h3V14h2V6.99h3L9 3zm7 14.01V10h-2v7.01h-3L15 21l4-3.99h-3z"/></svg></div>
+            <div><h4>Our Mission</h4><p>Integrating advanced technologies, understanding client needs, and believing that client success equals AMSCO success through innovative industrial solutions.</p></div>
           </div>
           <div class="ifeat" data-delay="3">
-            <div class="ifeat-icon">
-              <svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
-            </div>
-            <div>
-              <h4>Our Facility</h4>
-              <p>State-of-the-art 12,000 sqm fabrication shop in the 2nd Industrial City, Dammam, with 10-ton crane capacity and full-spectrum manufacturing capabilities.</p>
-            </div>
+            <div class="ifeat-icon"><svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg></div>
+            <div><h4>Our Facility</h4><p>State-of-the-art 12,000 sqm fabrication shop in the 2nd Industrial City, Dammam, with 10-ton crane capacity and full-spectrum manufacturing capabilities.</p></div>
           </div>
         </div>
         <a href="about.html" class="btn btn-outline-gold" style="margin-top:28px;">Learn More About Us</a>
@@ -404,40 +625,16 @@
     </div>
     <div class="services-prev-grid">
       <div class="svc-card" data-reveal data-delay="1">
-        <div class="svc-card-top">
-          <img src="company_details\jahhid-fitrah-alamsyah-M7FjEJza8Pk-unsplash.jpg" alt="Oil and Gas">
-          <div class="svc-card-num">01</div>
-        </div>
-        <div class="svc-card-body">
-          <div class="card-tag">Sector</div>
-          <div class="svc-card-title">Oil &amp; Gas Services</div>
-          <p class="svc-card-desc">Comprehensive drilling, maintenance, and specialized services for upstream and downstream operations across the GCC.</p>
-          <a href="services.html#oil-gas" class="svc-card-link">Read More &rarr;</a>
-        </div>
+        <div class="svc-card-top"><img src="company_details\jahhid-fitrah-alamsyah-M7FjEJza8Pk-unsplash.jpg" alt="Oil and Gas"><div class="svc-card-num">01</div></div>
+        <div class="svc-card-body"><div class="card-tag">Sector</div><div class="svc-card-title">Oil &amp; Gas Services</div><p class="svc-card-desc">Comprehensive drilling, maintenance, and specialized services for upstream and downstream operations across the GCC.</p><a href="services.html#oil-gas" class="svc-card-link">Read More &rarr;</a></div>
       </div>
       <div class="svc-card" data-reveal data-delay="2">
-        <div class="svc-card-top">
-          <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80" alt="Power">
-          <div class="svc-card-num">02</div>
-        </div>
-        <div class="svc-card-body">
-          <div class="card-tag">Sector</div>
-          <div class="svc-card-title">Electricity &amp; Power</div>
-          <p class="svc-card-desc">Electrical services, maintenance, and support for power generation and distribution infrastructure throughout the region.</p>
-          <a href="services.html#power" class="svc-card-link">Read More &rarr;</a>
-        </div>
+        <div class="svc-card-top"><img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80" alt="Power"><div class="svc-card-num">02</div></div>
+        <div class="svc-card-body"><div class="card-tag">Sector</div><div class="svc-card-title">Electricity &amp; Power</div><p class="svc-card-desc">Electrical services, maintenance, and support for power generation and distribution infrastructure throughout the region.</p><a href="services.html#power" class="svc-card-link">Read More &rarr;</a></div>
       </div>
       <div class="svc-card" data-reveal data-delay="3">
-        <div class="svc-card-top">
-          <img src="company_details\fabrication (1).jpg" alt="Fabrication">
-          <div class="svc-card-num">03</div>
-        </div>
-        <div class="svc-card-body">
-          <div class="card-tag">Sector</div>
-          <div class="svc-card-title">Fabrication Services</div>
-          <p class="svc-card-desc">Advanced fabrication facility with welding, coating, and specialized manufacturing capabilities for industrial applications.</p>
-          <a href="services.html#fabrication" class="svc-card-link">Read More &rarr;</a>
-        </div>
+        <div class="svc-card-top"><img src="company_details\fabrication (1).jpg" alt="Fabrication"><div class="svc-card-num">03</div></div>
+        <div class="svc-card-body"><div class="card-tag">Sector</div><div class="svc-card-title">Fabrication Services</div><p class="svc-card-desc">Advanced fabrication facility with welding, coating, and specialized manufacturing capabilities for industrial applications.</p><a href="services.html#fabrication" class="svc-card-link">Read More &rarr;</a></div>
       </div>
     </div>
   </div>
@@ -453,32 +650,8 @@
   </div>
   <div class="clients-marquee-wrap">
     <div class="clients-marquee">
-      <div class="client-chip">Saudi Aramco</div>
-      <div class="client-chip">Qatar Energy</div>
-      <div class="client-chip">SLB Schlumberger</div>
-      <div class="client-chip">Halliburton</div>
-      <div class="client-chip">Baker Hughes</div>
-      <div class="client-chip">NOV</div>
-      <div class="client-chip">Saudi Electricity Company</div>
-      <div class="client-chip">SAR Railways</div>
-      <div class="client-chip">SABIC</div>
-      <div class="client-chip">Ma'aden</div>
-      <div class="client-chip">KOC</div>
-      <div class="client-chip">KNPC</div>
-      <div class="client-chip">BAPCO</div>
-      <!-- Duplicate for seamless loop -->
-      <div class="client-chip">Saudi Aramco</div>
-      <div class="client-chip">Qatar Energy</div>
-      <div class="client-chip">SLB Schlumberger</div>
-      <div class="client-chip">Halliburton</div>
-      <div class="client-chip">Baker Hughes</div>
-      <div class="client-chip">NOV</div>
-      <div class="client-chip">Saudi Electricity Company</div>
-      <div class="client-chip">SAR Railways</div>
-      <div class="client-chip">SABIC</div>
-      <div class="client-chip">Ma'aden</div>
-      <div class="client-chip">KOC &amp; KNPC</div>
-      <div class="client-chip">BAPCO</div>
+      <div class="client-chip">Saudi Aramco</div><div class="client-chip">Qatar Energy</div><div class="client-chip">SLB Schlumberger</div><div class="client-chip">Halliburton</div><div class="client-chip">Baker Hughes</div><div class="client-chip">NOV</div><div class="client-chip">Saudi Electricity Company</div><div class="client-chip">SAR Railways</div><div class="client-chip">SABIC</div><div class="client-chip">Ma'aden</div><div class="client-chip">KOC</div><div class="client-chip">KNPC</div><div class="client-chip">BAPCO</div>
+      <div class="client-chip">Saudi Aramco</div><div class="client-chip">Qatar Energy</div><div class="client-chip">SLB Schlumberger</div><div class="client-chip">Halliburton</div><div class="client-chip">Baker Hughes</div><div class="client-chip">NOV</div><div class="client-chip">Saudi Electricity Company</div><div class="client-chip">SAR Railways</div><div class="client-chip">SABIC</div><div class="client-chip">Ma'aden</div><div class="client-chip">KOC &amp; KNPC</div><div class="client-chip">BAPCO</div>
     </div>
   </div>
 </section>
@@ -489,26 +662,10 @@
     <div class="section-label">Why Choose Us</div>
     <h2 class="section-heading">Built on <span class="gold">Proven Excellence</span></h2>
     <div class="why-grid">
-      <div class="why-card" data-reveal data-delay="1">
-        <div class="why-num">01</div>
-        <div class="why-title">Decade of Local Expertise</div>
-        <p class="why-desc">Over ten years operating in the Saudi Arabian market gives AMSCO an unmatched understanding of local regulations, client expectations, and operational demands — particularly in the Eastern Province.</p>
-      </div>
-      <div class="why-card" data-reveal data-delay="2">
-        <div class="why-num">02</div>
-        <div class="why-title">Full-Service Capability</div>
-        <p class="why-desc">From upstream oil and gas to railway transportation and industrial fabrication, AMSCO delivers integrated solutions across multiple sectors — eliminating the need for multiple vendors.</p>
-      </div>
-      <div class="why-card" data-reveal data-delay="3">
-        <div class="why-num">03</div>
-        <div class="why-title">Advanced Fabrication Infrastructure</div>
-        <p class="why-desc">A 12,000 sqm fabrication facility in Dammam with 10-ton crane capacity, full welding and coating lines, and reverse engineering capabilities ensures rapid, quality-driven manufacturing and repair.</p>
-      </div>
-      <div class="why-card" data-reveal data-delay="4">
-        <div class="why-num">04</div>
-        <div class="why-title">Prestigious Client Portfolio</div>
-        <p class="why-desc">Trusted by Saudi Aramco, Qatar Energy, SLB, Halliburton, Baker Hughes, SABIC, and other leading corporations — a track record that speaks directly to AMSCO's consistency and reliability.</p>
-      </div>
+      <div class="why-card" data-reveal data-delay="1"><div class="why-num">01</div><div class="why-title">Decade of Local Expertise</div><p class="why-desc">Over ten years operating in the Saudi Arabian market gives AMSCO an unmatched understanding of local regulations, client expectations, and operational demands — particularly in the Eastern Province.</p></div>
+      <div class="why-card" data-reveal data-delay="2"><div class="why-num">02</div><div class="why-title">Full-Service Capability</div><p class="why-desc">From upstream oil and gas to railway transportation and industrial fabrication, AMSCO delivers integrated solutions across multiple sectors — eliminating the need for multiple vendors.</p></div>
+      <div class="why-card" data-reveal data-delay="3"><div class="why-num">03</div><div class="why-title">Advanced Fabrication Infrastructure</div><p class="why-desc">A 12,000 sqm fabrication facility in Dammam with 10-ton crane capacity, full welding and coating lines, and reverse engineering capabilities ensures rapid, quality-driven manufacturing and repair.</p></div>
+      <div class="why-card" data-reveal data-delay="4"><div class="why-num">04</div><div class="why-title">Prestigious Client Portfolio</div><p class="why-desc">Trusted by Saudi Aramco, Qatar Energy, SLB, Halliburton, Baker Hughes, SABIC, and other leading corporations — a track record that speaks directly to AMSCO's consistency and reliability.</p></div>
     </div>
   </div>
 </section>
@@ -530,57 +687,68 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a href="index.html" class="nav-logo">
-          <div class="nav-logo-mark">A</div>
-          <div>
-            <div class="nav-logo-name">AMS<span>CO</span></div>
-            <span class="nav-logo-sub">Industrial Services</span>
-          </div>
+        <a href="index.html">
+          <img src="company_details\AMSLogo.png" alt="AMSCO Industrial Services" class="footer-logo-img">
         </a>
         <p class="footer-brand-desc">Leading industrial supplier and service provider in Al Khobar, Saudi Arabia — delivering comprehensive solutions across critical infrastructure sectors for over a decade.</p>
       </div>
-      <div class="footer-col">
-        <h5>Services</h5>
-        <ul class="footer-links">
-          <li><a href="services.html">Oil &amp; Gas Services</a></li>
-          <li><a href="services.html">Electricity &amp; Power</a></li>
-          <li><a href="services.html">Railway Transportation</a></li>
-          <li><a href="services.html">Fabrication Services</a></li>
-          <li><a href="services.html">Specialized Solutions</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Company</h5>
-        <ul class="footer-links">
-          <li><a href="about.html">About AMSCO</a></li>
-          <li><a href="projects.html">Our Projects</a></li>
-          <li><a href="clients.html">Our Clients</a></li>
-          <li><a href="partners.html">Our Partners</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Contact</h5>
-        <ul class="footer-links">
-          <li><a href="tel:+966541720336">+966 541 720 336</a></li>
-          <li><a href="mailto:operations@shihabksa.com">operations@shihabksa.com</a></li>
-          <li><a href="contact.html">Al Khobar, Saudi Arabia</a></li>
-          <li><a href="contact.html">Doha, Qatar</a></li>
-          <li><a href="contact.html">Manama, Bahrain</a></li>
-        </ul>
-      </div>
+      <div class="footer-col"><h5>Services</h5><ul class="footer-links"><li><a href="services.html">Oil &amp; Gas Services</a></li><li><a href="services.html">Electricity &amp; Power</a></li><li><a href="services.html">Railway Transportation</a></li><li><a href="services.html">Fabrication Services</a></li><li><a href="services.html">Specialized Solutions</a></li></ul></div>
+      <div class="footer-col"><h5>Company</h5><ul class="footer-links"><li><a href="about.html">About AMSCO</a></li><li><a href="projects.html">Our Projects</a></li><li><a href="clients.html">Our Clients</a></li><li><a href="partners.html">Our Partners</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+      <div class="footer-col"><h5>Contact</h5><ul class="footer-links">
+        <li><a href="tel:+966541720336">+966 541 720 336</a></li>
+        <li><a href="https://wa.me/966541720336" target="_blank" rel="noopener" style="color:#25D366;">WhatsApp</a></li>
+        <li><a href="mailto:operations@shihabksa.com">operations@shihabksa.com</a></li>
+        <li><a href="contact.html">Al Khobar, Saudi Arabia</a></li>
+        <li><a href="contact.html">Doha, Qatar</a></li>
+        <li><a href="contact.html">Manama, Bahrain</a></li>
+      </ul></div>
     </div>
     <div class="footer-bottom">
       <p>&copy; 2025 <span class="gold">AMSCO Industrial Services</span>. All rights reserved.</p>
       <div class="footer-social">
         <a href="mailto:operations@shihabksa.com" title="Email">&#9993;</a>
-        <a href="tel:+966541720336" title="Phone">&#9743;</a>
+        <a href="https://wa.me/966541720336" target="_blank" rel="noopener" title="WhatsApp" style="display:inline-flex;align-items:center;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
         <a href="#" title="LinkedIn">in</a>
       </div>
     </div>
   </div>
 </footer>
 
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/966541720336" target="_blank" rel="noopener" class="wa-float" aria-label="Chat with us on WhatsApp">
+  <span class="wa-float__pill">
+    <span class="wa-float__label">Chat with Us</span>
+  </span>
+  <span class="wa-float__icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </span>
+</a>
+
 <script src="js/main.js"></script>
+<script>
+  /* ── WELCOME MODAL ── */
+  function closeWelcomeModal() {
+    var modal = document.getElementById('welcome-modal');
+    modal.classList.add('closing');
+    // After fade-out animation, remove from DOM entirely
+    modal.addEventListener('animationend', function handler() {
+      modal.removeEventListener('animationend', handler);
+      modal.remove();
+      document.body.style.overflow = '';
+    });
+  }
+
+  // Prevent page scroll while modal is visible
+  document.addEventListener('DOMContentLoaded', function () {
+    document.body.style.overflow = 'hidden';
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeWelcomeModal();
+  });
+</script>
 </body>
 </html>

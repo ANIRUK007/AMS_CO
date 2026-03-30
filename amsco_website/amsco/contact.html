@@ -69,36 +69,26 @@
 .loc-wa-link { display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#25D366; transition:color 0.25s; text-decoration:none; }
 .loc-wa-link:hover { color:#1ebe5d; }
 
+/* ── NAV LOGO — image version ── */
+.nav-logo { display:flex; align-items:center; text-decoration:none; }
+.nav-logo-img { height:44px; width:auto; display:block; }
+
+/* ── FOOTER LOGO — image version ── */
+.footer-logo-img { height:48px; width:auto; display:block; margin-bottom:14px; }
+
 /* ═══════════════════════════════════════════════
    FLOATING WHATSAPP — pill expands from the icon
-   
-   Structure:
-     <a.wa-float>               ← positioned anchor
-       <span.wa-float__pill>    ← the growing pill (behind icon)
-         <span.wa-float__label> ← text inside pill
-       </span>
-       <span.wa-float__icon>    ← always-visible circle (on top)
-     </a>
-
-   The pill starts at width = icon size (54px) so it's
-   hidden behind the icon. On hover it widens left,
-   revealing the label. The icon never moves.
    ═══════════════════════════════════════════════ */
-
 .wa-float {
   position: fixed;
   bottom: 32px;
   right: 32px;
   z-index: 9999;
   text-decoration: none;
-  /* size anchor to match icon so layout is stable */
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  /* no overflow or width on the anchor itself */
 }
-
-/* The pill sits absolutely, anchored to the right edge */
 .wa-float__pill {
   position: absolute;
   right: 0;
@@ -106,7 +96,6 @@
   height: 54px;
   border-radius: 27px;
   background: #25D366;
-  /* collapsed: just the icon's width, invisible behind the circle */
   width: 54px;
   overflow: hidden;
   display: flex;
@@ -120,8 +109,6 @@
   width: 210px;
   box-shadow: 0 6px 28px rgba(37,211,102,0.55);
 }
-
-/* Label text — fades in as the pill opens */
 .wa-float__label {
   font-family: 'Barlow', sans-serif;
   font-size: 12px;
@@ -141,11 +128,9 @@
   opacity: 1;
   transform: translateX(0);
 }
-
-/* The icon circle — always on top, never moves */
 .wa-float__icon {
   position: relative;
-  z-index: 2;          /* above the pill */
+  z-index: 2;
   width: 54px;
   height: 54px;
   border-radius: 50%;
@@ -156,10 +141,7 @@
   flex-shrink: 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
-.wa-float__icon svg {
-  width: 28px;
-  height: 28px;
-}
+.wa-float__icon svg { width: 28px; height: 28px; }
 
 @media(max-width:1024px){
   .contact-grid { grid-template-columns:1fr; }
@@ -171,6 +153,8 @@
   .locations-grid { grid-template-columns:1fr; }
   .wa-float { bottom:20px; right:20px; }
   .wa-float:hover .wa-float__pill { width:190px; }
+  .nav-logo-img { height:36px; }
+  .footer-logo-img { height:40px; }
 }
 </style>
 </head>
@@ -178,8 +162,7 @@
 
 <nav class="site-nav">
   <a href="index.html" class="nav-logo">
-    <div class="nav-logo-mark">A</div>
-    <div><div class="nav-logo-name">AMS<span>CO</span></div><span class="nav-logo-sub">Industrial Services</span></div>
+    <img src="company_details\AMSLogo.png" alt="AMSCO Industrial Services" class="nav-logo-img">
   </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
@@ -353,9 +336,8 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <a href="index.html" class="nav-logo">
-          <div class="nav-logo-mark">A</div>
-          <div><div class="nav-logo-name">AMS<span>CO</span></div><span class="nav-logo-sub">Industrial Services</span></div>
+        <a href="index.html">
+          <img src="AMSLogo.png" alt="AMSCO Industrial Services" class="footer-logo-img">
         </a>
         <p class="footer-brand-desc">Leading industrial supplier and service provider in Al Khobar, Saudi Arabia.</p>
       </div>
@@ -380,11 +362,7 @@
   </div>
 </footer>
 
-<!-- ════════════════════════════════
-     FLOATING WHATSAPP BUTTON
-     Pill grows left FROM the icon.
-     Icon stays fixed on the right.
-     ════════════════════════════════ -->
+<!-- FLOATING WHATSAPP BUTTON -->
 <a href="https://wa.me/966541720336"
    target="_blank"
    rel="noopener"
